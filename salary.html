@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>జీతం లెక్కలు — Telugu Salary & CTC Calculator 2026 | TeluguHelp</title>
+  <meta name="description" content="మీ CTC నుండి నెలసరి జీతం, PF, TDS లెక్కలు తెలుగులో. పాత vs కొత్త పన్ను విధానం comparison. Free Telugu Salary Calculator 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --saffron: #E8720C;
+      --saffron-hover: #d4650a;
+      --teal: #0C7873;
+      --teal-hover: #0a6560;
+      --cream: #FFF8F0;
+      --cream2: #FFF0DC;
+      --dark: #1E1E1E;
+      --body: #444444;
+      --muted: #777777;
+      --border: #E8DDD0;
+      --white: #FFFFFF;
+      --green: #1a7a3a;
+      --green-bg: #edfaf2;
+      --red: #c0392b;
+      --red-bg: #fdf0ee;
+      --card-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      --r: 14px;
+      --r-sm: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: 'Hind Guntur', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,248,240,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      max-width: 1140px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; gap: 16px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-words { line-height: 1.15; }
+    .logo-te { font-size: 18px; font-weight: 700; color: var(--dark); display: block; }
+    .logo-en { font-size: 11px; color: var(--muted); }
+    .back-btn {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: var(--teal);
+      background: rgba(12,120,115,0.08); border: 1px solid rgba(12,120,115,0.2);
+      padding: 7px 14px; border-radius: 30px;
+      transition: all 0.18s; white-space: nowrap;
+    }
+    .back-btn:hover { background: rgba(12,120,115,0.15); }
+
+    /* ── PAGE HEADER ── */
+    .page-hero {
+      background: linear-gradient(160deg, #FFF8F0 0%, #FFF0DC 60%, #FFF8F0 100%);
+      padding: 44px 24px 36px; text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero h1 { font-size: clamp(22px, 4vw, 38px); font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .page-hero h1 span { color: var(--saffron); font-family: 'Playfair Display', serif; font-style: italic; }
+    .page-hero p { font-size: 15px; color: var(--muted); }
+    .breadcrumb { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+    .breadcrumb a { color: var(--teal); }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap {
+      max-width: 1140px; margin: 0 auto; padding: 32px 24px 60px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start;
+    }
+
+    /* ── INPUT PANEL ── */
+    .input-panel {
+      background: var(--teal);
+      border-radius: var(--r); padding: 28px 26px;
+      position: sticky; top: 90px;
+    }
+    .input-panel h2 {
+      font-size: 18px; font-weight: 700; color: #fff;
+      margin-bottom: 22px; padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .field { margin-bottom: 18px; }
+    .field label {
+      display: block; font-size: 13px; font-weight: 600;
+      color: rgba(255,255,255,0.85); margin-bottom: 7px;
+    }
+    .field label span { font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.55); margin-left: 4px; }
+
+    .inp {
+      width: 100%; padding: 11px 14px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--r-sm); color: #fff;
+      font-family: 'Hind Guntur', sans-serif; font-size: 15px;
+      transition: border 0.18s, background 0.18s;
+      outline: none;
+    }
+    .inp::placeholder { color: rgba(255,255,255,0.4); }
+    .inp:focus { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.18); }
+    .inp option { color: var(--dark); background: var(--white); }
+
+    /* pill toggles */
+    .pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pill {
+      padding: 7px 14px; border-radius: 30px; font-size: 13px; font-weight: 600;
+      border: 1.5px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7);
+      background: transparent; cursor: pointer; font-family: 'Hind Guntur', sans-serif;
+      transition: all 0.18s;
+    }
+    .pill.on { background: #fff; color: var(--teal); border-color: #fff; }
+    .pill:hover:not(.on) { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+    /* tax toggle */
+    .tax-toggle {
+      display: flex; background: rgba(0,0,0,0.2); border-radius: 30px; padding: 3px; gap: 2px;
+    }
+    .tax-btn {
+      flex: 1; padding: 8px 10px; border-radius: 24px; border: none;
+      font-family: 'Hind Guntur', sans-serif; font-size: 13px; font-weight: 600;
+      color: rgba(255,255,255,0.6); background: transparent; cursor: pointer;
+      transition: all 0.18s; text-align: center;
+    }
+    .tax-btn.on { background: var(--saffron); color: #fff; }
+
+    .calc-btn {
+      width: 100%; padding: 14px; margin-top: 6px;
+      background: var(--saffron); color: #fff;
+      border: none; border-radius: var(--r-sm);
+      font-family: 'Hind Guntur', sans-serif; font-size: 16px; font-weight: 700;
+      cursor: pointer; transition: background 0.18s, transform 0.1s;
+    }
+    .calc-btn:hover { background: var(--saffron-hover); }
+    .calc-btn:active { transform: scale(0.98); }
+
+    /* ── RESULT PANEL ── */
+    .result-panel { display: flex; flex-direction: column; gap: 20px; }
+
+    /* empty state */
+    .empty-state {
+      background: var(--white); border-radius: var(--r);
+      border: 2px dashed var(--border);
+      padding: 48px 24px; text-align: center;
+    }
+    .empty-state .es-icon { font-size: 48px; margin-bottom: 14px; }
+    .empty-state h3 { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .empty-state p { font-size: 14px; color: var(--muted); }
+
+    /* main result card */
+    .result-card {
+      background: var(--white); border-radius: var(--r);
+      border: 1px solid var(--border); box-shadow: var(--card-shadow);
+      padding: 26px; display: none;
+    }
+    .result-card.show { display: block; }
+
+    .monthly-big { text-align: center; padding: 20px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 22px; }
+    .monthly-label { font-size: 13px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .monthly-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 6vw, 56px); font-weight: 700;
+      color: var(--teal); line-height: 1;
+    }
+    .monthly-sub { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    /* breakdown rows */
+    .breakdown { display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+    .brow {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 11px 14px; border-radius: var(--r-sm);
+      background: var(--cream);
+    }
+    .brow-left { display: flex; align-items: center; gap: 10px; }
+    .brow-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .brow-name { font-size: 14px; font-weight: 600; color: var(--dark); }
+    .brow-hint { font-size: 11px; color: var(--muted); display: block; }
+    .brow-amt { font-size: 15px; font-weight: 700; }
+    .brow.green .brow-amt { color: var(--green); }
+    .brow.red .brow-amt { color: var(--red); }
+    .brow.neutral .brow-amt { color: var(--dark); }
+
+    /* donut chart */
+    .chart-wrap { text-align: center; padding: 16px 0 10px; border-top: 1px solid var(--border); margin-top: 4px; }
+    .chart-wrap h3 { font-size: 14px; font-weight: 700; color: var(--muted); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .donut-container { position: relative; width: 180px; height: 180px; margin: 0 auto 16px; }
+    .donut-container svg { transform: rotate(-90deg); }
+    .donut-center {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      text-align: center;
+    }
+    .donut-pct { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--teal); display: block; }
+    .donut-lbl { font-size: 10px; color: var(--muted); font-weight: 600; letter-spacing: 0.5px; }
+    .chart-legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--body); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+    /* summary paragraph */
+    .summary-card {
+      background: var(--cream2); border-radius: var(--r-sm);
+      padding: 18px 16px; border-left: 4px solid var(--saffron);
+      font-size: 14px; color: var(--body); line-height: 1.7;
+      display: none;
+    }
+    .summary-card.show { display: block; }
+    .summary-card strong { color: var(--dark); }
+
+    /* action buttons */
+    .action-btns { display: flex; gap: 10px; }
+    .act-btn {
+      flex: 1; padding: 12px 10px; border-radius: var(--r-sm);
+      border: 1.5px solid var(--border); background: var(--white);
+      font-family: 'Hind Guntur', sans-serif; font-size: 13px; font-weight: 600;
+      color: var(--teal); cursor: pointer; transition: all 0.18s; text-align: center;
+    }
+    .act-btn:hover { background: var(--cream2); border-color: var(--teal); }
+    .act-btn.primary { background: var(--saffron); color: #fff; border-color: var(--saffron); }
+    .act-btn.primary:hover { background: var(--saffron-hover); }
+
+    /* comparison table */
+    .compare-card {
+      background: var(--white); border-radius: var(--r);
+      border: 1px solid var(--border); box-shadow: var(--card-shadow);
+      padding: 22px; display: none;
+    }
+    .compare-card.show { display: block; }
+    .compare-card h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .compare-table th {
+      text-align: left; padding: 10px 12px;
+      background: var(--cream); color: var(--muted);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .compare-table td { padding: 11px 12px; border-bottom: 1px solid var(--border); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .better { color: var(--green); font-weight: 700; }
+    .compare-table .worse  { color: var(--red); }
+    .badge-better { background: var(--green-bg); color: var(--green); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
+    .badge-worse  { background: var(--red-bg);   color: var(--red);   font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
+
+    /* ── FAQ ── */
+    .faq-sec { max-width: 1140px; margin: 0 auto; padding: 0 24px 60px; }
+    .faq-sec h2 { font-size: 22px; font-weight: 700; color: var(--dark); margin-bottom: 18px; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 10px; overflow: hidden; background: var(--white); }
+    .faq-q {
+      width: 100%; text-align: left; padding: 16px 18px;
+      background: none; border: none; font-family: 'Hind Guntur', sans-serif;
+      font-size: 15px; font-weight: 600; color: var(--dark);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-q .arr { font-size: 18px; color: var(--saffron); transition: transform 0.22s; }
+    .faq-q.open .arr { transform: rotate(90deg); }
+    .faq-a { display: none; padding: 0 18px 16px; font-size: 14px; color: var(--body); line-height: 1.7; }
+    .faq-a.open { display: block; }
+
+    /* AD */
+    .ad-zone {
+      border: 1.5px dashed #C8BAA8; border-radius: var(--r-sm);
+      padding: 16px; text-align: center;
+      font-size: 11px; color: #AAA; letter-spacing: 1.5px; text-transform: uppercase;
+      margin: 24px 0;
+    }
+
+    /* ── FOOTER ── */
+    footer { background: #1C1C1C; color: rgba(255,255,255,0.5); padding: 28px 24px; text-align: center; font-size: 13px; }
+    footer a { color: var(--saffron); }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width: 860px) {
+      .main-wrap { grid-template-columns: 1fr; }
+      .input-panel { position: static; }
+    }
+    @media(max-width: 480px) {
+      .main-wrap { padding: 20px 16px 40px; }
+      .faq-sec { padding: 0 16px 40px; }
+      .action-btns { flex-direction: column; }
+      .monthly-amount { font-size: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav class="nav">
+    <a href="/" class="logo">
+      <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="10" fill="#E8720C"/>
+        <rect x="8" y="10" width="24" height="5" rx="2.5" fill="white"/>
+        <rect x="17.5" y="10" width="5" height="20" rx="2.5" fill="white"/>
+        <circle cx="30" cy="29" r="3" fill="rgba(255,255,255,0.55)"/>
+        <path d="M10 27 Q14 32 20 30" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div class="logo-words">
+        <span class="logo-te">TeluguHelp</span>
+        <span class="logo-en">teluguhelp.in</span>
+      </div>
+    </a>
+    <a href="/" class="back-btn">← Home కి వెళ్ళు</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="/">Home</a><span>›</span> జీతం లెక్కలు</div>
+  <h1>జీతం లెక్కలు — <span>Salary Calculator</span></h1>
+  <p>మీ CTC నుండి నెలసరి జీతం, PF, TDS అన్నీ తెలుగులో తెలుసుకోండి</p>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- LEFT: INPUT PANEL -->
+  <div class="input-panel">
+    <h2>📝 మీ వివరాలు ఇవ్వండి</h2>
+
+    <div class="field">
+      <label>వార్షిక CTC (Annual CTC) <span>రూపాయలలో</span></label>
+      <input type="number" class="inp" id="ctc" placeholder="ఉదా: 600000" min="0" />
+    </div>
+
+    <div class="field">
+      <label>Employment Type</label>
+      <div class="pills" id="empPills">
+        <button class="pill on" data-v="private">ప్రైవేట్</button>
+        <button class="pill" data-v="govt">ప్రభుత్వం</button>
+        <button class="pill" data-v="psu">PSU</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>పన్ను విధానం ఎంచుకోండి</label>
+      <div class="tax-toggle">
+        <button class="tax-btn on" id="taxOld" onclick="setTax('old')">పాత విధానం</button>
+        <button class="tax-btn" id="taxNew" onclick="setTax('new')">కొత్త విధానం</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>PF మీ జీతంలో వస్తుందా?</label>
+      <div class="pills" id="pfPills">
+        <button class="pill on" data-v="yes">అవును (Yes)</button>
+        <button class="pill" data-v="no">లేదు (No)</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>మీరు Metro City లో ఉన్నారా? <span>HRA కోసం</span></label>
+      <div class="pills" id="metroPills">
+        <button class="pill on" data-v="yes">అవును — Metro</button>
+        <button class="pill" data-v="no">లేదు — Non-Metro</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>రాష్ట్రం <span>Professional Tax కోసం</span></label>
+      <select class="inp" id="state">
+        <option value="telangana">తెలంగాణ</option>
+        <option value="ap">ఆంధ్రప్రదేశ్</option>
+        <option value="karnataka">Karnataka</option>
+        <option value="maharashtra">Maharashtra</option>
+        <option value="other">ఇతర రాష్ట్రాలు</option>
+      </select>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">లెక్కించండి →</button>
+  </div>
+
+  <!-- RIGHT: RESULTS -->
+  <div class="result-panel">
+
+    <!-- Empty state -->
+    <div class="empty-state" id="emptyState">
+      <div class="es-icon">💡</div>
+      <h3>మీ జీతం లెక్కించండి</h3>
+      <p>ఎడమ వైపు మీ CTC మరియు వివరాలు ఇచ్చి "లెక్కించండి" నొక్కండి</p>
+    </div>
+
+    <!-- Result card -->
+    <div class="result-card" id="resultCard">
+      <div class="monthly-big">
+        <div class="monthly-label">నెలసరి జీతం (In-Hand)</div>
+        <div class="monthly-amount" id="inHandAmt">₹0</div>
+        <div class="monthly-sub" id="annualSub"></div>
+      </div>
+
+      <div class="breakdown" id="breakdown"></div>
+
+      <div class="chart-wrap">
+        <h3>జీతం విభజన</h3>
+        <div class="donut-container">
+          <svg width="180" height="180" viewBox="0 0 180 180">
+            <circle cx="90" cy="90" r="70" fill="none" stroke="#F0E8DC" stroke-width="28"/>
+            <circle cx="90" cy="90" r="70" fill="none" stroke="#0C7873" stroke-width="28"
+              id="donutTake" stroke-dasharray="0 440" stroke-dashoffset="0" style="transition:stroke-dasharray 0.8s ease"/>
+            <circle cx="90" cy="90" r="70" fill="none" stroke="#E8720C" stroke-width="28"
+              id="donutDeduct" stroke-dasharray="0 440" stroke-dashoffset="0" style="transition:stroke-dasharray 0.8s ease,stroke-dashoffset 0.8s ease"/>
+          </svg>
+          <div class="donut-center">
+            <span class="donut-pct" id="donutPct">0%</span>
+            <span class="donut-lbl">IN-HAND</span>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-dot" style="background:#0C7873"></span>In-Hand జీతం</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#E8720C"></span>తగ్గింపులు</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#F0E8DC"></span>ఇతర</span>
+        </div>
+      </div>
+
+      <div class="action-btns" style="margin-top:18px;">
+        <button class="act-btn" onclick="window.print()">🖨️ Print / PDF</button>
+        <button class="act-btn" onclick="shareResult()">📤 Share</button>
+        <button class="act-btn primary" onclick="resetForm()">🔄 మళ్ళీ లెక్కించు</button>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-card" id="summaryCard"></div>
+
+    <!-- Tax comparison -->
+    <div class="compare-card" id="compareCard">
+      <h3>⚖️ పాత vs కొత్త పన్ను విధానం పోలిక</h3>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>వివరాలు</th>
+            <th>పాత విధానం</th>
+            <th>కొత్త విధానం</th>
+          </tr>
+        </thead>
+        <tbody id="compareBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Ad zone between results and FAQ -->
+    <div class="ad-zone">Advertisement — Google AdSense</div>
+
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-sec">
+  <h2>తరచుగా అడిగే ప్రశ్నలు</h2>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      CTC అంటే ఏమిటి? In-Hand జీతం అంటే?
+      <span class="arr">›</span>
+    </button>
+    <div class="faq-a">
+      <strong>CTC (Cost to Company)</strong> అంటే మీకోసం కంపెనీ మొత్తం ఖర్చుపెట్టే మొత్తం. దీనిలో Basic Pay, HRA, PF, Bonus అన్నీ ఉంటాయి.<br><br>
+      <strong>In-Hand జీతం</strong> అంటే నెలనెలా మీ bank account కి వచ్చే అసలు మొత్తం. CTC లో నుండి PF, TDS, Professional Tax తగ్గించిన తర్వాత మిగిలినది.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      పాత పన్ను విధానం vs కొత్త పన్ను విధానం — ఏది మంచిది?
+      <span class="arr">›</span>
+    </button>
+    <div class="faq-a">
+      <strong>పాత విధానం:</strong> HRA, 80C, 80D లాంటి exemptions claim చేయవచ్చు. investments, insurance చేసేవారికి మంచిది.<br><br>
+      <strong>కొత్త విధానం:</strong> Tax slab తక్కువగా ఉంటుంది కానీ exemptions ఉండవు. Investment చేయని వారికి, తక్కువ జీతం వాళ్ళకి మంచిది.<br><br>
+      మీ situation కి ఏది మంచిదో పైన calculator లో రెండూ compare చేయండి.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      PF అంటే ఏమిటి? నా జీతంలో ఎంత తగ్గుతుంది?
+      <span class="arr">›</span>
+    </button>
+    <div class="faq-a">
+      <strong>PF (Provident Fund)</strong> అంటే భవిష్యత్తు పొదుపు పథకం. మీ Basic Salary లో 12% మీరు కట్టాలి, మరో 12% కంపెనీ కడుతుంది.<br><br>
+      ఉదా: Basic Salary ₹25,000 అయితే → మీరు ₹3,000/నెల కడతారు. Retirement లో మీకు వడ్డీతో సహా తిరిగి వస్తుంది.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      TDS అంటే ఏమిటి? తప్పించుకోవచ్చా?
+      <span class="arr">›</span>
+    </button>
+    <div class="faq-a">
+      <strong>TDS (Tax Deducted at Source)</strong> అంటే జీతం ఇచ్చే ముందే కంపెనీ కట్టే income tax. ₹7 లక్షల లోపు జీతం అయితే కొత్త విధానంలో TDS zero.<br><br>
+      80C లో ₹1.5 లక్షలు invest చేయడం, HRA claim చేయడం ద్వారా TDS తగ్గించవచ్చు.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      Professional Tax అంటే ఏమిటి?
+      <span class="arr">›</span>
+    </button>
+    <div class="faq-a">
+      Professional Tax రాష్ట్ర ప్రభుత్వం విధించే చిన్న tax. తెలంగాణలో maximum ₹200/నెల. కొన్ని రాష్ట్రాల్లో ఉండదు.
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <a href="/">TeluguHelp (teluguhelp.in)</a> — లెక్కలు approximate. అసలు జీతానికి మీ HR తో confirm చేయండి.</p>
+</footer>
+
+<script>
+  // ── State ──
+  let taxMode = 'old';
+  let empType = 'private';
+  let pfEnabled = 'yes';
+  let metroCity = 'yes';
+
+  // ── Pill toggles ──
+  function setupPills(groupId, onChange) {
+    document.querySelectorAll('#'+groupId+' .pill').forEach(p => {
+      p.addEventListener('click', () => {
+        document.querySelectorAll('#'+groupId+' .pill').forEach(x => x.classList.remove('on'));
+        p.classList.add('on');
+        onChange(p.dataset.v);
+      });
+    });
+  }
+  setupPills('empPills',   v => empType   = v);
+  setupPills('pfPills',    v => pfEnabled = v);
+  setupPills('metroPills', v => metroCity = v);
+
+  function setTax(mode) {
+    taxMode = mode;
+    document.getElementById('taxOld').classList.toggle('on', mode === 'old');
+    document.getElementById('taxNew').classList.toggle('on', mode === 'new');
+  }
+
+  // ── PT by state ──
+  function getPT(state) {
+    const pt = { telangana:200, ap:200, karnataka:200, maharashtra:200, other:0 };
+    return pt[state] || 0;
+  }
+
+  // ── Tax calculation (FY 2025-26 / AY 2026-27) ──
+  function calcTax(taxableIncome, regime) {
+    let tax = 0;
+    if (regime === 'new') {
+      // New regime slabs — Budget 2025
+      // 0–4L = 0%, 4–8L = 5%, 8–12L = 10%, 12–16L = 15%, 16–20L = 20%, 20–24L = 25%, 24L+ = 30%
+      if (taxableIncome <= 400000) tax = 0;
+      else if (taxableIncome <= 800000)  tax = (taxableIncome - 400000) * 0.05;
+      else if (taxableIncome <= 1200000) tax = 20000 + (taxableIncome - 800000) * 0.10;
+      else if (taxableIncome <= 1600000) tax = 60000 + (taxableIncome - 1200000) * 0.15;
+      else if (taxableIncome <= 2000000) tax = 120000 + (taxableIncome - 1600000) * 0.20;
+      else if (taxableIncome <= 2400000) tax = 200000 + (taxableIncome - 2000000) * 0.25;
+      else tax = 300000 + (taxableIncome - 2400000) * 0.30;
+      // Section 87A rebate — zero tax if taxable income ≤ 12L (new regime)
+      if (taxableIncome <= 1200000) tax = 0;
+    } else {
+      // Old regime slabs
+      // 0–2.5L = 0%, 2.5–5L = 5%, 5–10L = 20%, 10L+ = 30%
+      if (taxableIncome <= 250000) tax = 0;
+      else if (taxableIncome <= 500000)  tax = (taxableIncome - 250000) * 0.05;
+      else if (taxableIncome <= 1000000) tax = 12500 + (taxableIncome - 500000) * 0.20;
+      else tax = 112500 + (taxableIncome - 1000000) * 0.30;
+      // Section 87A rebate — zero tax if taxable income ≤ 5L (old regime)
+      if (taxableIncome <= 500000) tax = 0;
+    }
+    // Surcharge for very high incomes
+    if (taxableIncome > 5000000  && taxableIncome <= 10000000) tax += tax * 0.10;
+    else if (taxableIncome > 10000000 && taxableIncome <= 20000000) tax += tax * 0.15;
+    else if (taxableIncome > 20000000) tax += tax * 0.25;
+    // 4% Health & Education Cess
+    return tax * 1.04;
+  }
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  // ── Main calculate ──
+  function calculate() {
+    const ctc = parseFloat(document.getElementById('ctc').value);
+    if (!ctc || ctc <= 0 || isNaN(ctc)) {
+      alert('దయచేసి మీ CTC ఇవ్వండి');
+      return;
+    }
+    if (ctc < 100000) {
+      alert('CTC కనీసం ₹1,00,000 (1 లక్ష) ఉండాలి');
+      return;
+    }
+    if (ctc > 100000000) {
+      alert('CTC చాలా ఎక్కువగా ఉంది. దయచేసి సరైన మొత్తం ఇవ్వండి');
+      return;
+    }
+
+    const state   = document.getElementById('state').value;
+    const annual  = ctc;
+    const monthly = annual / 12;
+
+    // Basic = 40% of CTC
+    const basicAnnual  = annual * 0.40;
+    const basicMonthly = basicAnnual / 12;
+
+    // HRA
+    const hraAnnual  = metroCity === 'yes' ? basicAnnual * 0.50 : basicAnnual * 0.40;
+    const hraMonthly = hraAnnual / 12;
+
+    // PF employee = 12% of basic (capped at 15000 basic)
+    const pfBase = Math.min(basicMonthly, 15000);
+    const pfMonthly  = pfEnabled === 'yes' ? pfBase * 0.12 : 0;
+    const pfAnnual   = pfMonthly * 12;
+
+    // PF employer (part of CTC, not deduction from gross)
+    const pfEmployerMonthly = pfEnabled === 'yes' ? pfBase * 0.12 : 0;
+
+    // Gross monthly (CTC - employer PF)
+    const grossMonthly = monthly - pfEmployerMonthly;
+    const grossAnnual  = grossMonthly * 12;
+
+    // Professional Tax
+    const ptMonthly = getPT(state);
+    const ptAnnual  = ptMonthly * 12;
+
+    // Standard deduction: Rs75,000 new regime / Rs50,000 old regime (FY 2025-26)
+    const stdDeductionNew = 75000;
+    const stdDeductionOld = 50000;
+
+    // Old regime: gross - std deduction - employee PF - PT - HRA exemption
+    const taxableOld = Math.max(0, grossAnnual - stdDeductionOld - pfAnnual - ptAnnual - hraAnnual * 0.4);
+
+    // New regime: gross - std deduction only
+    const taxableNew = Math.max(0, grossAnnual - stdDeductionNew);
+
+    const taxAnnual = calcTax(taxMode === 'old' ? taxableOld : taxableNew, taxMode);
+    const taxMonthly  = taxAnnual / 12;
+
+    // In-hand
+    const inHandMonthly = grossMonthly - pfMonthly - ptMonthly - taxMonthly;
+    const inHandAnnual  = inHandMonthly * 12;
+
+    const inHandPct = Math.round((inHandMonthly / monthly) * 100);
+    const deductPct = 100 - inHandPct;
+    const circumference = 2 * Math.PI * 70; // ≈ 440
+
+    // ── Update UI ──
+    document.getElementById('emptyState').style.display = 'none';
+    document.getElementById('resultCard').classList.add('show');
+    document.getElementById('summaryCard').classList.add('show');
+    document.getElementById('compareCard').classList.add('show');
+
+    document.getElementById('inHandAmt').textContent = fmt(inHandMonthly);
+    document.getElementById('annualSub').textContent = 'వార్షికం: ' + fmt(inHandAnnual) + ' | CTC: ' + fmt(annual);
+
+    // Breakdown
+    const rows = [
+      { label: 'Basic Salary',         hint: 'CTC లో 40%',            amt: basicMonthly,   cls: 'neutral', dot: '#0C7873' },
+      { label: 'HRA',                   hint: metroCity==='yes'?'Metro — Basic లో 50%':'Non-Metro — Basic లో 40%', amt: hraMonthly, cls: 'green', dot: '#27ae60' },
+      { label: 'Gross Salary (నెలసరి)', hint: 'CTC − Employer PF',    amt: grossMonthly,   cls: 'neutral', dot: '#888' },
+      { label: 'PF తగ్గింపు',           hint: 'Employee — Basic లో 12%', amt: -pfMonthly,  cls: 'red',     dot: '#E8720C' },
+      { label: 'TDS / Income Tax',      hint: taxMode==='old'?'పాత విధానం':'కొత్త విధానం', amt: -taxMonthly, cls: 'red', dot: '#c0392b' },
+      { label: 'Professional Tax',      hint: state.charAt(0).toUpperCase()+state.slice(1), amt: -ptMonthly, cls: ptMonthly>0?'red':'neutral', dot: '#e67e22' },
+      { label: '💰 నెలసరి In-Hand',     hint: 'మీ account కి వచ్చేది', amt: inHandMonthly, cls: 'green',  dot: '#0C7873' },
+    ];
+
+    document.getElementById('breakdown').innerHTML = rows.map(r => `
+      <div class="brow ${r.cls}">
+        <div class="brow-left">
+          <span class="brow-dot" style="background:${r.dot}"></span>
+          <div>
+            <span class="brow-name">${r.label}</span>
+            <span class="brow-hint">${r.hint}</span>
+          </div>
+        </div>
+        <span class="brow-amt">${r.amt < 0 ? '−' + fmt(-r.amt) : fmt(r.amt)}</span>
+      </div>`).join('');
+
+    // Donut
+    const takeDash   = (inHandPct / 100) * circumference;
+    const deductDash = (deductPct / 100) * circumference;
+    document.getElementById('donutTake').setAttribute('stroke-dasharray', takeDash + ' ' + circumference);
+    document.getElementById('donutDeduct').setAttribute('stroke-dasharray', deductDash + ' ' + circumference);
+    document.getElementById('donutDeduct').setAttribute('stroke-dashoffset', -takeDash);
+    document.getElementById('donutPct').textContent = inHandPct + '%';
+
+    // Summary — always compute both for comparison
+    const tipOld = calcTax(taxableOld, 'old');
+    const tipNew = calcTax(taxableNew, 'new');
+    const betterRegime = tipOld < tipNew ? 'పాత విధానం' : 'కొత్త విధానం';
+    const saving = Math.abs(tipOld - tipNew) / 12;
+
+    const zeroTaxNote = (taxMode === 'new' && taxableNew <= 1200000)
+      ? '<br><br>🎉 <strong>మీకు Zero Tax!</strong> మీ taxable income ₹12 లక్షల లోపు ఉంది — Section 87A rebate వల్ల income tax శూన్యం.'
+      : (taxMode === 'old' && taxableOld <= 500000)
+      ? '<br><br>🎉 <strong>మీకు Zero Tax!</strong> మీ taxable income ₹5 లక్షల లోపు ఉంది — Section 87A rebate వల్ల income tax శూన్యం.'
+      : '';
+    const hraNote = taxMode === 'old'
+      ? '<br><br>ℹ️ <strong>గమనిక:</strong> HRA exemption approximate గా లెక్కించాం (rent paid తెలియకపోవడం వల్ల). అసలు exemption కొంచెం ఎక్కువ ఉండవచ్చు.'
+      : '';
+    document.getElementById('summaryCard').innerHTML = `
+      <strong>మీ విశ్లేషణ:</strong> మీ CTC <strong>${fmt(annual)}/సంవత్సరం</strong>కి,
+      నెలసరి in-hand జీతం <strong>${fmt(inHandMonthly)}</strong> వస్తుంది —
+      అంటే మీ CTC లో <strong>${inHandPct}%</strong> మీకు చేతికి వస్తుంది.
+      ${zeroTaxNote}
+      ${saving > 500 ? '<br><br>💡 <strong>' + betterRegime + '</strong> మీకు మెరుగైనది — నెలకు <strong>' + fmt(saving) + '</strong> వరకు ఆదా చేయవచ్చు.' : ''}
+      ${hraNote}
+    `;
+
+    // Compare table
+    const oldInHand = (grossMonthly - pfMonthly - ptMonthly - (tipOld/12));
+    const newInHand = (grossMonthly - pfMonthly - ptMonthly - (tipNew/12));
+    document.getElementById('compareBody').innerHTML = `
+      <tr><td>వార్షిక Tax</td>
+        <td class="${tipOld<=tipNew?'better':'worse'}">${fmt(tipOld)}</td>
+        <td class="${tipNew<=tipOld?'better':'worse'}">${fmt(tipNew)}</td></tr>
+      <tr><td>నెలసరి TDS</td>
+        <td>${fmt(tipOld/12)}</td>
+        <td>${fmt(tipNew/12)}</td></tr>
+      <tr><td>నెలసరి In-Hand</td>
+        <td class="${oldInHand>=newInHand?'better':'worse'}">${fmt(oldInHand)}</td>
+        <td class="${newInHand>=oldInHand?'better':'worse'}">${fmt(newInHand)}</td></tr>
+      <tr><td>మంచి విధానం</td>
+        <td>${tipOld<=tipNew?'<span class="badge-better">✓ మంచిది</span>':'<span class="badge-worse">ఎక్కువ Tax</span>'}</td>
+        <td>${tipNew<=tipOld?'<span class="badge-better">✓ మంచిది</span>':'<span class="badge-worse">ఎక్కువ Tax</span>'}</td></tr>
+    `;
+
+    // Scroll to result on mobile
+    if (window.innerWidth < 860) {
+      document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function resetForm() {
+    document.getElementById('ctc').value = '';
+    document.getElementById('emptyState').style.display = 'block';
+    document.getElementById('resultCard').classList.remove('show');
+    document.getElementById('summaryCard').classList.remove('show');
+    document.getElementById('compareCard').classList.remove('show');
+  }
+
+  function shareResult() {
+    const amt = document.getElementById('inHandAmt').textContent;
+    const ctc = document.getElementById('ctc').value;
+    const text = `నా జీతం లెక్కలు:\nCTC: ₹${parseInt(ctc).toLocaleString('en-IN')}/సంవత్సరం\nIn-Hand: ${amt}/నెల\n\nTeluguHelp లో మీరూ చెక్ చేయండి: https://teluguhelp.vercel.app/salary.html`;
+    if (navigator.share) {
+      navigator.share({ title: 'జీతం లెక్కలు', text });
+    } else {
+      navigator.clipboard.writeText(text).then(() => alert('Copied! WhatsApp లో paste చేయండి.'));
+    }
+  }
+
+  function toggleFaq(btn) {
+    const ans = btn.nextElementSibling;
+    btn.classList.toggle('open');
+    ans.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
