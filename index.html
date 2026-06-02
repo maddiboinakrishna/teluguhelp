@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TeluguHelp — తెలుగులో సహాయం | Salary, Loan, Govt Schemes</title>
+  <meta name="description" content="జీతం లెక్కలు, లోన్ అర్హత, ప్రభుత్వ పథకాలు — తెలుగులో, ఉచితంగా. Free tools for Telugu people." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --saffron: #E8720C;
+      --saffron-hover: #d4650a;
+      --teal: #0C7873;
+      --teal-hover: #0a6560;
+      --cream: #FFF8F0;
+      --cream2: #FFF0DC;
+      --dark: #1E1E1E;
+      --body: #444444;
+      --muted: #777777;
+      --border: #E8DDD0;
+      --white: #FFFFFF;
+      --card-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      --card-hover: 0 6px 24px rgba(0,0,0,0.13);
+      --r: 14px;
+      --r-sm: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Hind Guntur', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,248,240,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      max-width: 1140px; margin: 0 auto;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; gap: 16px;
+    }
+    /* Logo */
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo svg { flex-shrink: 0; }
+    .logo-words { line-height: 1.15; }
+    .logo-te { font-size: 18px; font-weight: 700; color: var(--dark); display: block; }
+    .logo-en { font-size: 11px; color: var(--muted); letter-spacing: 0.3px; }
+
+    /* Language pill */
+    .lang-pills { display: flex; background: var(--cream2); border-radius: 30px; padding: 3px; border: 1px solid var(--border); gap: 2px; }
+    .lang-pill { padding: 5px 14px; border-radius: 24px; border: none; background: transparent; font-family: 'Hind Guntur', sans-serif; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; transition: all 0.18s; white-space: nowrap; }
+    .lang-pill.on { background: var(--saffron); color: #fff; }
+    .lang-pill:hover:not(.on) { color: var(--saffron); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(170deg, #FFF8F0 0%, #FFF0DC 60%, #FFF8F0 100%);
+      padding: 72px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* subtle dot grid */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(232,114,12,0.12) 1.5px, transparent 1.5px);
+      background-size: 36px 36px;
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(232,114,12,0.1); border: 1px solid rgba(232,114,12,0.25);
+      color: var(--saffron-hover); font-size: 13px; font-weight: 600;
+      padding: 5px 16px; border-radius: 30px; margin-bottom: 24px;
+      animation: fadeUp 0.5s ease both;
+    }
+    .hero-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--saffron); animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+
+    .hero h1 {
+      font-family: 'Hind Guntur', sans-serif;
+      font-size: clamp(26px, 5vw, 48px); font-weight: 700;
+      color: var(--dark); line-height: 1.25; margin-bottom: 14px;
+      animation: fadeUp 0.55s ease 0.08s both;
+    }
+    .hero h1 .accent {
+      color: var(--saffron);
+      font-family: 'Playfair Display', serif; font-style: italic;
+    }
+    .hero-sub {
+      font-size: clamp(14px, 2.2vw, 18px); color: var(--muted);
+      margin-bottom: 36px;
+      animation: fadeUp 0.55s ease 0.15s both;
+    }
+    .trust-row {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 20px;
+      animation: fadeUp 0.55s ease 0.22s both;
+    }
+    .trust-item { font-size: 13px; font-weight: 600; color: var(--teal); display: flex; align-items: center; gap: 5px; }
+    .trust-item::before { content: '✓'; color: var(--saffron); }
+
+    /* ── AD ZONE ── */
+    .ad-zone {
+      max-width: 728px; margin: 0 auto;
+      border: 1.5px dashed #C8BAA8; border-radius: var(--r-sm);
+      padding: 16px; text-align: center;
+      font-size: 11px; color: #AAA; letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .ad-wrap { padding: 28px 24px; }
+
+    /* ── SECTION ── */
+    .sec { max-width: 1140px; margin: 0 auto; padding: 60px 24px; }
+    .sec-head { text-align: center; margin-bottom: 40px; }
+    .sec-head h2 { font-size: clamp(20px, 3vw, 32px); font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .sec-head h2 em { font-family: 'Playfair Display', serif; font-style: italic; color: var(--teal); }
+    .sec-head p { font-size: 15px; color: var(--muted); }
+
+    /* ── TOOLS GRID ── */
+    .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    .tool-card {
+      display: flex; flex-direction: column;
+      background: var(--white); border-radius: var(--r);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--saffron);
+      padding: 24px 22px 20px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-top-color 0.22s ease;
+      cursor: pointer;
+      opacity: 0; transform: translateY(24px);
+    }
+    .tool-card.in { animation: cardIn 0.45s ease forwards; }
+    .tool-card:hover { transform: translateY(-5px); box-shadow: var(--card-hover); border-top-color: var(--teal); }
+    .tool-card:hover .tc-arrow { color: var(--teal); transform: translateX(4px); }
+
+    .tc-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+    .tc-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: var(--cream2); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 22px;
+    }
+    .tc-names {}
+    .tc-te { font-size: 18px; font-weight: 700; color: var(--dark); display: block; line-height: 1.2; }
+    .tc-en { font-family: 'Playfair Display', serif; font-size: 12px; color: var(--muted); }
+    .tc-desc { font-size: 13px; color: var(--body); line-height: 1.55; flex: 1; }
+    .tc-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+    .tc-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: rgba(12,120,115,0.1); color: var(--teal); }
+    .tc-arrow { font-size: 18px; color: var(--saffron); font-weight: 700; transition: all 0.2s; }
+
+    /* ── WHY US ── */
+    .why-sec {
+      background: var(--teal);
+      padding: 64px 24px;
+      position: relative; overflow: hidden;
+    }
+    .why-sec::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .why-inner { max-width: 1140px; margin: 0 auto; position: relative; z-index: 1; }
+    .why-head { text-align: center; margin-bottom: 40px; }
+    .why-head h2 { font-size: clamp(20px, 3vw, 32px); font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .why-head p { font-size: 14px; color: rgba(255,255,255,0.65); }
+    .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .why-card {
+      background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.16);
+      border-radius: var(--r); padding: 28px 22px; text-align: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .why-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-4px); }
+    .why-icon-wrap {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin: 0 auto 16px;
+    }
+    .why-card h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .why-card p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    /* ── STATS ── */
+    .stats-sec { background: var(--saffron); padding: 44px 24px; }
+    .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: #fff; display: block; }
+    .stat-lbl { font-size: 13px; color: rgba(255,255,255,0.82); font-weight: 500; margin-top: 4px; }
+
+    /* ── STEPS / HOW TO USE ── */
+    .steps-sec { background: #fff; padding: 64px 24px; }
+    .steps-inner { max-width: 1140px; margin: 0 auto; }
+    .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 40px; }
+    .step-card { text-align: center; padding: 20px 16px; }
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--saffron); color: #fff;
+      font-size: 18px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .step-card h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .step-card p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* ── BLOG ── */
+    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px; }
+    .blog-card {
+      background: var(--white); border-radius: var(--r); border: 1px solid var(--border);
+      padding: 22px 20px; box-shadow: var(--card-shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .blog-card:hover { transform: translateY(-3px); box-shadow: var(--card-hover); }
+    .blog-cat { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; background: rgba(12,120,115,0.1); color: var(--teal); margin-bottom: 10px; }
+    .blog-te { font-size: 15px; font-weight: 700; color: var(--dark); line-height: 1.45; margin-bottom: 6px; }
+    .blog-en { font-family: 'Playfair Display', serif; font-size: 12px; color: var(--muted); display: block; margin-bottom: 12px; }
+    .blog-meta { font-size: 12px; color: #AAA; display: flex; gap: 12px; }
+    .blog-more { display: inline-flex; align-items: center; gap: 4px; color: var(--saffron); font-size: 13px; font-weight: 600; margin-top: 14px; }
+
+    /* ── FOOTER ── */
+    footer { background: #1C1C1C; color: rgba(255,255,255,0.6); padding: 52px 24px 28px; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-about .ft-logo-te { font-size: 20px; font-weight: 700; color: var(--saffron); display: block; }
+    .footer-about .ft-logo-en { font-size: 11px; color: rgba(255,255,255,0.35); }
+    .footer-about p { font-size: 13px; margin-top: 12px; line-height: 1.7; color: rgba(255,255,255,0.5); }
+    .footer-col h4 { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.9); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 9px; transition: color 0.18s; }
+    .footer-col a:hover { color: var(--saffron); }
+    .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 22px; font-size: 12px; }
+    .footer-bottom a { color: var(--saffron); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes cardIn { to{opacity:1;transform:translateY(0)} }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      .tools-grid { grid-template-columns: repeat(2,1fr); }
+      .why-grid { grid-template-columns: repeat(2,1fr); }
+      .stats-inner { grid-template-columns: repeat(2,1fr); }
+      .steps-grid { grid-template-columns: repeat(2,1fr); }
+      .blog-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-about { grid-column: 1/-1; }
+    }
+    @media(max-width:600px){
+      .tools-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .nav { padding: 0 16px; }
+      .lang-pill { padding: 5px 10px; font-size: 12px; }
+      .hero { padding: 52px 16px 44px; }
+      .sec { padding: 44px 16px; }
+    }
+    @media(max-width:380px){
+      .steps-grid { grid-template-columns: 1fr; }
+      .logo-te { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <nav class="nav">
+    <!-- SVG Logo -->
+    <a href="/" class="logo" aria-label="TeluguHelp Home">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Background rounded square -->
+        <rect width="40" height="40" rx="10" fill="#E8720C"/>
+        <!-- Letter T shape in white (stylized) -->
+        <rect x="8" y="10" width="24" height="5" rx="2.5" fill="white"/>
+        <rect x="17.5" y="10" width="5" height="20" rx="2.5" fill="white"/>
+        <!-- Small dot accent bottom right -->
+        <circle cx="30" cy="29" r="3" fill="rgba(255,255,255,0.55)"/>
+        <!-- Small curve accent -->
+        <path d="M10 27 Q14 32 20 30" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div class="logo-words">
+        <span class="logo-te">TeluguHelp</span>
+        <span class="logo-en">teluguhelp.in</span>
+      </div>
+    </a>
+
+    <!-- Language Toggle -->
+    <div class="lang-pills" role="group" aria-label="Language">
+      <button class="lang-pill on" onclick="switchLang(this,'te')">తెలుగు</button>
+      <button class="lang-pill" onclick="switchLang(this,'hi')">हिंदी</button>
+      <button class="lang-pill" onclick="switchLang(this,'en')">English</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-chip">
+      <span class="dot"></span>
+      తెలుగు వారికోసం · 100% ఉచితం
+    </div>
+    <h1>మీ సమస్యకు<br><span class="accent">వెంటనే పరిష్కారం</span></h1>
+    <p class="hero-sub">జీతం లెక్కలు · లోన్ అర్హత · ప్రభుత్వ పథకాలు — తెలుగులో, సులభంగా</p>
+    <div class="trust-row">
+      <span class="trust-item">50,000+ మంది వాడారు</span>
+      <span class="trust-item">Registration అక్కర్లేదు</span>
+      <span class="trust-item">Data save కాదు</span>
+      <span class="trust-item">Mobile Friendly</span>
+    </div>
+  </div>
+</section>
+
+<!-- AD ZONE 1 -->
+<div class="ad-wrap">
+  <div class="ad-zone">Advertisement — Google AdSense</div>
+</div>
+
+<!-- ══ TOOLS ══ -->
+<section class="sec">
+  <div class="sec-head">
+    <h2>ఏ సమస్య వచ్చినా — <em>ఇక్కడ చూడండి</em></h2>
+    <p>ఒక్కో సాధనం ఒక నిజమైన సమస్యను పూర్తిగా పరిష్కరిస్తుంది</p>
+  </div>
+  <div class="tools-grid" id="toolsGrid">
+
+    <a href="salary.html" class="tool-card">
+      <div class="tc-top">
+        <div class="tc-icon">💰</div>
+        <div class="tc-names">
+          <span class="tc-te">జీతం లెక్కలు</span>
+          <span class="tc-en">Salary & CTC Calculator</span>
+        </div>
+      </div>
+      <p class="tc-desc">మీ CTC నుండి నెలసరి జీతం ఎంతో తెలుసుకోండి. PF, TDS, పాత vs కొత్త పన్ను విధానం లెక్కలు.</p>
+      <div class="tc-footer">
+        <span class="tc-badge">Finance</span>
+        <span class="tc-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="emi.html" class="tool-card">
+      <div class="tc-top">
+        <div class="tc-icon">🏠</div>
+        <div class="tc-names">
+          <span class="tc-te">లోన్ వస్తుందా?</span>
+          <span class="tc-en">EMI & Loan Eligibility</span>
+        </div>
+      </div>
+      <p class="tc-desc">మీ జీతానికి ఎంత లోన్ వస్తుందో చెక్ చేయండి. EMI లెక్కలు, 6 బ్యాంకులు పోలిక.</p>
+      <div class="tc-footer">
+        <span class="tc-badge">Loans</span>
+        <span class="tc-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="schemes.html" class="tool-card">
+      <div class="tc-top">
+        <div class="tc-icon">🏛️</div>
+        <div class="tc-names">
+          <span class="tc-te">ప్రభుత్వ పథకాలు</span>
+          <span class="tc-en">Govt Scheme Checker</span>
+        </div>
+      </div>
+      <p class="tc-desc">మీకు ఏ ప్రభుత్వ పథకాలు అర్హత ఉందో తెలుసుకోండి. రాష్ట్రం, ఆదాయం, వయసు ఆధారంగా.</p>
+      <div class="tc-footer">
+        <span class="tc-badge">Government</span>
+        <span class="tc-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="documents.html" class="tool-card">
+      <div class="tc-top">
+        <div class="tc-icon">📋</div>
+        <div class="tc-names">
+          <span class="tc-te">పత్రాలు గైడ్</span>
+          <span class="tc-en">Ration Card & Documents</span>
+        </div>
+      </div>
+      <p class="tc-desc">రేషన్ కార్డు, ఆధార్, పాన్ — ఎలా apply చేయాలో step-by-step తెలుగులో చెప్తాం.</p>
+      <div class="tc-footer">
+        <span class="tc-badge">Documents</span>
+        <span class="tc-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="scholarship.html" class="tool-card">
+      <div class="tc-top">
+        <div class="tc-icon">🎓</div>
+        <div class="tc-names">
+          <span class="tc-te">స్కాలర్షిప్</span>
+          <span class="tc-en">Scholarship Checker</span>
+        </div>
+      </div>
+      <p class="tc-desc">చదువుకు స్కాలర్షిప్ వస్తుందా? CGPA అర్హత, apply steps — 2026 అప్డేట్.</p>
+      <div class="tc-footer">
+        <span class="tc-badge">Education</span>
+        <span class="tc-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="rental.html" class="tool-card">
+      <div class="tc-top">
+        <div class="tc-icon">🏘️</div>
+        <div class="tc-names">
+          <span class="tc-te">ఇల్లు అద్దె ఒప్పందం</span>
+          <span class="tc-en">Rental Agreement</span>
+        </div>
+      </div>
+      <p class="tc-desc">Rental agreement PDF తయారు చేయండి. స్టాంప్ డ్యూటీ, రాష్ట్రం ప్రకారం లెక్కలు.</p>
+      <div class="tc-footer">
+        <span class="tc-badge">Property</span>
+        <span class="tc-arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- AD ZONE 2 -->
+<div class="ad-wrap" style="padding-top:0;">
+  <div class="ad-zone">Advertisement — Google AdSense</div>
+</div>
+
+<!-- ══ HOW TO USE ══ -->
+<section class="steps-sec">
+  <div class="steps-inner">
+    <div class="sec-head">
+      <h2>ఎలా వాడాలి? — <em>చాలా సులభం</em></h2>
+      <p>4 simple steps లో మీ సమస్యకు జవాబు పొందండి</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>సాధనం ఎంచుకోండి</h3>
+        <p>పైన ఉన్న tools లో మీకు కావలసిన దాన్ని click చేయండి</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>వివరాలు నమోదు చేయండి</h3>
+        <p>మీ జీతం, రాష్ట్రం, వయసు లాంటి basic details ఇవ్వండి</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>లెక్కించండి</h3>
+        <p>ఒక్క click లో మీకు తెలుగులో సంపూర్ణ జవాబు వస్తుంది</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Save చేయండి</h3>
+        <p>PDF download చేయండి లేదా WhatsApp లో share చేయండి</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US ══ -->
+<section class="why-sec">
+  <div class="why-inner">
+    <div class="why-head">
+      <h2>మనం ఎందుకు వేరుగా ఉన్నాం?</h2>
+      <p>Other sites కంటే TeluguHelp ఏ విధంగా మెరుగ్గా ఉంది</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon-wrap">🗣️</div>
+        <h3>నిజమైన తెలుగులో</h3>
+        <p>Google Translate కాదు — హైదరాబాద్, విజయవాడ వాడుక భాషలో రాశాం. మీకు సులభంగా అర్థమవుతుంది.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">✅</div>
+        <h3>Accurate లెక్కలు</h3>
+        <p>AI guess work కాదు — real formulas, verified data. ప్రతి లెక్క cross-check చేయబడింది.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">🔒</div>
+        <h3>మీ Data Safe</h3>
+        <p>Registration అక్కర్లేదు. మీరు ఇచ్చిన details ఏవీ save అవ్వవు. పూర్తిగా privacy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<section class="stats-sec">
+  <div class="stats-inner">
+    <div>
+      <span class="stat-num" data-to="50000">0</span>
+      <div class="stat-lbl">మంది వాడారు</div>
+    </div>
+    <div>
+      <span class="stat-num" data-to="10">0</span>
+      <div class="stat-lbl">ఉచిత సాధనాలు</div>
+    </div>
+    <div>
+      <span class="stat-num">3</span>
+      <div class="stat-lbl">భాషలు</div>
+    </div>
+    <div>
+      <span class="stat-num">₹0</span>
+      <div class="stat-lbl">ఖర్చు లేదు</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOG ══ -->
+<section class="sec" style="background:#fff;">
+  <div class="sec-head">
+    <h2>తెలుగులో చదవండి — <em>Useful Articles</em></h2>
+    <p>Finance, Govt schemes, Documents — సరళమైన తెలుగులో వివరణ</p>
+  </div>
+  <div class="blog-grid">
+    <a href="blog/schemes-2026.html" class="blog-card">
+      <span class="blog-cat">Govt Schemes</span>
+      <div class="blog-te">తెలంగాణ ప్రభుత్వ పథకాలు 2026 — పూర్తి జాబితా</div>
+      <span class="blog-en">Telangana Govt Schemes 2026 Complete List</span>
+      <div class="blog-meta"><span>⏱ 5 నిమిషాలు</span><span>Jan 2026</span></div>
+      <span class="blog-more">చదవండి →</span>
+    </a>
+    <a href="blog/salary-savings.html" class="blog-card">
+      <span class="blog-cat">Finance</span>
+      <div class="blog-te">జీతం నుండి పొదుపు ఎలా చేయాలి — Practical Guide</div>
+      <span class="blog-en">How to Save Money from Salary — Telugu</span>
+      <div class="blog-meta"><span>⏱ 4 నిమిషాలు</span><span>Jan 2026</span></div>
+      <span class="blog-more">చదవండి →</span>
+    </a>
+    <a href="blog/new-vs-old-tax.html" class="blog-card">
+      <span class="blog-cat">Tax</span>
+      <div class="blog-te">కొత్త పన్ను విధానం vs పాత పన్ను విధానం — ఏది మంచిది?</div>
+      <span class="blog-en">New vs Old Tax Regime — Which is Better?</span>
+      <div class="blog-meta"><span>⏱ 6 నిమిషాలు</span><span>Jan 2026</span></div>
+      <span class="blog-more">చదవండి →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <span class="ft-logo-te">TeluguHelp</span>
+        <span class="ft-logo-en">teluguhelp.in</span>
+        <p>తెలుగు వారికి వారి హక్కులు తెలియాలని మా లక్ష్యం. Hyderabad, Vijayawada, Guntur వాసుల కోసం నిర్మించాం. 100% Free, Always.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="salary.html">జీతం లెక్కలు</a>
+        <a href="emi.html">లోన్ అర్హత</a>
+        <a href="schemes.html">ప్రభుత్వ పథకాలు</a>
+        <a href="documents.html">పత్రాలు గైడ్</a>
+        <a href="scholarship.html">స్కాలర్షిప్</a>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="about.html">మా గురించి</a>
+        <a href="blog.html">వ్యాసాలు</a>
+        <a href="contact.html">సంప్రదించండి</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <a href="/">teluguhelp.in</a> — Made with ❤️ for Telugu people</p>
+      <p>No Ads tracking · No Personal Data · Free Forever</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Language switch
+  function switchLang(btn, lang) {
+    document.querySelectorAll('.lang-pill').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+  }
+
+  // Staggered card entrance
+  const cards = document.querySelectorAll('.tool-card');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        const idx = Array.from(cards).indexOf(e.target);
+        setTimeout(() => e.target.classList.add('in'), idx * 70);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  cards.forEach(c => io.observe(c));
+
+  // Number counter
+  const nums = document.querySelectorAll('[data-to]');
+  const co = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.to;
+      let cur = 0;
+      const step = target / 60;
+      const t = setInterval(() => {
+        cur = Math.min(cur + step, target);
+        el.textContent = target >= 1000 ? Math.round(cur / 1000) + 'K+' : Math.round(cur) + '+';
+        if (cur >= target) clearInterval(t);
+      }, 20);
+      co.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  nums.forEach(n => co.observe(n));
+</script>
+</body>
+</html>
