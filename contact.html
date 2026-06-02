@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>సంప్రదించండి — Contact TeluguHelp | teluguhelp.in</title>
+  <meta name="description" content="TeluguHelp తో సంప్రదించండి. సూచనలు, సమస్యలు, కొత్త tools కోసం మాకు రాయండి." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--saffron:#E8720C;--saffron-h:#d4650a;--teal:#0C7873;--cream:#FFF8F0;--cream2:#FFF0DC;--dark:#1E1E1E;--body:#444;--muted:#777;--border:#E8DDD0;--white:#fff;--green:#1a7a3a;--green-bg:#edfaf2;--red:#c0392b;--shadow:0 2px 12px rgba(0,0,0,0.07);--r:14px;--rs:8px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px}
+    body{font-family:'Hind Guntur',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    header{position:sticky;top:0;z-index:200;background:rgba(255,248,240,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo-te{font-size:18px;font-weight:700;color:var(--dark);display:block}
+    .logo-en{font-size:11px;color:var(--muted)}
+    .back-btn{font-size:13px;font-weight:600;color:var(--teal);background:rgba(12,120,115,0.08);border:1px solid rgba(12,120,115,0.2);padding:7px 14px;border-radius:30px}
+    .page-hero{background:linear-gradient(160deg,#FFF8F0 0%,#FFF0DC 60%,#FFF8F0 100%);padding:44px 24px 36px;text-align:center;border-bottom:1px solid var(--border)}
+    .page-hero h1{font-size:clamp(22px,4vw,36px);font-weight:700;margin-bottom:8px}
+    .page-hero h1 span{color:var(--saffron);font-family:'Playfair Display',serif;font-style:italic}
+    .page-hero p{font-size:14px;color:var(--muted)}
+    .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:12px}
+    .breadcrumb a{color:var(--teal)}
+    .breadcrumb span{margin:0 6px}
+    .wrap{max-width:960px;margin:0 auto;padding:48px 24px 70px;display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+    /* LEFT INFO */
+    .info-side h2{font-size:22px;font-weight:700;color:var(--dark);margin-bottom:16px}
+    .info-side p{font-size:14px;color:var(--body);margin-bottom:24px;line-height:1.7}
+    .info-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+    .info-icon{width:44px;height:44px;border-radius:12px;background:var(--cream2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .info-item h4{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:2px}
+    .info-item p{font-size:13px;color:var(--muted);margin:0}
+    .info-item a{color:var(--teal);font-weight:600}
+    /* FORM */
+    .form-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow);padding:32px 28px}
+    .form-card h2{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:22px}
+    .field{margin-bottom:18px}
+    .field label{display:block;font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px}
+    .field input,.field select,.field textarea{width:100%;padding:12px 14px;background:var(--cream);border:1.5px solid var(--border);border-radius:var(--rs);color:var(--dark);font-family:'Hind Guntur',sans-serif;font-size:14px;outline:none;transition:border .18s,background .18s}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--teal);background:var(--white)}
+    .field textarea{resize:vertical;min-height:120px;line-height:1.6}
+    .field select option{background:var(--white)}
+    .error-msg{font-size:12px;color:var(--red);margin-top:4px;display:none}
+    .submit-btn{width:100%;padding:14px;background:var(--saffron);color:#fff;border:none;border-radius:var(--rs);font-family:'Hind Guntur',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:background .18s,transform .1s;margin-top:4px}
+    .submit-btn:hover{background:var(--saffron-h)}
+    .submit-btn:active{transform:scale(.98)}
+    .success-msg{display:none;background:var(--green-bg);border:1px solid var(--green);border-radius:var(--rs);padding:16px;text-align:center;margin-top:16px}
+    .success-msg .sm-icon{font-size:32px;margin-bottom:8px}
+    .success-msg h3{font-size:16px;font-weight:700;color:var(--green);margin-bottom:4px}
+    .success-msg p{font-size:13px;color:var(--body)}
+    footer{background:#1C1C1C;color:rgba(255,255,255,0.5);padding:28px 24px;text-align:center;font-size:13px}
+    footer a{color:var(--saffron)}
+    @media(max-width:700px){.wrap{grid-template-columns:1fr;padding:32px 16px 50px}.form-card{padding:22px 18px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="/" class="logo">
+      <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#E8720C"/><rect x="8" y="10" width="24" height="5" rx="2.5" fill="white"/><rect x="17.5" y="10" width="5" height="20" rx="2.5" fill="white"/><circle cx="30" cy="29" r="3" fill="rgba(255,255,255,0.55)"/><path d="M10 27 Q14 32 20 30" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+      <div><span class="logo-te">TeluguHelp</span><span class="logo-en">teluguhelp.in</span></div>
+    </a>
+    <a href="/" class="back-btn">← Home కి వెళ్ళు</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="/">Home</a><span>›</span> సంప్రదించండి</div>
+  <h1>సంప్రదించండి — <span>Contact Us</span></h1>
+  <p>సూచనలు, సమస్యలు లేదా కొత్త tools కావాలంటే — మాకు రాయండి!</p>
+</div>
+
+<div class="wrap">
+  <!-- LEFT -->
+  <div class="info-side">
+    <h2>మాతో మాట్లాడండి 👋</h2>
+    <p>మీ సూచనలు మాకు చాలా విలువైనవి. Calculator లో తప్పు ఉంటే, కొత్త tool కావాలంటే, లేదా ఏదైనా సమస్య ఉంటే — నిస్సంకోచంగా రాయండి.</p>
+
+    <div class="info-item">
+      <div class="info-icon">📧</div>
+      <div>
+        <h4>Email</h4>
+        <p><a href="mailto:contact@teluguhelp.in">contact@teluguhelp.in</a></p>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">⏱️</div>
+      <div>
+        <h4>Response Time</h4>
+        <p>సాధారణంగా 24-48 గంటల్లో reply చేస్తాం</p>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">🌐</div>
+      <div>
+        <h4>Website</h4>
+        <p><a href="https://teluguhelp.in" style="color:var(--teal);font-weight:600">teluguhelp.in</a></p>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">💡</div>
+      <div>
+        <h4>కొత్త Tool కావాలా?</h4>
+        <p>Subject లో "New Tool Request" అని రాయండి — మేము consider చేస్తాం</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="form-card">
+    <h2>📩 మాకు రాయండి</h2>
+    <div id="contactForm">
+      <div class="field">
+        <label>మీ పేరు *</label>
+        <input type="text" id="fname" placeholder="మీ పేరు ఇవ్వండి" />
+        <div class="error-msg" id="fnameErr">దయచేసి మీ పేరు ఇవ్వండి</div>
+      </div>
+      <div class="field">
+        <label>Email *</label>
+        <input type="email" id="femail" placeholder="yourname@email.com" />
+        <div class="error-msg" id="femailErr">దయచేసి valid email ఇవ్వండి</div>
+      </div>
+      <div class="field">
+        <label>విషయం *</label>
+        <select id="fsubject">
+          <option value="">-- ఎంచుకోండి --</option>
+          <option value="suggestion">💡 సూచన (Suggestion)</option>
+          <option value="bug">🐛 తప్పు దొరికింది (Bug Report)</option>
+          <option value="newtool">🛠️ కొత్త Tool కావాలి</option>
+          <option value="help">❓ సహాయం కావాలి (Help)</option>
+          <option value="other">📌 ఇతర (Other)</option>
+        </select>
+        <div class="error-msg" id="fsubjectErr">దయచేసి విషయం ఎంచుకోండి</div>
+      </div>
+      <div class="field">
+        <label>సందేశం *</label>
+        <textarea id="fmessage" placeholder="మీ సందేశం తెలుగులో లేదా English లో రాయవచ్చు..."></textarea>
+        <div class="error-msg" id="fmessageErr">దయచేసి మీ సందేశం రాయండి (కనీసం 10 అక్షరాలు)</div>
+      </div>
+      <button class="submit-btn" onclick="submitForm()">పంపండి →</button>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <div class="sm-icon">✅</div>
+      <h3>మీ సందేశం అందింది!</h3>
+      <p>మేము త్వరలో జవాబిస్తాం. TeluguHelp వాడినందుకు ధన్యవాదాలు.</p>
+    </div>
+  </div>
+</div>
+
+<footer><p>© 2026 <a href="/">TeluguHelp (teluguhelp.in)</a> | <a href="privacy.html">Privacy Policy</a> | <a href="disclaimer.html">Disclaimer</a> | <a href="about.html">మా గురించి</a></p></footer>
+
+<script>
+  function validate(id, errId, condition) {
+    const el  = document.getElementById(id);
+    const err = document.getElementById(errId);
+    if (!condition(el.value)) {
+      err.style.display = 'block';
+      el.style.borderColor = 'var(--red)';
+      return false;
+    }
+    err.style.display = 'none';
+    el.style.borderColor = 'var(--teal)';
+    return true;
+  }
+
+  function submitForm() {
+    const v1 = validate('fname',    'fnameErr',    v => v.trim().length >= 2);
+    const v2 = validate('femail',   'femailErr',   v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+    const v3 = validate('fsubject', 'fsubjectErr', v => v !== '');
+    const v4 = validate('fmessage', 'fmessageErr', v => v.trim().length >= 10);
+
+    if (v1 && v2 && v3 && v4) {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('successMsg').style.display  = 'block';
+    }
+  }
+
+  // Real-time validation on blur
+  document.getElementById('fname').addEventListener('blur',    () => validate('fname',    'fnameErr',    v => v.trim().length >= 2));
+  document.getElementById('femail').addEventListener('blur',   () => validate('femail',   'femailErr',   v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)));
+  document.getElementById('fsubject').addEventListener('blur', () => validate('fsubject', 'fsubjectErr', v => v !== ''));
+  document.getElementById('fmessage').addEventListener('blur', () => validate('fmessage', 'fmessageErr', v => v.trim().length >= 10));
+</script>
+</body>
+</html>

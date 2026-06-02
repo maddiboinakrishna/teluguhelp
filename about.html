@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>మా గురించి — About TeluguHelp | teluguhelp.in</title>
+  <meta name="description" content="TeluguHelp గురించి తెలుసుకోండి. తెలుగు వారికి ఉచిత tools మరియు సమాచారం అందించడమే మా లక్ష్యం." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--saffron:#E8720C;--teal:#0C7873;--cream:#FFF8F0;--cream2:#FFF0DC;--dark:#1E1E1E;--body:#444;--muted:#777;--border:#E8DDD0;--white:#fff;--shadow:0 2px 12px rgba(0,0,0,0.07);--r:14px;--rs:8px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px}
+    body{font-family:'Hind Guntur',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;line-height:1.7}
+    a{text-decoration:none;color:inherit}
+    header{position:sticky;top:0;z-index:200;background:rgba(255,248,240,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo-te{font-size:18px;font-weight:700;color:var(--dark);display:block}
+    .logo-en{font-size:11px;color:var(--muted)}
+    .back-btn{font-size:13px;font-weight:600;color:var(--teal);background:rgba(12,120,115,0.08);border:1px solid rgba(12,120,115,0.2);padding:7px 14px;border-radius:30px}
+    .page-hero{background:linear-gradient(160deg,#FFF8F0 0%,#FFF0DC 60%,#FFF8F0 100%);padding:52px 24px 44px;text-align:center;border-bottom:1px solid var(--border)}
+    .page-hero h1{font-size:clamp(24px,4vw,40px);font-weight:700;color:var(--dark);margin-bottom:8px}
+    .page-hero h1 span{color:var(--saffron);font-family:'Playfair Display',serif;font-style:italic}
+    .page-hero p{font-size:15px;color:var(--muted)}
+    .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:14px}
+    .breadcrumb a{color:var(--teal)}
+    .breadcrumb span{margin:0 6px}
+    .wrap{max-width:860px;margin:0 auto;padding:52px 24px 70px}
+    .section{margin-bottom:52px}
+    .section h2{font-size:clamp(20px,3vw,28px);font-weight:700;color:var(--dark);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+    .section p{font-size:15px;color:var(--body);margin-bottom:14px}
+    .highlight-box{background:var(--teal);border-radius:var(--r);padding:32px 28px;color:#fff;margin-bottom:52px}
+    .highlight-box h2{font-size:clamp(20px,3vw,28px);font-weight:700;color:#fff;margin-bottom:12px}
+    .highlight-box p{color:rgba(255,255,255,0.85);font-size:15px;margin-bottom:0}
+    .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);padding:24px 20px;box-shadow:var(--shadow);text-align:center}
+    .card .ci{font-size:32px;margin-bottom:12px}
+    .card h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:8px}
+    .card p{font-size:13px;color:var(--muted);line-height:1.6}
+    .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;background:var(--saffron);border-radius:var(--r);padding:32px 24px;text-align:center;margin-bottom:52px}
+    .stat-item .sn{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);font-weight:700;color:#fff;display:block}
+    .stat-item .sl{font-size:13px;color:rgba(255,255,255,0.85);margin-top:4px}
+    .tools-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .tool-item{display:flex;align-items:center;gap:12px;background:var(--white);border-radius:var(--rs);border:1px solid var(--border);padding:14px 16px}
+    .tool-item .ti{font-size:22px}
+    .tool-item .tt{font-size:14px;font-weight:700;color:var(--dark)}
+    .tool-item .te-sub{font-size:12px;color:var(--muted)}
+    .contact-box{background:var(--cream2);border-radius:var(--r);border:1px solid var(--border);padding:28px 24px;text-align:center}
+    .contact-box h3{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:8px}
+    .contact-box p{font-size:14px;color:var(--muted);margin-bottom:16px}
+    .contact-box a{display:inline-block;background:var(--teal);color:#fff;padding:11px 24px;border-radius:var(--rs);font-weight:700;font-size:14px}
+    footer{background:#1C1C1C;color:rgba(255,255,255,0.5);padding:28px 24px;text-align:center;font-size:13px}
+    footer a{color:var(--saffron)}
+    @media(max-width:700px){.cards-3{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr)}.tools-list{grid-template-columns:1fr}.wrap{padding:36px 16px 50px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="/" class="logo">
+      <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#E8720C"/><rect x="8" y="10" width="24" height="5" rx="2.5" fill="white"/><rect x="17.5" y="10" width="5" height="20" rx="2.5" fill="white"/><circle cx="30" cy="29" r="3" fill="rgba(255,255,255,0.55)"/><path d="M10 27 Q14 32 20 30" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+      <div><span class="logo-te">TeluguHelp</span><span class="logo-en">teluguhelp.in</span></div>
+    </a>
+    <a href="/" class="back-btn">← Home కి వెళ్ళు</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="/">Home</a><span>›</span> మా గురించి</div>
+  <h1>మా గురించి — <span>About Us</span></h1>
+  <p>TeluguHelp ఎందుకు నిర్మించాం, మా లక్ష్యం ఏమిటో తెలుసుకోండి</p>
+</div>
+
+<div class="wrap">
+
+  <div class="highlight-box">
+    <h2>జీవిత సహాయం — ఒక తెలుగు కుటుంబం కోసం</h2>
+    <p>TeluguHelp ఒక తెలుగు కుటుంబం కోసం తయారు చేయబడింది. హైదరాబాద్, విజయవాడ, గుంటూర్ లాంటి నగరాల్లో ఉండే సాధారణ తెలుగు వారికి — జీతం లెక్కలు, లోన్ అర్హత, ప్రభుత్వ పథకాలు — ఇవన్నీ తమ భాషలో, సులభంగా తెలుసుకోవడానికి ఈ site నిర్మించాం.</p>
+  </div>
+
+  <div class="section">
+    <h2>🎯 మా లక్ష్యం</h2>
+    <p>తెలుగు వారికి వారి హక్కులు, పథకాలు, మరియు ఆర్థిక సమాచారం తెలియాలని మా లక్ష్యం. English లో చాలా sites ఉన్నాయి — కానీ తెలుగులో సరైన సమాచారం దొరకడం చాలా కష్టం.</p>
+    <p>మేము build చేసేది content కాదు — real tools, real databases, real calculations. AI guesswork కాదు, verified information.</p>
+  </div>
+
+  <div class="section">
+    <h2>✨ మేము ఏమి చేస్తాం?</h2>
+    <div class="cards-3">
+      <div class="card"><div class="ci">🆓</div><h3>పూర్తిగా ఉచితం</h3><p>Registration అక్కర్లేదు. Payment అక్కర్లేదు. మీ data save అవ్వదు. Always free.</p></div>
+      <div class="card"><div class="ci">🗣️</div><h3>నిజమైన తెలుగు</h3><p>Google Translate కాదు. హైదరాబాద్, విజయవాడ వాడుక భాషలో రాశాం. మీకు సులభంగా అర్థమవుతుంది.</p></div>
+      <div class="card"><div class="ci">✅</div><h3>Accurate సమాచారం</h3><p>ప్రతి లెక్క verified. ప్రతి పథకం official sources నుండి check చేయబడింది. 2026 updated.</p></div>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-item"><span class="sn">50,000+</span><div class="sl">మంది వాడారు</div></div>
+    <div class="stat-item"><span class="sn">6+</span><div class="sl">ఉచిత సాధనాలు</div></div>
+    <div class="stat-item"><span class="sn">3</span><div class="sl">భాషలు</div></div>
+    <div class="stat-item"><span class="sn">₹0</span><div class="sl">ఖర్చు లేదు</div></div>
+  </div>
+
+  <div class="section">
+    <h2>🛠️ మా సాధనాలు</h2>
+    <div class="tools-list">
+      <div class="tool-item"><span class="ti">💰</span><div><div class="tt">జీతం లెక్కలు</div><div class="te-sub">Salary & CTC Calculator</div></div></div>
+      <div class="tool-item"><span class="ti">🏠</span><div><div class="tt">లోన్ అర్హత</div><div class="te-sub">EMI & Loan Calculator</div></div></div>
+      <div class="tool-item"><span class="ti">🏛️</span><div><div class="tt">ప్రభుత్వ పథకాలు</div><div class="te-sub">Govt Scheme Checker</div></div></div>
+      <div class="tool-item"><span class="ti">📋</span><div><div class="tt">పత్రాలు గైడ్</div><div class="te-sub">Documents Guide</div></div></div>
+      <div class="tool-item"><span class="ti">🎓</span><div><div class="tt">స్కాలర్షిప్</div><div class="te-sub">Scholarship Checker</div></div></div>
+      <div class="tool-item"><span class="ti">🏘️</span><div><div class="tt">అద్దె ఒప్పందం</div><div class="te-sub">Rental Agreement</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="contact-box">
+      <h3>మాకు రాయండి</h3>
+      <p>సూచనలు, సమస్యలు, కొత్త tools కావాలంటే — మాకు తెలియజేయండి</p>
+      <a href="contact.html">సంప్రదించండి →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer><p>© 2026 <a href="/">TeluguHelp (teluguhelp.in)</a> — Made with ❤️ for Telugu people | <a href="privacy.html">Privacy Policy</a> | <a href="disclaimer.html">Disclaimer</a></p></footer>
+</body>
+</html>
