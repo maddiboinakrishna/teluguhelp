@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>లోన్ అర్హత — Telugu EMI & Loan Calculator 2026 | TeluguHelp</title>
+  <meta name="description" content="మీ జీతానికి ఎంత లోన్ వస్తుందో తెలుసుకోండి. EMI లెక్కలు, బ్యాంక్ అర్హత, 6 బ్యాంకులు పోలిక — తెలుగులో ఉచితంగా." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --saffron:#E8720C; --saffron-h:#d4650a;
+      --teal:#0C7873;    --teal-h:#0a6560;
+      --cream:#FFF8F0;   --cream2:#FFF0DC;
+      --dark:#1E1E1E;    --body:#444; --muted:#777;
+      --border:#E8DDD0;  --white:#fff;
+      --green:#1a7a3a;   --green-bg:#edfaf2;
+      --red:#c0392b;     --red-bg:#fdf0ee;
+      --blue:#1a5fa8;    --blue-bg:#eef4fd;
+      --shadow:0 2px 12px rgba(0,0,0,0.07);
+      --shadow-h:0 6px 24px rgba(0,0,0,0.13);
+      --r:14px; --rs:8px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{font-family:'Hind Guntur',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+
+    /* HEADER */
+    header{position:sticky;top:0;z-index:200;background:rgba(255,248,240,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo-te{font-size:18px;font-weight:700;color:var(--dark);display:block}
+    .logo-en{font-size:11px;color:var(--muted)}
+    .back-btn{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--teal);background:rgba(12,120,115,0.08);border:1px solid rgba(12,120,115,0.2);padding:7px 14px;border-radius:30px;transition:all .18s;white-space:nowrap}
+    .back-btn:hover{background:rgba(12,120,115,0.15)}
+
+    /* PAGE HERO */
+    .page-hero{background:linear-gradient(160deg,#FFF8F0 0%,#FFF0DC 60%,#FFF8F0 100%);padding:44px 24px 36px;text-align:center;border-bottom:1px solid var(--border)}
+    .page-hero h1{font-size:clamp(22px,4vw,38px);font-weight:700;color:var(--dark);margin-bottom:8px}
+    .page-hero h1 span{color:var(--saffron);font-family:'Playfair Display',serif;font-style:italic}
+    .page-hero p{font-size:15px;color:var(--muted)}
+    .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:12px}
+    .breadcrumb a{color:var(--teal)}
+    .breadcrumb span{margin:0 6px}
+
+    /* TABS */
+    .tabs-wrap{max-width:1140px;margin:0 auto;padding:28px 24px 0}
+    .tabs{display:flex;gap:4px;background:var(--cream2);border-radius:12px;padding:4px;border:1px solid var(--border)}
+    .tab{flex:1;padding:11px 8px;border-radius:9px;border:none;background:transparent;font-family:'Hind Guntur',sans-serif;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .18s;text-align:center;white-space:nowrap}
+    .tab.on{background:var(--white);color:var(--teal);box-shadow:0 1px 6px rgba(0,0,0,0.1)}
+
+    /* MAIN */
+    .main{max-width:1140px;margin:0 auto;padding:24px 24px 60px}
+    .pane{display:none}
+    .pane.on{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+
+    /* INPUT PANEL */
+    .inp-panel{background:var(--teal);border-radius:var(--r);padding:28px 26px;position:sticky;top:88px}
+    .inp-panel h2{font-size:17px;font-weight:700;color:#fff;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.2)}
+    .field{margin-bottom:16px}
+    .field label{display:block;font-size:13px;font-weight:600;color:rgba(255,255,255,0.85);margin-bottom:6px}
+    .field label small{font-weight:400;color:rgba(255,255,255,0.5);margin-left:4px}
+
+    /* slider row */
+    .slider-row{display:flex;align-items:center;gap:10px}
+    .slider-row input[type=range]{flex:1;-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(255,255,255,0.25);outline:none;cursor:pointer}
+    .slider-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--saffron);border:2px solid #fff;cursor:pointer;box-shadow:0 1px 5px rgba(0,0,0,0.3)}
+    .slider-val{min-width:90px;text-align:right;font-size:14px;font-weight:700;color:#fff}
+
+    .inp{width:100%;padding:10px 13px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:var(--rs);color:#fff;font-family:'Hind Guntur',sans-serif;font-size:15px;outline:none;transition:border .18s,background .18s}
+    .inp::placeholder{color:rgba(255,255,255,0.4)}
+    .inp:focus{border-color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.18)}
+    .inp option{color:var(--dark);background:var(--white)}
+
+    .pills{display:flex;gap:8px;flex-wrap:wrap}
+    .pill{padding:7px 13px;border-radius:30px;font-size:13px;font-weight:600;border:1.5px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.7);background:transparent;cursor:pointer;font-family:'Hind Guntur',sans-serif;transition:all .18s}
+    .pill.on{background:#fff;color:var(--teal);border-color:#fff}
+    .pill:hover:not(.on){border-color:rgba(255,255,255,0.6);color:#fff}
+
+    .calc-btn{width:100%;padding:14px;margin-top:8px;background:var(--saffron);color:#fff;border:none;border-radius:var(--rs);font-family:'Hind Guntur',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:background .18s,transform .1s}
+    .calc-btn:hover{background:var(--saffron-h)}
+    .calc-btn:active{transform:scale(.98)}
+
+    /* RESULT PANEL */
+    .res-panel{display:flex;flex-direction:column;gap:20px}
+
+    .empty-state{background:var(--white);border-radius:var(--r);border:2px dashed var(--border);padding:48px 24px;text-align:center}
+    .empty-state .ei{font-size:48px;margin-bottom:14px}
+    .empty-state h3{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:8px}
+    .empty-state p{font-size:14px;color:var(--muted)}
+
+    .res-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow);padding:26px;display:none}
+    .res-card.show{display:block}
+
+    /* big number */
+    .big-num{text-align:center;padding:18px 0 22px;border-bottom:1px solid var(--border);margin-bottom:20px}
+    .big-label{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+    .big-amount{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,52px);font-weight:700;color:var(--teal);line-height:1}
+    .big-sub{font-size:13px;color:var(--muted);margin-top:6px}
+
+    /* stat pills row */
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+    .stat-pill{background:var(--cream);border-radius:var(--rs);padding:14px 12px;text-align:center}
+    .stat-pill .sp-val{font-size:17px;font-weight:700;color:var(--dark);display:block}
+    .stat-pill .sp-lbl{font-size:11px;color:var(--muted);margin-top:3px}
+
+    /* bar chart */
+    .bar-chart{margin:4px 0 18px}
+    .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .bar-lbl{font-size:12px;font-weight:600;color:var(--muted);width:90px;flex-shrink:0;text-align:right}
+    .bar-track{flex:1;height:18px;background:var(--cream);border-radius:4px;overflow:hidden}
+    .bar-fill{height:100%;border-radius:4px;transition:width .8s ease}
+    .bar-val{font-size:12px;font-weight:700;color:var(--dark);width:90px;flex-shrink:0}
+
+    /* amortization table */
+    .amort-toggle{width:100%;text-align:left;padding:12px 0;border:none;background:none;font-family:'Hind Guntur',sans-serif;font-size:14px;font-weight:700;color:var(--teal);cursor:pointer;display:flex;justify-content:space-between;border-top:1px solid var(--border);margin-top:8px}
+    .amort-toggle .arr{transition:transform .22s}
+    .amort-toggle.open .arr{transform:rotate(180deg)}
+    .amort-body{display:none;overflow-x:auto;margin-top:12px}
+    .amort-body.open{display:block}
+    .amort-table{width:100%;border-collapse:collapse;font-size:13px}
+    .amort-table th{background:var(--cream);padding:9px 10px;text-align:right;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.4px;text-transform:uppercase}
+    .amort-table th:first-child{text-align:left}
+    .amort-table td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--border)}
+    .amort-table td:first-child{text-align:left;font-weight:600}
+    .amort-table tr:last-child td{border-bottom:none;font-weight:700;background:var(--cream)}
+
+    /* action buttons */
+    .act-btns{display:flex;gap:10px;margin-top:18px}
+    .act-btn{flex:1;padding:11px 8px;border-radius:var(--rs);border:1.5px solid var(--border);background:var(--white);font-family:'Hind Guntur',sans-serif;font-size:13px;font-weight:600;color:var(--teal);cursor:pointer;transition:all .18s;text-align:center}
+    .act-btn:hover{background:var(--cream2);border-color:var(--teal)}
+    .act-btn.primary{background:var(--saffron);color:#fff;border-color:var(--saffron)}
+    .act-btn.primary:hover{background:var(--saffron-h)}
+
+    /* summary card */
+    .summary-card{background:var(--cream2);border-radius:var(--rs);padding:16px;border-left:4px solid var(--saffron);font-size:14px;color:var(--body);line-height:1.7;display:none}
+    .summary-card.show{display:block}
+
+    /* bank compare table */
+    .bank-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow);padding:22px;display:none}
+    .bank-card.show{display:block}
+    .bank-card h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:16px}
+    .bank-table{width:100%;border-collapse:collapse;font-size:13px}
+    .bank-table th{background:var(--cream);padding:10px 12px;text-align:left;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+    .bank-table td{padding:11px 12px;border-bottom:1px solid var(--border)}
+    .bank-table tr:last-child td{border-bottom:none}
+    .bank-table tr.best-row td{background:rgba(12,120,115,0.05)}
+    .best-badge{background:var(--green-bg);color:var(--green);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:6px}
+    .apply-link{display:inline-flex;align-items:center;gap:4px;color:var(--saffron);font-weight:700;font-size:12px;cursor:pointer}
+
+    /* eligibility tips */
+    .tips-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow);padding:22px;display:none}
+    .tips-card.show{display:block}
+    .tips-card h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:14px}
+    .tip-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+    .tip-item:last-child{border-bottom:none}
+    .tip-num{width:28px;height:28px;border-radius:50%;background:var(--saffron);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .tip-item p{font-size:14px;color:var(--body);line-height:1.55}
+    .tip-item strong{color:var(--dark)}
+
+    /* AD */
+    .ad-zone{border:1.5px dashed #C8BAA8;border-radius:var(--rs);padding:16px;text-align:center;font-size:11px;color:#AAA;letter-spacing:1.5px;text-transform:uppercase;margin:20px 0}
+
+    /* FAQ */
+    .faq-sec{max-width:1140px;margin:0 auto;padding:0 24px 60px}
+    .faq-sec h2{font-size:22px;font-weight:700;color:var(--dark);margin-bottom:18px}
+    .faq-item{border:1px solid var(--border);border-radius:var(--rs);margin-bottom:10px;overflow:hidden;background:var(--white)}
+    .faq-q{width:100%;text-align:left;padding:15px 18px;background:none;border:none;font-family:'Hind Guntur',sans-serif;font-size:15px;font-weight:600;color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .faq-q .arr{font-size:18px;color:var(--saffron);transition:transform .22s}
+    .faq-q.open .arr{transform:rotate(90deg)}
+    .faq-a{display:none;padding:0 18px 15px;font-size:14px;color:var(--body);line-height:1.7}
+    .faq-a.open{display:block}
+
+    footer{background:#1C1C1C;color:rgba(255,255,255,0.5);padding:28px 24px;text-align:center;font-size:13px}
+    footer a{color:var(--saffron)}
+
+    /* RESPONSIVE */
+    @media(max-width:860px){
+      .pane.on{grid-template-columns:1fr}
+      .inp-panel{position:static}
+      .tabs .tab{font-size:12px;padding:10px 4px}
+    }
+    @media(max-width:560px){
+      .stat-row{grid-template-columns:1fr 1fr}
+      .act-btns{flex-direction:column}
+      .tabs-wrap,.main{padding-left:16px;padding-right:16px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav class="nav">
+    <a href="/" class="logo">
+      <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="10" fill="#E8720C"/>
+        <rect x="8" y="10" width="24" height="5" rx="2.5" fill="white"/>
+        <rect x="17.5" y="10" width="5" height="20" rx="2.5" fill="white"/>
+        <circle cx="30" cy="29" r="3" fill="rgba(255,255,255,0.55)"/>
+        <path d="M10 27 Q14 32 20 30" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div>
+        <span class="logo-te">TeluguHelp</span>
+        <span class="logo-en">teluguhelp.in</span>
+      </div>
+    </a>
+    <a href="/" class="back-btn">← Home కి వెళ్ళు</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="/">Home</a><span>›</span> లోన్ అర్హత</div>
+  <h1>లోన్ వస్తుందా? — <span>EMI Calculator</span></h1>
+  <p>EMI లెక్కలు · బ్యాంక్ అర్హత · 6 బ్యాంకులు పోలిక — తెలుగులో ఉచితంగా</p>
+</div>
+
+<!-- TABS -->
+<div class="tabs-wrap">
+  <div class="tabs" role="tablist">
+    <button class="tab on" onclick="switchTab(0)" role="tab">📊 EMI లెక్కలు</button>
+    <button class="tab"    onclick="switchTab(1)" role="tab">✅ అర్హత చెక్</button>
+    <button class="tab"    onclick="switchTab(2)" role="tab">🏦 బ్యాంకులు పోలిక</button>
+  </div>
+</div>
+
+<!-- ══ TAB 0: EMI CALCULATOR ══ -->
+<div class="main">
+<div class="pane on" id="pane0">
+
+  <!-- INPUT -->
+  <div class="inp-panel">
+    <h2>📝 లోన్ వివరాలు ఇవ్వండి</h2>
+
+    <div class="field">
+      <label>లోన్ రకం</label>
+      <div class="pills" id="loanPills">
+        <button class="pill on" data-v="home">గృహ రుణం 🏠</button>
+        <button class="pill" data-v="personal">వ్యక్తిగత 👤</button>
+        <button class="pill" data-v="car">కారు 🚗</button>
+        <button class="pill" data-v="education">విద్యా 🎓</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>లోన్ మొత్తం <small>(రూపాయలలో)</small></label>
+      <div class="slider-row">
+        <input type="range" id="loanAmt" min="50000" max="10000000" step="50000" value="2000000" oninput="updateSlider('loanAmt','loanAmtVal',formatINR)">
+        <span class="slider-val" id="loanAmtVal">₹20,00,000</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>వడ్డీ రేటు <small>(% వార్షికం)</small></label>
+      <div class="slider-row">
+        <input type="range" id="intRate" min="6" max="24" step="0.1" value="8.5" oninput="updateSlider('intRate','intRateVal', v => v+'%')">
+        <span class="slider-val" id="intRateVal">8.5%</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>కాలపరిమితి <small>(సంవత్సరాలు)</small></label>
+      <div class="slider-row">
+        <input type="range" id="tenure" min="1" max="30" step="1" value="20" oninput="updateSlider('tenure','tenureVal', v => v+' సంవత్సరాలు')">
+        <span class="slider-val" id="tenureVal">20 సంవత్సరాలు</span>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calcEMI()">లెక్కించండి →</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="res-panel">
+    <div class="empty-state" id="emiEmpty">
+      <div class="ei">🏦</div>
+      <h3>EMI లెక్కించండి</h3>
+      <p>లోన్ మొత్తం, వడ్డీ రేటు, కాలపరిమితి ఇచ్చి "లెక్కించండి" నొక్కండి</p>
+    </div>
+
+    <div class="res-card" id="emiResult">
+      <div class="big-num">
+        <div class="big-label">నెలసరి EMI</div>
+        <div class="big-amount" id="emiAmt">₹0</div>
+        <div class="big-sub" id="emiSub"></div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-pill">
+          <span class="sp-val" id="statPrincipal">-</span>
+          <div class="sp-lbl">అసల్ మొత్తం</div>
+        </div>
+        <div class="stat-pill">
+          <span class="sp-val" id="statInterest">-</span>
+          <div class="sp-lbl">వడ్డీ మొత్తం</div>
+        </div>
+        <div class="stat-pill">
+          <span class="sp-val" id="statTotal">-</span>
+          <div class="sp-lbl">మొత్తం చెల్లింపు</div>
+        </div>
+      </div>
+
+      <div class="bar-chart" id="barChart"></div>
+
+      <!-- Amortization -->
+      <button class="amort-toggle" id="amortToggle" onclick="toggleAmort()">
+        సంవత్సరాల వారీ లెక్కలు చూడండి
+        <span class="arr">▼</span>
+      </button>
+      <div class="amort-body" id="amortBody">
+        <table class="amort-table">
+          <thead>
+            <tr>
+              <th>సంవత్సరం</th>
+              <th>అసల్ (₹)</th>
+              <th>వడ్డీ (₹)</th>
+              <th>మిగిలిన లోన్ (₹)</th>
+            </tr>
+          </thead>
+          <tbody id="amortBody2"></tbody>
+        </table>
+      </div>
+
+      <div class="act-btns">
+        <button class="act-btn" onclick="window.print()">🖨️ Print</button>
+        <button class="act-btn" onclick="shareEMI()">📤 Share</button>
+        <button class="act-btn primary" onclick="resetEMI()">🔄 మళ్ళీ</button>
+      </div>
+    </div>
+
+    <div class="summary-card" id="emiSummary"></div>
+    <div class="ad-zone">Advertisement — Google AdSense</div>
+  </div>
+</div>
+
+<!-- ══ TAB 1: ELIGIBILITY ══ -->
+<div class="pane" id="pane1">
+  <div class="inp-panel">
+    <h2>✅ మీ అర్హత తెలుసుకోండి</h2>
+
+    <div class="field">
+      <label>నెలసరి జీతం (Net In-Hand) <small>రూపాయలలో</small></label>
+      <input type="number" class="inp" id="elSalary" placeholder="ఉదా: 50000" />
+    </div>
+
+    <div class="field">
+      <label>ప్రస్తుత EMIs (నెలసరి) <small>ఇప్పటికే చెల్లిస్తున్నవి</small></label>
+      <input type="number" class="inp" id="elExisting" placeholder="ఉదా: 5000 (లేకుంటే 0)" />
+    </div>
+
+    <div class="field">
+      <label>Employment Type</label>
+      <div class="pills" id="elEmpPills">
+        <button class="pill on" data-v="salaried">Salaried</button>
+        <button class="pill" data-v="self">Self Employed</button>
+        <button class="pill" data-v="govt">Govt Job</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>వయసు</label>
+      <div class="slider-row">
+        <input type="range" id="elAge" min="21" max="65" step="1" value="30" oninput="updateSlider('elAge','elAgeVal', v => v+' సంవత్సరాలు')">
+        <span class="slider-val" id="elAgeVal">30 సంవత్సరాలు</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Credit Score (అంచనా)</label>
+      <div class="pills" id="csPills">
+        <button class="pill" data-v="750">750+ (అద్భుతం)</button>
+        <button class="pill on" data-v="700">700-749 (మంచిది)</button>
+        <button class="pill" data-v="650">650-699 (సాధారణం)</button>
+        <button class="pill" data-v="600">650 కంటే తక్కువ</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>లోన్ రకం</label>
+      <div class="pills" id="elLoanPills">
+        <button class="pill on" data-v="home">గృహ రుణం</button>
+        <button class="pill" data-v="personal">వ్యక్తిగత</button>
+        <button class="pill" data-v="car">కారు లోన్</button>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calcEligibility()">అర్హత చెక్ చేయండి →</button>
+  </div>
+
+  <div class="res-panel">
+    <div class="empty-state" id="elEmpty">
+      <div class="ei">✅</div>
+      <h3>లోన్ అర్హత చెక్ చేయండి</h3>
+      <p>మీ జీతం మరియు details ఇచ్చి check చేయండి</p>
+    </div>
+
+    <div class="res-card" id="elResult">
+      <div class="big-num">
+        <div class="big-label">మీకు గరిష్ఠ లోన్</div>
+        <div class="big-amount" id="elAmt">₹0</div>
+        <div class="big-sub" id="elSub"></div>
+      </div>
+      <div class="stat-row" id="elStats"></div>
+      <div class="summary-card show" id="elSummary" style="margin-top:4px"></div>
+      <div class="act-btns" style="margin-top:16px">
+        <button class="act-btn primary" onclick="switchTab(0)">EMI లెక్కించండి →</button>
+        <button class="act-btn" onclick="resetEl()">🔄 మళ్ళీ</button>
+      </div>
+    </div>
+
+    <div class="tips-card" id="tipCard">
+      <h3>💡 లోన్ అర్హత పెంచుకోవడానికి చిట్కాలు</h3>
+      <div class="tip-item"><div class="tip-num">1</div><p><strong>Credit Score పెంచుకోండి:</strong> సమయానికి EMIs, credit card bills కట్టండి. 750+ score ఉంటే మెరుగైన interest rate వస్తుంది.</p></div>
+      <div class="tip-item"><div class="tip-num">2</div><p><strong>Existing EMIs తగ్గించుకోండి:</strong> ఇప్పటి loans close చేయండి. EMI/Salary ratio 40% లోపు ఉంచుకోండి.</p></div>
+      <div class="tip-item"><div class="tip-num">3</div><p><strong>Co-applicant చేర్చండి:</strong> జీవిత భాగస్వామి లేదా తల్లిదండ్రులను co-applicant గా చేర్చితే లోన్ మొత్తం పెరుగుతుంది.</p></div>
+      <div class="tip-item"><div class="tip-num">4</div><p><strong>Down payment పెంచండి:</strong> ఎక్కువ down payment ఇస్తే లోన్ మొత్తం తగ్గి EMI burden తక్కువగా ఉంటుంది.</p></div>
+    </div>
+
+    <div class="ad-zone">Advertisement — Google AdSense</div>
+  </div>
+</div>
+
+<!-- ══ TAB 2: BANK COMPARE ══ -->
+<div class="pane" id="pane2">
+  <div class="inp-panel">
+    <h2>🏦 బ్యాంకులు పోల్చండి</h2>
+
+    <div class="field">
+      <label>లోన్ రకం</label>
+      <div class="pills" id="bcLoanPills">
+        <button class="pill on" data-v="home">గృహ రుణం</button>
+        <button class="pill" data-v="personal">వ్యక్తిగత</button>
+        <button class="pill" data-v="car">కారు లోన్</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>లోన్ మొత్తం <small>(రూపాయలలో)</small></label>
+      <div class="slider-row">
+        <input type="range" id="bcAmt" min="100000" max="10000000" step="100000" value="2000000" oninput="updateSlider('bcAmt','bcAmtVal',formatINR)">
+        <span class="slider-val" id="bcAmtVal">₹20,00,000</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>కాలపరిమితి <small>(సంవత్సరాలు)</small></label>
+      <div class="slider-row">
+        <input type="range" id="bcTenure" min="1" max="30" step="1" value="20" oninput="updateSlider('bcTenure','bcTenureVal', v => v+' సంవత్సరాలు')">
+        <span class="slider-val" id="bcTenureVal">20 సంవత్సరాలు</span>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calcBankCompare()">పోల్చండి →</button>
+
+    <div style="margin-top:16px;padding:14px;background:rgba(255,255,255,0.1);border-radius:var(--rs);font-size:12px;color:rgba(255,255,255,0.65);line-height:1.6">
+      ℹ️ వడ్డీ రేట్లు approximate. అసలు రేట్లు Credit Score, Income బట్టి మారతాయి. Apply చేసే ముందు బ్యాంక్ confirm చేయండి.
+    </div>
+  </div>
+
+  <div class="res-panel">
+    <div class="empty-state" id="bcEmpty">
+      <div class="ei">🏦</div>
+      <h3>బ్యాంకులు పోల్చండి</h3>
+      <p>లోన్ రకం మరియు మొత్తం ఇచ్చి పోలిక చూడండి</p>
+    </div>
+
+    <div class="bank-card" id="bcResult">
+      <h3 id="bcTitle">గృహ రుణం — 6 బ్యాంకుల పోలిక</h3>
+      <div style="overflow-x:auto">
+        <table class="bank-table">
+          <thead>
+            <tr>
+              <th>బ్యాంక్</th>
+              <th>వడ్డీ రేటు</th>
+              <th>నెల EMI</th>
+              <th>Processing Fee</th>
+              <th>Max Tenure</th>
+            </tr>
+          </thead>
+          <tbody id="bankBody"></tbody>
+        </table>
+      </div>
+      <div class="summary-card show" id="bcSummary" style="margin-top:16px"></div>
+    </div>
+
+    <div class="ad-zone">Advertisement — Google AdSense</div>
+  </div>
+</div>
+</div><!-- end .main -->
+
+<!-- FAQ -->
+<div class="faq-sec">
+  <h2>తరచుగా అడిగే ప్రశ్నలు</h2>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">EMI అంటే ఏమిటి? ఎలా లెక్కిస్తారు? <span class="arr">›</span></button>
+    <div class="faq-a"><strong>EMI (Equated Monthly Installment)</strong> అంటే నెలనెలా కట్టే లోన్ వాయిదా. దీనిలో అసల్ మొత్తం + వడ్డీ రెండూ ఉంటాయి.<br><br>Formula: EMI = P × r × (1+r)ⁿ / ((1+r)ⁿ−1)<br>P = లోన్ మొత్తం, r = నెలసరి వడ్డీ రేటు, n = మొత్తం నెలల సంఖ్య</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">లోన్ అర్హత ఎలా నిర్ణయిస్తారు? <span class="arr">›</span></button>
+    <div class="faq-a">బ్యాంకులు సాధారణంగా నెలసరి EMI మీ net salary లో 40-50% మించకూడదు అని చూస్తాయి. దీన్ని <strong>FOIR (Fixed Obligation to Income Ratio)</strong> అంటారు.<br><br>ఉదా: జీతం ₹50,000 అయితే → max EMI ₹20,000-25,000 వరకు అనుమతిస్తారు.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Home Loan కి ఎంత Down Payment కావాలి? <span class="arr">›</span></button>
+    <div class="faq-a">RBI నిబంధనల ప్రకారం బ్యాంకులు ఆస్తి విలువలో maximum 90% వరకు లోన్ ఇవ్వగలవు. కాబట్టి కనీసం <strong>10-20% down payment</strong> మీరు సొంతంగా ఇవ్వాలి.<br><br>₹50 లక్షల ఇంటికి → కనీసం ₹5-10 లక్షలు down payment సిద్ధంగా ఉండాలి.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Tenure పెంచితే EMI తగ్గుతుందా? <span class="arr">›</span></button>
+    <div class="faq-a">అవును — tenure పెంచితే నెలసరి EMI తగ్గుతుంది. కానీ మొత్తం వడ్డీ చాలా ఎక్కువ అవుతుంది.<br><br>ఉదా: ₹20 లక్షల లోన్ 8.5% వడ్డీకి:<br>• 10 సంవత్సరాలు → EMI ₹24,797 → మొత్తం వడ్డీ ₹9.7 లక్షలు<br>• 20 సంవత్సరాలు → EMI ₹17,356 → మొత్తం వడ్డీ ₹21.7 లక్షలు<br><br>వీలైతే tenure తక్కువగా ఉంచండి.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Prepayment / Part Payment చేయవచ్చా? <span class="arr">›</span></button>
+    <div class="faq-a">అవును! Floating rate home loans కి RBI నిబంధనల ప్రకారం prepayment charges ఉండవు. Extra amount కట్టినప్పుడు tenure తగ్గుతుంది లేదా EMI తగ్గుతుంది.<br><br>Bonus వచ్చినప్పుడు part payment చేయడం వల్ల లక్షల రూపాయల వడ్డీ ఆదా చేయవచ్చు.</div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 <a href="/">TeluguHelp (teluguhelp.in)</a> — వడ్డీ రేట్లు approximate. అప్లై చేసే ముందు బ్యాంక్‌తో confirm చేయండి.</p>
+</footer>
+
+<script>
+  // ── Helpers ──
+  function formatINR(v) {
+    const n = parseInt(v);
+    if (n >= 10000000) return '₹' + (n/10000000).toFixed(1) + ' కోట్లు';
+    if (n >= 100000)   return '₹' + (n/100000).toFixed(1)   + ' లక్షలు';
+    return '₹' + n.toLocaleString('en-IN');
+  }
+  function fmt(n)  { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+  function fmtL(n) { return (n/100000).toFixed(2) + ' లక్షలు'; }
+
+  function updateSlider(id, outId, formatter) {
+    document.getElementById(outId).textContent = formatter(document.getElementById(id).value);
+  }
+
+  // pill groups
+  function setupPills(groupId, onChange) {
+    document.querySelectorAll('#'+groupId+' .pill').forEach(p => {
+      p.addEventListener('click', () => {
+        document.querySelectorAll('#'+groupId+' .pill').forEach(x => x.classList.remove('on'));
+        p.classList.add('on');
+        if(onChange) onChange(p.dataset.v);
+      });
+    });
+  }
+
+  let loanType='home', elEmpType='salaried', elLoanType='home', csScore=700, bcLoanType='home';
+  setupPills('loanPills',   v => loanType   = v);
+  setupPills('elEmpPills',  v => elEmpType  = v);
+  setupPills('elLoanPills', v => elLoanType = v);
+  setupPills('csPills',     v => csScore    = parseInt(v));
+  setupPills('bcLoanPills', v => bcLoanType = v);
+
+  // ── Tab switch ──
+  function switchTab(idx) {
+    document.querySelectorAll('.tab').forEach((t,i)  => t.classList.toggle('on', i===idx));
+    document.querySelectorAll('.pane').forEach((p,i) => p.classList.toggle('on', i===idx));
+  }
+
+  // ── EMI formula ──
+  function emiCalc(P, annualRate, years) {
+    const r = annualRate / 100 / 12;
+    const n = years * 12;
+    if (r === 0) return P / n;
+    return P * r * Math.pow(1+r, n) / (Math.pow(1+r, n) - 1);
+  }
+
+  // ── TAB 0: EMI ──
+  function calcEMI() {
+    const P       = parseFloat(document.getElementById('loanAmt').value);
+    const rate    = parseFloat(document.getElementById('intRate').value);
+    const years   = parseInt(document.getElementById('tenure').value);
+    const emi     = emiCalc(P, rate, years);
+    const totalPay= emi * years * 12;
+    const interest= totalPay - P;
+    const intPct  = Math.round((interest/totalPay)*100);
+    const priPct  = 100 - intPct;
+
+    document.getElementById('emiEmpty').style.display = 'none';
+    document.getElementById('emiResult').classList.add('show');
+
+    document.getElementById('emiAmt').textContent  = fmt(emi);
+    document.getElementById('emiSub').textContent  = `${years} సంవత్సరాల లోన్ | ${rate}% వడ్డీ`;
+    document.getElementById('statPrincipal').textContent = fmtL(P);
+    document.getElementById('statInterest').textContent  = fmtL(interest);
+    document.getElementById('statTotal').textContent     = fmtL(totalPay);
+
+    // Bar chart
+    document.getElementById('barChart').innerHTML = `
+      <div class="bar-row">
+        <span class="bar-lbl">అసల్ మొత్తం</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${priPct}%;background:var(--teal)"></div></div>
+        <span class="bar-val">${fmt(P)}</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-lbl">వడ్డీ మొత్తం</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${intPct}%;background:var(--saffron)"></div></div>
+        <span class="bar-val">${fmt(interest)}</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-lbl">మొత్తం చెల్లింపు</span>
+        <div class="bar-track"><div class="bar-fill" style="width:100%;background:#ccc"></div></div>
+        <span class="bar-val">${fmt(totalPay)}</span>
+      </div>`;
+
+    // Amortization year-wise
+    let balance = P;
+    const r = rate / 100 / 12;
+    let rows = '';
+    for (let yr = 1; yr <= years; yr++) {
+      let yearPri = 0, yearInt = 0;
+      for (let m = 0; m < 12; m++) {
+        const intM = balance * r;
+        const priM = emi - intM;
+        yearInt += intM;
+        yearPri += priM;
+        balance -= priM;
+        if (balance < 0) balance = 0;
+      }
+      rows += `<tr><td>${yr} సం.</td><td>${fmt(yearPri)}</td><td>${fmt(yearInt)}</td><td>${fmt(Math.max(0,balance))}</td></tr>`;
+    }
+    rows += `<tr><td>మొత్తం</td><td>${fmt(P)}</td><td>${fmt(interest)}</td><td>₹0</td></tr>`;
+    document.getElementById('amortBody2').innerHTML = rows;
+
+    // Summary
+    document.getElementById('emiSummary').classList.add('show');
+    document.getElementById('emiSummary').innerHTML = `
+      <strong>మీ విశ్లేషణ:</strong> ₹${fmtL(P)} లోన్‌కి నెలసరి EMI <strong>${fmt(emi)}</strong> వస్తుంది.
+      ${years} సంవత్సరాలలో మీరు మొత్తం <strong>${fmt(totalPay)}</strong> చెల్లిస్తారు —
+      దీనిలో వడ్డీ మాత్రమే <strong>${fmt(interest)}</strong> (${intPct}%).
+      ${intPct > 50 ? '<br><br>💡 Tenure తగ్గించుకోగలిగితే వడ్డీ చాలా ఆదా చేయవచ్చు.' : ''}`;
+
+    if (window.innerWidth < 860) document.getElementById('emiResult').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function toggleAmort() {
+    const btn  = document.getElementById('amortToggle');
+    const body = document.getElementById('amortBody');
+    btn.classList.toggle('open');
+    body.classList.toggle('open');
+  }
+
+  function resetEMI() {
+    document.getElementById('emiEmpty').style.display = 'block';
+    document.getElementById('emiResult').classList.remove('show');
+    document.getElementById('emiSummary').classList.remove('show');
+  }
+
+  function shareEMI() {
+    const emi = document.getElementById('emiAmt').textContent;
+    const P   = document.getElementById('loanAmt').value;
+    const text = `నా EMI లెక్కలు:\nలోన్: ${formatINR(P)}\nనెలసరి EMI: ${emi}\n\nTeluguHelp లో మీరూ చెక్ చేయండి: https://teluguhelp.vercel.app/emi.html`;
+    if (navigator.share) navigator.share({ title:'EMI లెక్కలు', text });
+    else navigator.clipboard.writeText(text).then(() => alert('Copied! WhatsApp లో paste చేయండి.'));
+  }
+
+  // ── TAB 1: ELIGIBILITY ──
+  function calcEligibility() {
+    const salary   = parseFloat(document.getElementById('elSalary').value) || 0;
+    const existing = parseFloat(document.getElementById('elExisting').value) || 0;
+    const age      = parseInt(document.getElementById('elAge').value);
+
+    if (!salary || salary < 5000) { alert('దయచేసి మీ నెలసరి జీతం ఇవ్వండి'); return; }
+
+    // FOIR: max 50% of salary for home, 40% for personal
+    const foirPct  = elLoanType === 'home' ? 0.50 : 0.40;
+    const maxEMI   = salary * foirPct - existing;
+    if (maxEMI <= 0) { alert('మీ existing EMIs చాలా ఎక్కువగా ఉన్నాయి. ముందు కొన్ని close చేయండి.'); return; }
+
+    // Rate based on credit score & loan type
+    const baseRates = { home:8.5, personal:12.0, car:9.0 };
+    let rate = baseRates[elLoanType];
+    if (csScore >= 750) rate -= 0.5;
+    else if (csScore < 650) rate += 1.5;
+    if (elEmpType === 'govt') rate -= 0.25;
+
+    // Max tenure based on age
+    const maxTenureAge = elLoanType === 'home' ? Math.min(30, 60 - age) : Math.min(7, 60 - age);
+    const tenure = Math.max(1, maxTenureAge);
+
+    // Reverse EMI to find max loan
+    const r = rate / 100 / 12;
+    const n = tenure * 12;
+    const maxLoan = maxEMI * (Math.pow(1+r,n) - 1) / (r * Math.pow(1+r,n));
+
+    document.getElementById('elEmpty').style.display = 'none';
+    document.getElementById('elResult').classList.add('show');
+    document.getElementById('tipCard').classList.add('show');
+
+    document.getElementById('elAmt').textContent = fmt(maxLoan);
+    document.getElementById('elSub').textContent = `${rate.toFixed(1)}% వడ్డీ | ${tenure} సంవత్సరాల tenure`;
+
+    document.getElementById('elStats').innerHTML = `
+      <div class="stat-pill"><span class="sp-val">${fmt(maxEMI)}</span><div class="sp-lbl">గరిష్ఠ EMI</div></div>
+      <div class="stat-pill"><span class="sp-val">${tenure} సం.</span><div class="sp-lbl">Max Tenure</div></div>
+      <div class="stat-pill"><span class="sp-val">${rate.toFixed(1)}%</span><div class="sp-lbl">అంచనా రేటు</div></div>`;
+
+    const foirUsed = Math.round(((existing + maxEMI) / salary) * 100);
+    document.getElementById('elSummary').innerHTML = `
+      <strong>మీ అర్హత:</strong> మీ జీతం ${fmt(salary)}/నెల కు, గరిష్ఠ <strong>${fmt(maxLoan)}</strong> లోన్ వస్తుంది.
+      మీ FOIR (EMI/జీతం ratio) <strong>${foirUsed}%</strong> — ${foirUsed <= 40 ? '✅ మంచి స్థితిలో ఉంది' : '⚠️ కొంచెం ఎక్కువగా ఉంది'}.
+      ${csScore < 700 ? '<br><br>⚠️ మీ Credit Score తక్కువగా ఉంది — పెంచుకుంటే తక్కువ వడ్డీకి లోన్ వస్తుంది.' : ''}`;
+
+    if (window.innerWidth < 860) document.getElementById('elResult').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function resetEl() {
+    document.getElementById('elSalary').value = '';
+    document.getElementById('elExisting').value = '';
+    document.getElementById('elEmpty').style.display = 'block';
+    document.getElementById('elResult').classList.remove('show');
+    document.getElementById('tipCard').classList.remove('show');
+  }
+
+  // ── TAB 2: BANK COMPARE ──
+  const bankData = {
+    home: [
+      { name:'SBI',          rate:8.50, fee:'0.35%',   maxTenure:30 },
+      { name:'HDFC Bank',    rate:8.70, fee:'0.50%',   maxTenure:30 },
+      { name:'ICICI Bank',   rate:8.75, fee:'0.50%',   maxTenure:30 },
+      { name:'Axis Bank',    rate:8.75, fee:'1%',       maxTenure:30 },
+      { name:'Kotak Bank',   rate:8.70, fee:'0.50%',   maxTenure:20 },
+      { name:'Bank of Baroda',rate:8.40, fee:'0.25%',  maxTenure:30 },
+    ],
+    personal: [
+      { name:'SBI',          rate:11.15, fee:'1.50%', maxTenure:6 },
+      { name:'HDFC Bank',    rate:10.75, fee:'2.50%', maxTenure:5 },
+      { name:'ICICI Bank',   rate:10.80, fee:'2%',    maxTenure:6 },
+      { name:'Axis Bank',    rate:11.25, fee:'2%',    maxTenure:5 },
+      { name:'Kotak Bank',   rate:10.99, fee:'2%',    maxTenure:5 },
+      { name:'Bank of Baroda',rate:11.05,fee:'2%',    maxTenure:5 },
+    ],
+    car: [
+      { name:'SBI',          rate:8.85,  fee:'0.51%', maxTenure:7 },
+      { name:'HDFC Bank',    rate:9.40,  fee:'0.50%', maxTenure:7 },
+      { name:'ICICI Bank',   rate:9.30,  fee:'0.50%', maxTenure:7 },
+      { name:'Axis Bank',    rate:9.25,  fee:'1%',    maxTenure:7 },
+      { name:'Kotak Bank',   rate:9.25,  fee:'1%',    maxTenure:7 },
+      { name:'Bank of Baroda',rate:8.80, fee:'0.50%', maxTenure:7 },
+    ],
+  };
+
+  function calcBankCompare() {
+    const P      = parseFloat(document.getElementById('bcAmt').value);
+    const tenure = parseInt(document.getElementById('bcTenure').value);
+    const banks  = bankData[bcLoanType];
+    const loanNames = { home:'గృహ రుణం', personal:'వ్యక్తిగత లోన్', car:'కారు లోన్' };
+
+    const emis = banks.map(b => ({ ...b, emi: emiCalc(P, b.rate, Math.min(tenure, b.maxTenure)) }));
+    const minEmi = Math.min(...emis.map(e => e.emi));
+
+    document.getElementById('bcEmpty').style.display = 'none';
+    document.getElementById('bcResult').classList.add('show');
+    document.getElementById('bcTitle').textContent = `${loanNames[bcLoanType]} — 6 బ్యాంకుల పోలిక`;
+
+    document.getElementById('bankBody').innerHTML = emis.map(b => {
+      const isBest = b.emi === minEmi;
+      return `<tr class="${isBest?'best-row':''}">
+        <td>${b.name}${isBest?'<span class="best-badge">అత్యుత్తమం ✓</span>':''}</td>
+        <td>${b.rate}%</td>
+        <td style="font-weight:700;color:${isBest?'var(--green)':'var(--dark)'}">${fmt(b.emi)}</td>
+        <td>${b.fee}</td>
+        <td>${Math.min(tenure,b.maxTenure)} సం.</td>
+      </tr>`;
+    }).join('');
+
+    const bestBank = emis.find(b => b.emi === minEmi);
+    const maxEmi   = Math.max(...emis.map(e => e.emi));
+    const saving   = (maxEmi - minEmi) * tenure * 12;
+    document.getElementById('bcSummary').innerHTML = `
+      <strong>${bestBank.name}</strong> అత్యంత తక్కువ EMI — <strong>${fmt(minEmi)}/నెల</strong> ఇస్తోంది.
+      అత్యధిక EMI బ్యాంక్ తో పోలిస్తే <strong>${fmt(saving)}</strong> వరకు ఆదా చేయవచ్చు ${tenure} సంవత్సరాలలో.
+      ℹ️ వడ్డీ రేట్లు Credit Score బట్టి మారతాయి. Apply చేసే ముందు బ్యాంక్ నిర్ధారించుకోండి.`;
+
+    if (window.innerWidth < 860) document.getElementById('bcResult').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  // ── FAQ ──
+  function toggleFaq(btn) {
+    const ans = btn.nextElementSibling;
+    btn.classList.toggle('open');
+    ans.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
