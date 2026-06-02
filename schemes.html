@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ప్రభుత్వ పథకాలు 2026 — Telugu Govt Scheme Checker | TeluguHelp</title>
+  <meta name="description" content="మీకు అర్హమైన ప్రభుత్వ పథకాలు తెలుసుకోండి. తెలంగాణ, ఆంధ్రప్రదేశ్ పథకాలు — రాష్ట్రం, ఆదాయం, కులం, వయసు ఆధారంగా. Free Telugu Govt Scheme Checker 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --saffron:#E8720C; --saffron-h:#d4650a;
+      --teal:#0C7873;    --teal-h:#0a6560;
+      --cream:#FFF8F0;   --cream2:#FFF0DC;
+      --dark:#1E1E1E;    --body:#444; --muted:#777;
+      --border:#E8DDD0;  --white:#fff;
+      --green:#1a7a3a;   --green-bg:#edfaf2;
+      --blue:#1a5fa8;    --blue-bg:#eef4fd;
+      --purple:#6b3fa0;  --purple-bg:#f3eeff;
+      --shadow:0 2px 12px rgba(0,0,0,0.07);
+      --shadow-h:0 6px 24px rgba(0,0,0,0.13);
+      --r:14px; --rs:8px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{font-family:'Hind Guntur',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+
+    /* HEADER */
+    header{position:sticky;top:0;z-index:200;background:rgba(255,248,240,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo-te{font-size:18px;font-weight:700;color:var(--dark);display:block}
+    .logo-en{font-size:11px;color:var(--muted)}
+    .back-btn{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--teal);background:rgba(12,120,115,0.08);border:1px solid rgba(12,120,115,0.2);padding:7px 14px;border-radius:30px;transition:all .18s;white-space:nowrap}
+    .back-btn:hover{background:rgba(12,120,115,0.15)}
+
+    /* PAGE HERO */
+    .page-hero{background:linear-gradient(160deg,#FFF8F0 0%,#FFF0DC 60%,#FFF8F0 100%);padding:44px 24px 36px;text-align:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(232,114,12,0.1) 1.5px,transparent 1.5px);background-size:32px 32px;pointer-events:none}
+    .page-hero-inner{position:relative;z-index:1}
+    .page-hero h1{font-size:clamp(22px,4vw,38px);font-weight:700;color:var(--dark);margin-bottom:8px}
+    .page-hero h1 span{color:var(--saffron);font-family:'Playfair Display',serif;font-style:italic}
+    .page-hero p{font-size:15px;color:var(--muted)}
+    .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:12px}
+    .breadcrumb a{color:var(--teal)}
+    .breadcrumb span{margin:0 6px}
+
+    /* PROGRESS BAR */
+    .progress-wrap{max-width:700px;margin:0 auto;padding:28px 24px 0}
+    .progress-bar{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:8px}
+    .prog-step{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;position:relative}
+    .prog-step:not(:last-child)::after{content:'';position:absolute;top:17px;left:50%;width:100%;height:2px;background:var(--border);z-index:0}
+    .prog-step.done::after{background:var(--teal)}
+    .prog-dot{width:34px;height:34px;border-radius:50%;border:2px solid var(--border);background:var(--white);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--muted);position:relative;z-index:1;transition:all .3s}
+    .prog-step.done .prog-dot{background:var(--teal);border-color:var(--teal);color:#fff}
+    .prog-step.active .prog-dot{background:var(--saffron);border-color:var(--saffron);color:#fff;box-shadow:0 0 0 4px rgba(232,114,12,0.2)}
+    .prog-label{font-size:11px;font-weight:600;color:var(--muted);text-align:center;white-space:nowrap}
+    .prog-step.active .prog-label{color:var(--saffron)}
+    .prog-step.done .prog-label{color:var(--teal)}
+
+    /* WIZARD */
+    .wizard-wrap{max-width:700px;margin:0 auto;padding:24px 24px 60px}
+    .step-card{display:none;background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow);padding:32px 28px;animation:fadeUp .35s ease both}
+    .step-card.on{display:block}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+    .step-title{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:6px}
+    .step-sub{font-size:14px;color:var(--muted);margin-bottom:28px}
+
+    /* Field styles */
+    .field{margin-bottom:22px}
+    .field label{display:block;font-size:14px;font-weight:600;color:var(--dark);margin-bottom:8px}
+    .field label small{font-weight:400;color:var(--muted);margin-left:4px}
+
+    /* option grid — big touch-friendly buttons */
+    .opt-grid{display:grid;gap:10px}
+    .opt-grid.cols2{grid-template-columns:1fr 1fr}
+    .opt-grid.cols3{grid-template-columns:1fr 1fr 1fr}
+    .opt-btn{padding:14px 12px;border-radius:var(--rs);border:1.5px solid var(--border);background:var(--white);font-family:'Hind Guntur',sans-serif;font-size:14px;font-weight:600;color:var(--body);cursor:pointer;transition:all .18s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px}
+    .opt-btn .ob-icon{font-size:22px}
+    .opt-btn .ob-en{font-size:11px;color:var(--muted);font-weight:400}
+    .opt-btn:hover{border-color:var(--teal);color:var(--teal)}
+    .opt-btn.on{border-color:var(--teal);background:rgba(12,120,115,0.08);color:var(--teal)}
+
+    /* range slider in wizard */
+    .range-wrap{padding:4px 0}
+    .range-row{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+    .range-row input[type=range]{flex:1;-webkit-appearance:none;height:6px;border-radius:3px;background:#e0d8cf;outline:none;cursor:pointer}
+    .range-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--saffron);border:2px solid #fff;cursor:pointer;box-shadow:0 1px 5px rgba(0,0,0,0.2)}
+    .range-val{font-size:16px;font-weight:700;color:var(--teal);min-width:130px;text-align:right}
+    .range-hints{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+
+    /* income select */
+    .inp{width:100%;padding:12px 14px;background:var(--cream);border:1.5px solid var(--border);border-radius:var(--rs);color:var(--dark);font-family:'Hind Guntur',sans-serif;font-size:15px;outline:none;transition:border .18s}
+    .inp:focus{border-color:var(--teal);background:var(--white)}
+    .inp option{background:var(--white)}
+
+    /* yes/no toggle */
+    .yn-row{display:flex;gap:10px}
+    .yn-btn{flex:1;padding:12px;border-radius:var(--rs);border:1.5px solid var(--border);background:var(--white);font-family:'Hind Guntur',sans-serif;font-size:14px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .18s;text-align:center}
+    .yn-btn.on.yes{border-color:var(--green);background:var(--green-bg);color:var(--green)}
+    .yn-btn.on.no{border-color:#c0392b;background:#fdf0ee;color:#c0392b}
+    .yn-btn:hover:not(.on){border-color:var(--teal);color:var(--teal)}
+
+    /* nav buttons */
+    .step-nav{display:flex;gap:12px;margin-top:28px;padding-top:20px;border-top:1px solid var(--border)}
+    .btn-prev{flex:1;padding:13px;border-radius:var(--rs);border:1.5px solid var(--border);background:var(--white);font-family:'Hind Guntur',sans-serif;font-size:15px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .18s}
+    .btn-prev:hover{border-color:var(--dark);color:var(--dark)}
+    .btn-next{flex:2;padding:13px;border-radius:var(--rs);border:none;background:var(--saffron);font-family:'Hind Guntur',sans-serif;font-size:15px;font-weight:700;color:#fff;cursor:pointer;transition:all .18s}
+    .btn-next:hover{background:var(--saffron-h)}
+    .btn-next:active{transform:scale(.98)}
+
+    /* RESULTS PAGE */
+    .results-wrap{max-width:900px;margin:0 auto;padding:0 24px 60px;display:none}
+    .results-wrap.on{display:block}
+
+    .confetti-banner{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-h) 100%);border-radius:var(--r);padding:28px 24px;text-align:center;color:#fff;margin-bottom:24px;position:relative;overflow:hidden}
+    .confetti-banner::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.06) 1px,transparent 1px);background-size:24px 24px}
+    .confetti-banner h2{font-size:clamp(20px,3vw,30px);font-weight:700;margin-bottom:8px;position:relative;z-index:1}
+    .confetti-banner p{font-size:15px;color:rgba(255,255,255,0.8);position:relative;z-index:1}
+    .count-badge{display:inline-block;background:var(--saffron);color:#fff;font-size:28px;font-weight:700;padding:8px 20px;border-radius:30px;margin-bottom:12px;font-family:'Playfair Display',serif}
+
+    /* filter bar */
+    .filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+    .filter-btn{padding:7px 16px;border-radius:30px;border:1.5px solid var(--border);background:var(--white);font-family:'Hind Guntur',sans-serif;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .18s}
+    .filter-btn.on{background:var(--teal);border-color:var(--teal);color:#fff}
+    .filter-btn:hover:not(.on){border-color:var(--teal);color:var(--teal)}
+
+    /* scheme cards */
+    .schemes-grid{display:flex;flex-direction:column;gap:16px}
+    .scheme-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow);padding:22px 20px;transition:box-shadow .2s,transform .2s;animation:fadeUp .4s ease both}
+    .scheme-card:hover{box-shadow:var(--shadow-h);transform:translateY(-2px)}
+
+    .sc-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:12px}
+    .sc-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+    .sc-icon.central{background:var(--blue-bg)}
+    .sc-icon.state{background:var(--green-bg)}
+    .sc-icon.both{background:var(--purple-bg)}
+
+    .sc-info{flex:1}
+    .sc-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+    .sc-badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:.3px}
+    .sc-badge.central{background:var(--blue-bg);color:var(--blue)}
+    .sc-badge.state{background:var(--green-bg);color:var(--green)}
+    .sc-badge.ts{background:rgba(232,114,12,0.12);color:var(--saffron-h)}
+    .sc-badge.ap{background:rgba(107,63,160,0.12);color:var(--purple)}
+    .sc-badge.new{background:#fff3cd;color:#856404}
+
+    .sc-name{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:2px}
+    .sc-name-en{font-family:'Playfair Display',serif;font-size:12px;color:var(--muted)}
+
+    .sc-benefit{display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);border-radius:var(--rs);padding:8px 14px;margin-bottom:12px;font-size:14px;font-weight:700;color:var(--green)}
+    .sc-desc{font-size:13px;color:var(--body);line-height:1.6;margin-bottom:12px}
+
+    .sc-docs{margin-bottom:12px}
+    .sc-docs-label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
+    .sc-doc-chips{display:flex;flex-wrap:wrap;gap:6px}
+    .sc-chip{font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;background:var(--cream);border:1px solid var(--border);color:var(--body)}
+
+    .sc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border)}
+    .sc-apply{display:inline-flex;align-items:center;gap:6px;background:var(--teal);color:#fff;padding:9px 18px;border-radius:var(--rs);font-size:13px;font-weight:700;cursor:pointer;transition:background .18s;border:none;font-family:'Hind Guntur',sans-serif}
+    .sc-apply:hover{background:var(--teal-h)}
+    .sc-deadline{font-size:12px;color:var(--muted)}
+
+    /* missed schemes */
+    .missed-section{margin-top:32px}
+    .missed-title{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+    .missed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .missed-card{background:var(--white);border-radius:var(--rs);border:1px solid var(--border);padding:16px 14px;box-shadow:var(--shadow);cursor:pointer;transition:all .18s}
+    .missed-card:hover{border-color:var(--saffron);box-shadow:var(--shadow-h)}
+    .missed-card h4{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:4px}
+    .missed-card p{font-size:12px;color:var(--muted);line-height:1.5}
+    .missed-arrow{color:var(--saffron);font-weight:700;font-size:16px;margin-top:8px;display:block}
+
+    /* reset btn */
+    .reset-row{display:flex;gap:12px;margin-bottom:24px}
+    .res-btn{padding:11px 20px;border-radius:var(--rs);border:1.5px solid var(--border);background:var(--white);font-family:'Hind Guntur',sans-serif;font-size:14px;font-weight:600;color:var(--teal);cursor:pointer;transition:all .18s}
+    .res-btn:hover{border-color:var(--teal);background:var(--cream2)}
+    .res-btn.primary{background:var(--saffron);color:#fff;border-color:var(--saffron)}
+    .res-btn.primary:hover{background:var(--saffron-h)}
+
+    /* AD */
+    .ad-zone{border:1.5px dashed #C8BAA8;border-radius:var(--rs);padding:16px;text-align:center;font-size:11px;color:#AAA;letter-spacing:1.5px;text-transform:uppercase;margin:24px 0}
+
+    /* no results */
+    .no-results{text-align:center;padding:48px 24px;background:var(--white);border-radius:var(--r);border:2px dashed var(--border)}
+    .no-results .nr-icon{font-size:48px;margin-bottom:14px}
+    .no-results h3{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:8px}
+    .no-results p{font-size:14px;color:var(--muted)}
+
+    /* FOOTER */
+    footer{background:#1C1C1C;color:rgba(255,255,255,0.5);padding:28px 24px;text-align:center;font-size:13px}
+    footer a{color:var(--saffron)}
+
+    /* RESPONSIVE */
+    @media(max-width:600px){
+      .opt-grid.cols3{grid-template-columns:1fr 1fr}
+      .opt-grid.cols2{grid-template-columns:1fr 1fr}
+      .missed-grid{grid-template-columns:1fr 1fr}
+      .wizard-wrap,.results-wrap{padding-left:16px;padding-right:16px}
+      .step-card{padding:22px 18px}
+      .progress-wrap{padding:20px 16px 0}
+    }
+    @media(max-width:380px){
+      .opt-grid.cols3{grid-template-columns:1fr}
+      .missed-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav class="nav">
+    <a href="/" class="logo">
+      <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="10" fill="#E8720C"/>
+        <rect x="8" y="10" width="24" height="5" rx="2.5" fill="white"/>
+        <rect x="17.5" y="10" width="5" height="20" rx="2.5" fill="white"/>
+        <circle cx="30" cy="29" r="3" fill="rgba(255,255,255,0.55)"/>
+        <path d="M10 27 Q14 32 20 30" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div>
+        <span class="logo-te">TeluguHelp</span>
+        <span class="logo-en">teluguhelp.in</span>
+      </div>
+    </a>
+    <a href="/" class="back-btn">← Home కి వెళ్ళు</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span>›</span> ప్రభుత్వ పథకాలు</div>
+    <h1>ప్రభుత్వ పథకాలు — <span>Scheme Checker</span></h1>
+    <p>మీకు అర్హమైన పథకాలు 4 simple steps లో తెలుసుకోండి — 2026 Updated</p>
+  </div>
+</div>
+
+<!-- PROGRESS BAR -->
+<div class="progress-wrap">
+  <div class="progress-bar" id="progressBar">
+    <div class="prog-step active" id="ps1">
+      <div class="prog-dot">1</div>
+      <div class="prog-label">వ్యక్తిగత వివరాలు</div>
+    </div>
+    <div class="prog-step" id="ps2">
+      <div class="prog-dot">2</div>
+      <div class="prog-label">ఆర్థిక వివరాలు</div>
+    </div>
+    <div class="prog-step" id="ps3">
+      <div class="prog-dot">3</div>
+      <div class="prog-label">విద్య & వర్గం</div>
+    </div>
+    <div class="prog-step" id="ps4">
+      <div class="prog-dot">4</div>
+      <div class="prog-label">ఫలితాలు</div>
+    </div>
+  </div>
+</div>
+
+<!-- WIZARD -->
+<div class="wizard-wrap" id="wizardWrap">
+
+  <!-- STEP 1 -->
+  <div class="step-card on" id="step1">
+    <div class="step-title">👤 వ్యక్తిగత వివరాలు</div>
+    <div class="step-sub">మీ ప్రాథమిక సమాచారం ఇవ్వండి</div>
+
+    <div class="field">
+      <label>రాష్ట్రం ఎంచుకోండి</label>
+      <div class="opt-grid cols3" id="statePills">
+        <button class="opt-btn" data-v="telangana"><span class="ob-icon">🟠</span>తెలంగాణ<span class="ob-en">Telangana</span></button>
+        <button class="opt-btn" data-v="ap"><span class="ob-icon">🔵</span>ఆంధ్రప్రదేశ్<span class="ob-en">Andhra Pradesh</span></button>
+        <button class="opt-btn" data-v="other"><span class="ob-icon">🇮🇳</span>ఇతర రాష్ట్రాలు<span class="ob-en">Other State</span></button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>వయసు <small>(Age)</small></label>
+      <div class="range-wrap">
+        <div class="range-row">
+          <input type="range" id="ageSlider" min="1" max="80" step="1" value="30" oninput="document.getElementById('ageVal').textContent=this.value+' సంవత్సరాలు'">
+          <span class="range-val" id="ageVal">30 సంవత్సరాలు</span>
+        </div>
+        <div class="range-hints"><span>1</span><span>80+</span></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>మీరు ఎవరు?</label>
+      <div class="opt-grid cols3" id="genderPills">
+        <button class="opt-btn" data-v="male"><span class="ob-icon">👨</span>పురుషుడు<span class="ob-en">Male</span></button>
+        <button class="opt-btn" data-v="female"><span class="ob-icon">👩</span>స్త్రీ<span class="ob-en">Female</span></button>
+        <button class="opt-btn" data-v="other"><span class="ob-icon">🧑</span>ఇతర<span class="ob-en">Other</span></button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>వైవాహిక స్థితి <small>(Marital Status)</small></label>
+      <div class="opt-grid cols2" id="maritalPills">
+        <button class="opt-btn" data-v="single"><span class="ob-icon">🧑</span>అవివాహిత<span class="ob-en">Unmarried</span></button>
+        <button class="opt-btn" data-v="married"><span class="ob-icon">💑</span>వివాహిత<span class="ob-en">Married</span></button>
+        <button class="opt-btn" data-v="widow"><span class="ob-icon">🪦</span>వితంతువు<span class="ob-en">Widow/Widower</span></button>
+        <button class="opt-btn" data-v="divorced"><span class="ob-icon">📄</span>విడాకులు<span class="ob-en">Divorced</span></button>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="btn-next" onclick="nextStep(1)">తదుపరి దశ → వివరాలు ఇవ్వండి</button>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step-card" id="step2">
+    <div class="step-title">💰 ఆర్థిక వివరాలు</div>
+    <div class="step-sub">మీ ఆదాయం మరియు ఆస్తి వివరాలు</div>
+
+    <div class="field">
+      <label>కుటుంబ వార్షిక ఆదాయం <small>(Family Annual Income)</small></label>
+      <select class="inp" id="incomeSelect">
+        <option value="0">ఆదాయం లేదు / Below ₹50,000</option>
+        <option value="50000">₹50,000 – ₹1,00,000</option>
+        <option value="100000" selected>₹1,00,000 – ₹2,50,000</option>
+        <option value="250000">₹2,50,000 – ₹5,00,000</option>
+        <option value="500000">₹5,00,000 – ₹8,00,000</option>
+        <option value="800000">₹8,00,000 పైన</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Employment Type</label>
+      <div class="opt-grid cols3" id="empPills">
+        <button class="opt-btn" data-v="farmer"><span class="ob-icon">🌾</span>రైతు<span class="ob-en">Farmer</span></button>
+        <button class="opt-btn" data-v="labour"><span class="ob-icon">🔨</span>కార్మికుడు<span class="ob-en">Daily Labour</span></button>
+        <button class="opt-btn" data-v="private"><span class="ob-icon">💼</span>ప్రైవేట్<span class="ob-en">Private Job</span></button>
+        <button class="opt-btn" data-v="govt"><span class="ob-icon">🏛️</span>ప్రభుత్వం<span class="ob-en">Govt Job</span></button>
+        <button class="opt-btn" data-v="business"><span class="ob-icon">🏪</span>వ్యాపారం<span class="ob-en">Business</span></button>
+        <button class="opt-btn" data-v="unemployed"><span class="ob-icon">🏠</span>గృహిణి/నిరుద్యోగి<span class="ob-en">Housewife/Unemployed</span></button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>BPL కార్డు ఉందా? <small>(Below Poverty Line)</small></label>
+      <div class="yn-row" id="bplPills">
+        <button class="yn-btn yes" data-v="yes" onclick="setYN('bplPills',this,'bpl','yes')">✅ అవును (Yes)</button>
+        <button class="yn-btn no"  data-v="no"  onclick="setYN('bplPills',this,'bpl','no')">❌ లేదు (No)</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>సొంత ఇల్లు ఉందా? <small>(Own House)</small></label>
+      <div class="yn-row" id="housePills">
+        <button class="yn-btn yes" data-v="yes" onclick="setYN('housePills',this,'house','yes')">✅ అవును</button>
+        <button class="yn-btn no"  data-v="no"  onclick="setYN('housePills',this,'house','no')">❌ లేదు</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>భూమి ఉందా? <small>(Agricultural Land)</small></label>
+      <div class="yn-row" id="landPills">
+        <button class="yn-btn yes" data-v="yes" onclick="setYN('landPills',this,'land','yes')">✅ అవును</button>
+        <button class="yn-btn no"  data-v="no"  onclick="setYN('landPills',this,'land','no')">❌ లేదు</button>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="btn-prev" onclick="prevStep(2)">← వెనక్కి</button>
+      <button class="btn-next" onclick="nextStep(2)">తదుపరి దశ →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step-card" id="step3">
+    <div class="step-title">🎓 విద్య & వర్గం</div>
+    <div class="step-sub">చివరి దశ — మీ వర్గం మరియు విద్య వివరాలు</div>
+
+    <div class="field">
+      <label>కులం వర్గం <small>(Caste Category)</small></label>
+      <div class="opt-grid cols2" id="castePills">
+        <button class="opt-btn" data-v="sc"><span class="ob-icon">📋</span>SC (షెడ్యూల్డ్ కాస్ట్)</button>
+        <button class="opt-btn" data-v="st"><span class="ob-icon">🌿</span>ST (షెడ్యూల్డ్ ట్రైబ్)</button>
+        <button class="opt-btn" data-v="bc"><span class="ob-icon">🔰</span>BC (వెనుకబడిన వర్గాలు)</button>
+        <button class="opt-btn" data-v="general"><span class="ob-icon">👥</span>సాధారణ (General/OC)</button>
+        <button class="opt-btn" data-v="minority"><span class="ob-icon">☪️</span>మైనారిటీ (Minority)</button>
+        <button class="opt-btn" data-v="ews"><span class="ob-icon">📊</span>EWS (ఆర్థికంగా వెనుకబడిన)</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>విద్యా అర్హత <small>(Education)</small></label>
+      <select class="inp" id="eduSelect">
+        <option value="none">చదువు లేదు / Illiterate</option>
+        <option value="primary">ప్రాథమిక (1-5 వ తరగతి)</option>
+        <option value="middle">మాధ్యమిక (6-10 వ తరగతి)</option>
+        <option value="inter" selected>ఇంటర్మీడియేట్ / Diploma</option>
+        <option value="graduate">డిగ్రీ / Graduate</option>
+        <option value="pg">పోస్ట్ గ్రాడ్యుయేట్</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>ప్రస్తుతం విద్యార్థివా? <small>(Are you a student?)</small></label>
+      <div class="yn-row" id="studentPills">
+        <button class="yn-btn yes" data-v="yes" onclick="setYN('studentPills',this,'student','yes')">✅ అవును</button>
+        <button class="yn-btn no"  data-v="no"  onclick="setYN('studentPills',this,'student','no')">❌ లేదు</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>వికలాంగత ఉందా? <small>(Disability)</small></label>
+      <div class="yn-row" id="disabilityPills">
+        <button class="yn-btn yes" data-v="yes" onclick="setYN('disabilityPills',this,'disability','yes')">✅ అవును</button>
+        <button class="yn-btn no"  data-v="no"  onclick="setYN('disabilityPills',this,'disability','no')">❌ లేదు</button>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="btn-prev" onclick="prevStep(3)">← వెనక్కి</button>
+      <button class="btn-next" onclick="showResults()">🔍 పథకాలు చూడండి →</button>
+    </div>
+  </div>
+
+</div><!-- end wizard-wrap -->
+
+<!-- RESULTS -->
+<div class="results-wrap" id="resultsWrap">
+  <div class="reset-row">
+    <button class="res-btn" onclick="resetWizard()">🔄 మళ్ళీ చెక్ చేయండి</button>
+    <button class="res-btn primary" onclick="window.print()">🖨️ Print / Save</button>
+    <button class="res-btn" onclick="shareResults()">📤 Share</button>
+  </div>
+
+  <div class="confetti-banner" id="confettiBanner">
+    <div class="count-badge" id="schemeCount">0</div>
+    <h2 id="resultHeading">మీకు పథకాలు అర్హత ఉంది!</h2>
+    <p id="resultSubtext">పూర్తి వివరాలు మరియు apply చేయడానికి links చూడండి</p>
+  </div>
+
+  <div class="ad-zone">Advertisement — Google AdSense</div>
+
+  <!-- Filter bar -->
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn on" data-f="all" onclick="filterSchemes('all',this)">అన్నీ</button>
+    <button class="filter-btn" data-f="central" onclick="filterSchemes('central',this)">కేంద్ర పథకాలు</button>
+    <button class="filter-btn" data-f="state" onclick="filterSchemes('state',this)">రాష్ట్ర పథకాలు</button>
+    <button class="filter-btn" data-f="finance" onclick="filterSchemes('finance',this)">ఆర్థిక సహాయం</button>
+    <button class="filter-btn" data-f="housing" onclick="filterSchemes('housing',this)">గృహ పథకాలు</button>
+    <button class="filter-btn" data-f="education" onclick="filterSchemes('education',this)">విద్యా పథకాలు</button>
+  </div>
+
+  <div class="schemes-grid" id="schemesGrid"></div>
+
+  <div class="ad-zone">Advertisement — Google AdSense</div>
+
+  <!-- Schemes you might have missed -->
+  <div class="missed-section" id="missedSection">
+    <div class="missed-title">💡 మీరు miss చేసి ఉండవచ్చు — ఇవి కూడా చూడండి</div>
+    <div class="missed-grid" id="missedGrid"></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 <a href="/">TeluguHelp (teluguhelp.in)</a> — పథకాల సమాచారం official websites నుండి సేకరించాం. Apply చేసే ముందు అధికారిక వెబ్‌సైట్ నిర్ధారించుకోండి.</p>
+</footer>
+
+<script>
+// ══════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════
+const state = {
+  step: 1,
+  state: '', gender: '', marital: '', age: 30,
+  income: 100000, emp: '',
+  bpl: '', house: '', land: '',
+  caste: '', edu: 'inter', student: '', disability: ''
+};
+
+// ══════════════════════════════════════════
+// SCHEME DATABASE — 2026 Updated
+// ══════════════════════════════════════════
+const SCHEMES = [
+  // ── CENTRAL SCHEMES ──
+  {
+    id:'pmay', name:'PM Awas Yojana (Gramin)', nameEn:'Pradhan Mantri Awas Yojana',
+    icon:'🏠', type:'central', tag:'housing',
+    benefit:'₹1,20,000 – ₹1,30,000 (Plain) | ₹1,30,000 (Hills)',
+    desc:'గ్రామీణ పేద కుటుంబాలకు పక్కా ఇల్లు నిర్మించుకోవడానికి కేంద్ర ప్రభుత్వ సహాయం.',
+    docs:['ఆధార్ కార్డు','రేషన్ కార్డు','బ్యాంక్ పాస్‌బుక్','ఫొటో'],
+    apply:'https://pmayg.nic.in',
+    eligibility: u => u.income <= 250000 && u.house === 'no',
+    states:['all'], badges:['central']
+  },
+  {
+    id:'pmjdy', name:'PM జన్ ధన్ యోజన', nameEn:'Pradhan Mantri Jan Dhan Yojana',
+    icon:'🏦', type:'central', tag:'finance',
+    benefit:'Zero balance account + ₹2L accident insurance + ₹30,000 life cover',
+    desc:'ఏ బ్యాంక్ account లేని వారికి — zero balance account, రూపే కార్డు, జీవిత బీమా ఉచితంగా.',
+    docs:['ఆధార్ కార్డు లేదా ఏదైనా చిరునామా రుజువు'],
+    apply:'https://pmjdy.gov.in',
+    eligibility: u => u.age >= 10 && u.income <= 500000,
+    states:['all'], badges:['central']
+  },
+  {
+    id:'pmkisan', name:'PM కిసాన్ సమ్మాన్ నిధి', nameEn:'PM-KISAN',
+    icon:'🌾', type:'central', tag:'finance',
+    benefit:'₹6,000/సంవత్సరం (₹2,000 × 3 వాయిదాలు)',
+    desc:'భూమి ఉన్న చిన్న మరియు సన్నకారు రైతు కుటుంబాలకు ప్రత్యక్ష ఆదాయ సహాయం.',
+    docs:['ఆధార్','భూమి పత్రాలు (పట్టా)','బ్యాంక్ పాస్‌బుక్'],
+    apply:'https://pmkisan.gov.in',
+    eligibility: u => u.emp === 'farmer' && u.land === 'yes' && u.income <= 500000,
+    states:['all'], badges:['central']
+  },
+  {
+    id:'ayushman', name:'ఆయుష్మాన్ భారత్ (PM-JAY)', nameEn:'Pradhan Mantri Jan Arogya Yojana',
+    icon:'🏥', type:'central', tag:'health',
+    benefit:'₹5 లక్షల వరకు ఉచిత వైద్యం/సంవత్సరం',
+    desc:'పేద కుటుంబాలకు ఏడాదికి ₹5 లక్షల వరకు ఆసుపత్రి ఖర్చులు ఉచితంగా. SECC 2011 జాబితాలో పేరు ఉండాలి.',
+    docs:['ఆధార్ కార్డు','రేషన్ కార్డు','SECC లేదా BPL కార్డు'],
+    apply:'https://pmjay.gov.in',
+    eligibility: u => u.income <= 250000 || u.bpl === 'yes',
+    states:['all'], badges:['central']
+  },
+  {
+    id:'pmujjwala', name:'PM ఉజ్జ్వల యోజన', nameEn:'Pradhan Mantri Ujjwala Yojana',
+    icon:'🔥', type:'central', tag:'finance',
+    benefit:'ఉచిత LPG connection + ₹300 subsidy/cylinder',
+    desc:'BPL కుటుంబ మహిళలకు ఉచిత LPG గ్యాస్ కనెక్షన్. వంట గ్యాస్ వాడకాన్ని ప్రోత్సహించడానికి.',
+    docs:['ఆధార్','BPL/రేషన్ కార్డు','బ్యాంక్ పాస్‌బుక్','పాస్‌పోర్ట్ సైజ్ ఫొటో'],
+    apply:'https://pmuy.gov.in',
+    eligibility: u => u.gender === 'female' && (u.bpl === 'yes' || u.income <= 100000),
+    states:['all'], badges:['central']
+  },
+  {
+    id:'pmsby', name:'PM సురక్ష బీమా యోజన', nameEn:'PM Suraksha Bima Yojana',
+    icon:'🛡️', type:'central', tag:'finance',
+    benefit:'₹2 లక్షల ప్రమాద బీమా — కేవలం ₹20/సంవత్సరం',
+    desc:'18-70 సంవత్సరాల వయసు ఉన్న వారికి కేవలం ₹20 వార్షిక ప్రీమియంపై ₹2 లక్షల ప్రమాద బీమా.',
+    docs:['ఆధార్ లింక్ చేసిన బ్యాంక్ అకౌంట్'],
+    apply:'https://jansuraksha.gov.in',
+    eligibility: u => u.age >= 18 && u.age <= 70,
+    states:['all'], badges:['central']
+  },
+  {
+    id:'pmjjby', name:'PM జీవన్ జ్యోతి బీమా యోజన', nameEn:'PM Jeevan Jyoti Bima Yojana',
+    icon:'💚', type:'central', tag:'finance',
+    benefit:'₹2 లక్షల జీవిత బీమా — కేవలం ₹436/సంవత్సరం',
+    desc:'18-50 సంవత్సరాల వయసు వారికి తక్కువ ప్రీమియంలో ₹2 లక్షల జీవిత బీమా సౌకర్యం.',
+    docs:['ఆధార్ లింక్ చేసిన బ్యాంక్ అకౌంట్'],
+    apply:'https://jansuraksha.gov.in',
+    eligibility: u => u.age >= 18 && u.age <= 50,
+    states:['all'], badges:['central']
+  },
+  {
+    id:'nsp', name:'నేషనల్ స్కాలర్షిప్ పోర్టల్', nameEn:'National Scholarship Portal',
+    icon:'🎓', type:'central', tag:'education',
+    benefit:'₹10,000 – ₹20,000/సంవత్సరం (చదువు ఆధారంగా)',
+    desc:'SC/ST/OBC/Minority విద్యార్థులకు చదువు కొనసాగించడానికి కేంద్ర ప్రభుత్వ స్కాలర్షిప్.',
+    docs:['ఆధార్','మార్కు జాబితాలు','ఆదాయ ధృవపత్రం','కులం ధృవపత్రం','బ్యాంక్ పాస్‌బుక్'],
+    apply:'https://scholarships.gov.in',
+    eligibility: u => u.student === 'yes' && u.income <= 250000 && ['sc','st','bc','minority'].includes(u.caste),
+    states:['all'], badges:['central']
+  },
+  {
+    id:'disability_central', name:'వికలాంగుల కేంద్ర పెన్షన్', nameEn:'Disability Pension Scheme',
+    icon:'♿', type:'central', tag:'finance',
+    benefit:'₹500 – ₹1,500/నెల',
+    desc:'40% కంటే ఎక్కువ వికలాంగత ఉన్న వారికి నెలసరి పెన్షన్ సహాయం.',
+    docs:['ఆధార్','వికలాంగ ధృవపత్రం','ఆదాయ ధృవపత్రం','బ్యాంక్ పాస్‌బుక్'],
+    apply:'https://socialjustice.gov.in',
+    eligibility: u => u.disability === 'yes' && u.income <= 250000,
+    states:['all'], badges:['central']
+  },
+
+  // ── TELANGANA STATE SCHEMES ──
+  {
+    id:'rytubandhu', name:'రైతుబంధు పథకం', nameEn:'Rythu Bandhu Scheme',
+    icon:'🌾', type:'state', tag:'finance',
+    benefit:'₹10,000/ఎకరం/సంవత్సరం (రెండు పంటలకు)',
+    desc:'తెలంగాణ రైతులకు పంట ఖర్చుల కోసం ప్రత్యక్ష ఆర్థిక సహాయం. ఎకరాకు ₹5,000 చొప్పున ఖరీఫ్ + రబీ సీజన్లలో.',
+    docs:['ఆధార్','భూమి పట్టా','బ్యాంక్ పాస్‌బుక్'],
+    apply:'https://rythu.telangana.gov.in',
+    eligibility: u => u.state === 'telangana' && u.emp === 'farmer' && u.land === 'yes',
+    states:['telangana'], badges:['state','ts']
+  },
+  {
+    id:'aasara', name:'ఆసరా పెన్షన్', nameEn:'Aasara Pension Scheme',
+    icon:'👴', type:'state', tag:'finance',
+    benefit:'₹3,016/నెల (వృద్ధులు/వికలాంగులు/విధవలు)',
+    desc:'తెలంగాణ వృద్ధులు (60+), వికలాంగులు, విధవలు, వృత్తి కార్మికులకు నెలసరి పెన్షన్.',
+    docs:['ఆధార్','వయసు రుజువు','ఆదాయ ధృవపత్రం','బ్యాంక్ పాస్‌బుక్'],
+    apply:'https://wdcw.tg.gov.in',
+    eligibility: u => u.state === 'telangana' && (u.age >= 60 || u.disability === 'yes' || u.marital === 'widow') && u.income <= 250000,
+    states:['telangana'], badges:['state','ts']
+  },
+  {
+    id:'kalyana_lakshmi', name:'కళ్యాణ లక్ష్మీ / షాదీ ముబారక్', nameEn:'Kalyana Lakshmi / Shaadi Mubarak',
+    icon:'💍', type:'state', tag:'finance',
+    benefit:'₹1,00,116 (పెళ్ళి సహాయం)',
+    desc:'తెలంగాణలో SC/ST/BC/మైనారిటీ కులాల అమ్మాయిల పెళ్ళికి ₹1 లక్ష పైన ఆర్థిక సహాయం.',
+    docs:['ఆధార్','కులం ధృవపత్రం','ఆదాయ ధృవపత్రం','పెళ్ళి కార్డు','బ్యాంక్ పాస్‌బుక్'],
+    apply:'https://telanganaepass.cgg.gov.in',
+    eligibility: u => u.state === 'telangana' && u.gender === 'female' && u.age >= 18 && u.age <= 35 && ['sc','st','bc','minority'].includes(u.caste) && u.income <= 200000,
+    states:['telangana'], badges:['state','ts']
+  },
+  {
+    id:'ts_epass', name:'తెలంగాణ ePass స్కాలర్షిప్', nameEn:'TS ePass Scholarship',
+    icon:'📚', type:'state', tag:'education',
+    benefit:'ట్యూషన్ ఫీజు + రూ.1,000-1,500/నెల మెయింటెనెన్స్',
+    desc:'తెలంగాణ SC/ST/BC/EBC విద్యార్థులకు ట్యూషన్ ఫీజు రీయింబర్స్‌మెంట్ మరియు నెలసరి భత్యం.',
+    docs:['ఆధార్','మార్కు జాబితాలు','కులం & ఆదాయ ధృవపత్రాలు','కళాశాల ID','బ్యాంక్ పాస్‌బుక్'],
+    apply:'https://telanganaepass.cgg.gov.in',
+    eligibility: u => u.state === 'telangana' && u.student === 'yes' && ['sc','st','bc','ews'].includes(u.caste) && u.income <= 200000,
+    states:['telangana'], badges:['state','ts']
+  },
+  {
+    id:'ts_double_bedroom', name:'2BHK గృహ పథకం', nameEn:'Double Bedroom Housing Scheme',
+    icon:'🏘️', type:'state', tag:'housing',
+    benefit:'ఉచిత 2BHK ఇల్లు (అంచనా విలువ ₹5-7 లక్షలు)',
+    desc:'తెలంగాణ పేద, BPL కుటుంబాలకు నగరాల్లో 2 గదుల ఉచిత గృహాలు. స్వయంసహాయక సంఘ మహిళలకు ప్రాధాన్యత.',
+    docs:['ఆధార్','రేషన్ కార్డు','ఆదాయ ధృవపత్రం','BPL ధృవపత్రం'],
+    apply:'https://2bhk.telangana.gov.in',
+    eligibility: u => u.state === 'telangana' && u.income <= 100000 && u.house === 'no',
+    states:['telangana'], badges:['state','ts']
+  },
+  {
+    id:'ts_ku_sus', name:'KU/OU/TS Universities Free Education', nameEn:'Free Education in TS Universities',
+    icon:'🏫', type:'state', tag:'education',
+    benefit:'ట్యూషన్ ఫీజు మొత్తం మాఫీ',
+    desc:'తెలంగాణ ప్రభుత్వ విశ్వవిద్యాలయాలలో SC/ST విద్యార్థులకు పూర్తి ఫీజు మాఫీ.',
+    docs:['ఆధార్','కులం ధృవపత్రం','మార్కు జాబితాలు'],
+    apply:'https://telanganaepass.cgg.gov.in',
+    eligibility: u => u.state === 'telangana' && u.student === 'yes' && ['sc','st'].includes(u.caste),
+    states:['telangana'], badges:['state','ts']
+  },
+
+  // ── ANDHRA PRADESH STATE SCHEMES ──
+  {
+    id:'ap_ysr_pension', name:'YSR Pension Kanuka', nameEn:'YSR Pension Kanuka',
+    icon:'👴', type:'state', tag:'finance',
+    benefit:'₹3,000 – ₹5,000/నెల (వర్గాన్ని బట్టి)',
+    desc:'ఆంధ్రప్రదేశ్ వృద్ధులు (60+), వికలాంగులు, విధవలు, చేనేత కార్మికులకు నెలసరి పెన్షన్.',
+    docs:['ఆధార్','వయసు రుజువు','ఆదాయ ధృవపత్రం','బ్యాంక్ పాస్‌బుక్'],
+    apply:'https://navasakam.ap.gov.in',
+    eligibility: u => u.state === 'ap' && (u.age >= 60 || u.disability === 'yes' || u.marital === 'widow') && u.income <= 250000,
+    states:['ap'], badges:['state','ap']
+  },
+  {
+    id:'ap_jagananna_housing', name:'జగనన్న సంపూర్ణ గృహ హక్కు', nameEn:'Jagananna Housing Scheme',
+    icon:'🏠', type:'state', tag:'housing',
+    benefit:'ఉచిత 2BHK ఇల్లు + ₹5,030/నెల లీజు',
+    desc:'ఆంధ్రప్రదేశ్ పేద, BPL కుటుంబాలకు ఇంటి స్థలం మరియు ₹1.8 లక్షల నిర్మాణ సహాయం.',
+    docs:['ఆధార్','రేషన్ కార్డు','ఆదాయ ధృవపత్రం'],
+    apply:'https://navasakam.ap.gov.in',
+    eligibility: u => u.state === 'ap' && u.income <= 100000 && u.house === 'no',
+    states:['ap'], badges:['state','ap']
+  },
+  {
+    id:'ap_epass', name:'AP ePass స్కాలర్షిప్', nameEn:'AP ePass Scholarship',
+    icon:'📚', type:'state', tag:'education',
+    benefit:'ట్యూషన్ ఫీజు + నెలసరి భత్యం',
+    desc:'ఆంధ్రప్రదేశ్ SC/ST/BC విద్యార్థులకు పోస్ట్ మెట్రిక్ స్కాలర్షిప్ మరియు ఫీజు రీయింబర్స్‌మెంట్.',
+    docs:['ఆధార్','మార్కు జాబితాలు','కులం & ఆదాయ ధృవపత్రాలు','బ్యాంక్ పాస్‌బుక్'],
+    apply:'https://apepass.cgg.gov.in',
+    eligibility: u => u.state === 'ap' && u.student === 'yes' && ['sc','st','bc'].includes(u.caste) && u.income <= 200000,
+    states:['ap'], badges:['state','ap']
+  },
+  {
+    id:'ap_rythu_bharosa', name:'AP రైతు భరోసా', nameEn:'AP Rythu Bharosa',
+    icon:'🌾', type:'state', tag:'finance',
+    benefit:'₹13,500/సంవత్సరం/ఎకరం',
+    desc:'ఆంధ్రప్రదేశ్ రైతులకు PM-KISAN + రాష్ట్ర సహాయం కలిపి ఎకరాకు ₹13,500 ఆర్థిక సహాయం.',
+    docs:['ఆధార్','భూమి పట్టా','బ్యాంక్ పాస్‌బుక్'],
+    apply:'https://apagrisnet.ap.gov.in',
+    eligibility: u => u.state === 'ap' && u.emp === 'farmer' && u.land === 'yes',
+    states:['ap'], badges:['state','ap']
+  },
+  {
+    id:'ap_jagananna_ammavoodi', name:'జగనన్న అమ్మ ఒడి', nameEn:'Jagananna Amma Vodi',
+    icon:'👩‍👧', type:'state', tag:'education',
+    benefit:'₹15,000/సంవత్సరం (తల్లికి)',
+    desc:'ఆంధ్రప్రదేశ్ పిల్లలను ప్రభుత్వ పాఠశాలలో చదివించే పేద తల్లులకు ₹15,000 నేరుగా బ్యాంక్ అకౌంట్‌కి.',
+    docs:['ఆధార్','పిల్లల పాఠశాల సర్టిఫికేట్','ఆదాయ ధృవపత్రం','బ్యాంక్ పాస్‌బుక్'],
+    apply:'https://navasakam.ap.gov.in',
+    eligibility: u => u.state === 'ap' && u.gender === 'female' && u.income <= 200000,
+    states:['ap'], badges:['state','ap']
+  },
+];
+
+// ══════════════════════════════════════════
+// WIZARD NAVIGATION
+// ══════════════════════════════════════════
+function setupPills(groupId, key) {
+  document.querySelectorAll('#'+groupId+' .opt-btn').forEach(p => {
+    p.addEventListener('click', () => {
+      document.querySelectorAll('#'+groupId+' .opt-btn').forEach(x => x.classList.remove('on'));
+      p.classList.add('on');
+      state[key] = p.dataset.v;
+    });
+  });
+}
+
+setupPills('statePills',  'state');
+setupPills('genderPills', 'gender');
+setupPills('maritalPills','marital');
+setupPills('empPills',    'emp');
+setupPills('castePills',  'caste');
+
+document.getElementById('ageSlider').addEventListener('input', e => state.age = parseInt(e.target.value));
+document.getElementById('incomeSelect').addEventListener('change', e => state.income = parseInt(e.target.value));
+document.getElementById('eduSelect').addEventListener('change', e => state.edu = e.target.value);
+
+function setYN(groupId, btn, key, val) {
+  document.querySelectorAll('#'+groupId+' .yn-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  state[key] = val;
+}
+
+function updateProgress(step) {
+  for (let i = 1; i <= 4; i++) {
+    const el = document.getElementById('ps'+i);
+    el.classList.remove('active','done');
+    if (i < step) el.classList.add('done');
+    if (i === step) el.classList.add('active');
+  }
+}
+
+function nextStep(current) {
+  // Validate required fields
+  if (current === 1) {
+    if (!state.state) { alert('దయచేసి రాష్ట్రం ఎంచుకోండి'); return; }
+    if (!state.gender) { alert('దయచేసి మీరు ఎవరో ఎంచుకోండి'); return; }
+    if (!state.marital) { alert('దయచేసి వైవాహిక స్థితి ఎంచుకోండి'); return; }
+  }
+  if (current === 2) {
+    if (!state.emp) { alert('దయచేసి Employment type ఎంచుకోండి'); return; }
+    if (!state.bpl) { alert('దయచేసి BPL కార్డు ఉందా అని ఎంచుకోండి'); return; }
+    if (!state.house) { alert('దయచేసి సొంత ఇల్లు ఉందా అని చెప్పండి'); return; }
+    if (!state.land) { alert('దయచేసి భూమి ఉందా అని చెప్పండి'); return; }
+  }
+
+  document.getElementById('step'+current).classList.remove('on');
+  document.getElementById('step'+(current+1)).classList.add('on');
+  updateProgress(current+1);
+  window.scrollTo({top:200, behavior:'smooth'});
+}
+
+function prevStep(current) {
+  document.getElementById('step'+current).classList.remove('on');
+  document.getElementById('step'+(current-1)).classList.add('on');
+  updateProgress(current-1);
+  window.scrollTo({top:200, behavior:'smooth'});
+}
+
+// ══════════════════════════════════════════
+// SHOW RESULTS
+// ══════════════════════════════════════════
+function showResults() {
+  if (!state.caste) { alert('దయచేసి కులం వర్గం ఎంచుకోండి'); return; }
+  if (!state.student) { alert('దయచేసి విద్యార్థి అవునా కాదా ఎంచుకోండి'); return; }
+  if (!state.disability) { alert('దయచేసి వికలాంగత వివరం ఎంచుకోండి'); return; }
+
+  // Filter matching schemes
+  const matched = SCHEMES.filter(s => s.eligibility(state));
+
+  // Update progress to step 4
+  updateProgress(4);
+  document.getElementById('wizardWrap').style.display = 'none';
+  document.getElementById('resultsWrap').classList.add('on');
+
+  // Banner
+  const count = matched.length;
+  document.getElementById('schemeCount').textContent = count + ' పథకాలు';
+  document.getElementById('resultHeading').textContent = count > 0
+    ? `మీకు ${count} పథకాలకు అర్హత ఉంది! 🎉`
+    : 'అర్హత పథకాలు కనుగొనబడలేదు';
+  document.getElementById('resultSubtext').textContent = count > 0
+    ? 'పూర్తి వివరాలు మరియు apply links చూడండి'
+    : 'వివరాలు మార్చి మళ్ళీ ప్రయత్నించండి';
+
+  // Render schemes
+  renderSchemes(matched, 'all');
+
+  // Store for filtering
+  window._matched = matched;
+
+  // Missed schemes — schemes they didn't qualify for but might be interested in
+  const missed = SCHEMES.filter(s => !s.eligibility(state)).slice(0,3);
+  document.getElementById('missedGrid').innerHTML = missed.map(s => `
+    <div class="missed-card" onclick="alert('${s.name}: ${s.benefit}')">
+      <h4>${s.icon} ${s.name}</h4>
+      <p>${s.desc.substring(0,80)}...</p>
+      <span class="missed-arrow">→</span>
+    </div>`).join('');
+
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function renderSchemes(schemes, filter) {
+  const grid = document.getElementById('schemesGrid');
+  const filtered = filter === 'all' ? schemes : schemes.filter(s => s.tag === filter || s.type === filter);
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="no-results"><div class="nr-icon">🔍</div><h3>ఈ వర్గంలో పథకాలు లేవు</h3><p>వేరే filter ఎంచుకోండి</p></div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map((s, i) => `
+    <div class="scheme-card" style="animation-delay:${i*0.07}s">
+      <div class="sc-top">
+        <div class="sc-icon ${s.type}">${s.icon}</div>
+        <div class="sc-info">
+          <div class="sc-badges">
+            ${s.badges.map(b => `<span class="sc-badge ${b}">${b==='central'?'కేంద్ర పథకం':b==='state'?'రాష్ట్ర పథకం':b==='ts'?'తెలంగాణ':b==='ap'?'ఆంధ్రప్రదేశ్':''}</span>`).join('')}
+          </div>
+          <div class="sc-name">${s.name}</div>
+          <div class="sc-name-en">${s.nameEn}</div>
+        </div>
+      </div>
+      <div class="sc-benefit">💰 ${s.benefit}</div>
+      <div class="sc-desc">${s.desc}</div>
+      <div class="sc-docs">
+        <div class="sc-docs-label">అవసరమైన పత్రాలు</div>
+        <div class="sc-doc-chips">${s.docs.map(d=>`<span class="sc-chip">📄 ${d}</span>`).join('')}</div>
+      </div>
+      <div class="sc-footer">
+        <button class="sc-apply" onclick="window.open('${s.apply}','_blank')">Apply చేయండి →</button>
+        <span class="sc-deadline">Official Site</span>
+      </div>
+    </div>`).join('');
+}
+
+function filterSchemes(f, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  renderSchemes(window._matched || [], f);
+}
+
+function resetWizard() {
+  // Reset state
+  Object.assign(state, {step:1, state:'', gender:'', marital:'', age:30, income:100000, emp:'', bpl:'', house:'', land:'', caste:'', edu:'inter', student:'', disability:''});
+
+  // Reset UI
+  document.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('on'));
+  document.querySelectorAll('.yn-btn').forEach(b => b.classList.remove('on'));
+  document.getElementById('ageSlider').value = 30;
+  document.getElementById('ageVal').textContent = '30 సంవత్సరాలు';
+
+  // Show step 1
+  document.querySelectorAll('.step-card').forEach(s => s.classList.remove('on'));
+  document.getElementById('step1').classList.add('on');
+  document.getElementById('wizardWrap').style.display = 'block';
+  document.getElementById('resultsWrap').classList.remove('on');
+  updateProgress(1);
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function shareResults() {
+  const count = (window._matched||[]).length;
+  const text = `నాకు ${count} ప్రభుత్వ పథకాలకు అర్హత ఉంది!\n\nమీరూ చెక్ చేయండి: https://teluguhelp.vercel.app/schemes.html`;
+  if (navigator.share) navigator.share({title:'ప్రభుత్వ పథకాలు',text});
+  else navigator.clipboard.writeText(text).then(()=>alert('Copied! WhatsApp లో share చేయండి.'));
+}
+</script>
+</body>
+</html>
