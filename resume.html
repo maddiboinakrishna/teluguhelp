@@ -302,21 +302,9 @@ Tips:
 function printResume(){
   const content = document.getElementById('resumePreview').innerHTML;
   const w = window.open('','_blank');
-  w.document.write(`<html><head><title>Resume - ${document.getElementById('rName').value}</title>
-  <style>body{font-family:Georgia,serif;padding:40px;font-size:13px;line-height:1.7;max-width:800px;margin:0 auto}pre{white-space:pre-wrap;font-family:Georgia,serif}</style>
-</head>
-  <body>${content}else{localStorage.setItem("th_lang",lang);location.reload();}}
-</script>
-
-
-
-
-<script>
-function setLang(btn,lang){
-  document.querySelectorAll('.lang-pill').forEach(function(b){b.classList.remove('on');});
-  btn.classList.add('on');
-}
-</script>
+  w.document.write('<html><head><title>Resume</title><style>body{font-family:Georgia,serif;padding:40px;font-size:13px;line-height:1.7;max-width:800px;margin:0 auto}pre{white-space:pre-wrap}</style></head><body>'+content+'</body></html>');
+  w.document.close(); w.print();
+}</script>
 </body></html>`);
   w.document.close(); w.print();
 }

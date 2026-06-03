@@ -257,19 +257,9 @@ function calcRental(){
 function printAgreement(){
   const content = document.getElementById('agreementText').innerHTML;
   const w = window.open('','_blank');
-  w.document.write('<html><head><title>Rental Agreement</title><style>body{font-family:Georgia,serif;padding:40px;font-size:13px;line-height:1.9;max-width:800px;margin:0 auto}h4{text-align:center;text-decoration:underline;margin-bottom:16px}p{margin-bottom:10px}</style>
-</head><body>'+content+'else{localStorage.setItem("th_lang",lang);location.reload();}}
-</script>
-
-
-
-
-<script>
-function setLang(btn,lang){
-  document.querySelectorAll('.lang-pill').forEach(function(b){b.classList.remove('on');});
-  btn.classList.add('on');
-}
-</script>
+  w.document.write('<html><head><title>Rental Agreement</title><style>body{font-family:Georgia,serif;padding:40px;font-size:13px;line-height:1.9;max-width:800px;margin:0 auto}h4{text-align:center;text-decoration:underline;margin-bottom:16px}p{margin-bottom:10px}</style></head><body>'+content+'</body></html>');
+  w.document.close(); w.print();
+}</script>
 </body></html>');
   w.document.close(); w.print();
 }

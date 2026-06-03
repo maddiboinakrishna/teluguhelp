@@ -866,17 +866,6 @@ function shareResults() {
   else navigator.clipboard.writeText(text).then(()=>alert('Copied! WhatsApp లో share చేయండి.'));
 }
 
-else{localStorage.setItem("th_lang",lang);location.reload();}}
-</script>
-
-
-
-
-<script>
-function setLang(btn,lang){
-  document.querySelectorAll('.lang-pill').forEach(function(b){b.classList.remove('on');});
-  btn.classList.add('on');
-}
 </script>
 </body>
 </html>
