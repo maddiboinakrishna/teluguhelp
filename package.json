@@ -1,0 +1,16 @@
+{
+  "name": "teluguhelp",
+  "version": "1.0.0",
+  "description": "TeluguHelp - Free tools for Telugu people",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static HTML site - no build required'"
+  },
+  "keywords": ["telugu", "calculator", "salary", "emi", "schemes"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1"
+  }
+}
