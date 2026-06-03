@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet"/>
   <style>
-    :root{--saffron:#E8720C;--saffron-h:#d4650a;--teal:#0C7873;--cream:#FFF8F0;--cream2:#FFF0DC;--dark:#1E1E1E;--body:#444;--muted:#777;--border:#E8DDD0;--white:#fff;--green:#1a7a3a;--green-bg:#edfaf2;--shadow:0 2px 12px rgba(0,0,0,0.07);--r:14px;--rs:8px}
+    :root{--saffron:#E8720C;--saffron-h:#d4650a;--teal:#0C7873;--cream:#FFF8F0;--cream2:#FFF0DC;--dark:#1E1E1E;--body:#444;--muted:#777;--border:#E8DDD0;--white:#fff;--green:#1a7a3a;--green-bg:#edfaf2;--shadow:0 2px 12px rgba(0,0,0,.07);--r:14px;--rs:8px}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{font-size:16px;scroll-behavior:smooth}
     body{font-family:'Hind Guntur',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;line-height:1.6}
@@ -19,7 +19,7 @@
     .logo{display:flex;align-items:center;gap:10px}
     .logo-te{font-size:18px;font-weight:700;color:var(--dark);display:block}
     .logo-en{font-size:11px;color:var(--muted)}
-    .back-btn{font-size:13px;font-weight:600;color:var(--teal);background:rgba(12,120,115,0.08);border:1px solid rgba(12,120,115,0.2);padding:7px 14px;border-radius:30px;white-space:nowrap}
+    .back-btn{font-size:13px;font-weight:600;color:var(--teal);background:rgba(12,120,115,.08);border:1px solid rgba(12,120,115,.2);padding:7px 14px;border-radius:30px;white-space:nowrap}
     .page-hero{background:linear-gradient(160deg,#FFF8F0 0%,#FFF0DC 60%,#FFF8F0 100%);padding:44px 24px 36px;text-align:center;border-bottom:1px solid var(--border)}
     .page-hero h1{font-size:clamp(22px,4vw,38px);font-weight:700;color:var(--dark);margin-bottom:8px}
     .page-hero h1 span{color:var(--saffron);font-family:'Playfair Display',serif;font-style:italic}
@@ -27,7 +27,6 @@
     .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:12px}
     .breadcrumb a{color:var(--teal)}
     .breadcrumb span{margin:0 6px}
-    /* TABS */
     .tabs-wrap{max-width:1100px;margin:0 auto;padding:24px 24px 0}
     .htabs{display:flex;gap:4px;background:var(--cream2);border-radius:12px;padding:4px;border:1px solid var(--border)}
     .htab{flex:1;padding:11px 8px;border-radius:9px;border:none;background:transparent;font-family:'Hind Guntur',sans-serif;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .18s;text-align:center}
@@ -35,24 +34,22 @@
     .main{max-width:1100px;margin:0 auto;padding:24px 24px 60px}
     .hpane{display:none}
     .hpane.on{display:block}
-    /* CHECKER */
     .checker{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
     .inp-panel{background:var(--teal);border-radius:var(--r);padding:28px 24px;position:sticky;top:88px}
     .inp-panel h2{font-size:18px;font-weight:700;color:#fff;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.2)}
     .field{margin-bottom:16px}
     .field label{display:block;font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:6px}
-    .inp{width:100%;padding:11px 13px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:var(--rs);color:#fff;font-family:'Hind Guntur',sans-serif;font-size:14px;outline:none;transition:all .18s}
-    .inp:focus{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.18)}
-    .inp option{color:var(--dark);background:#fff}
     .pills{display:flex;gap:8px;flex-wrap:wrap}
     .pill{padding:7px 13px;border-radius:30px;font-size:13px;font-weight:600;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);background:transparent;cursor:pointer;font-family:'Hind Guntur',sans-serif;transition:all .18s}
     .pill.on{background:#fff;color:var(--teal);border-color:#fff}
+    .pill:hover:not(.on){border-color:rgba(255,255,255,.6);color:#fff}
     .calc-btn{width:100%;padding:14px;margin-top:8px;background:var(--saffron);color:#fff;border:none;border-radius:var(--rs);font-family:'Hind Guntur',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .18s}
     .calc-btn:hover{background:var(--saffron-h)}
-    /* RESULTS */
     .res-panel{display:flex;flex-direction:column;gap:16px}
     .empty-h{background:var(--white);border-radius:var(--r);border:2px dashed var(--border);padding:48px 24px;text-align:center}
     .empty-h .ei{font-size:48px;margin-bottom:14px}
+    .empty-h h3{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:8px}
+    .empty-h p{font-size:14px;color:var(--muted)}
     .routine-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow);padding:22px;display:none}
     .routine-card.show{display:block}
     .routine-card h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:14px}
@@ -61,7 +58,6 @@
     .rs-time{font-size:11px;font-weight:700;color:var(--saffron);background:rgba(232,114,12,.1);padding:2px 8px;border-radius:10px;flex-shrink:0;margin-top:3px;white-space:nowrap}
     .rs-text h4{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:3px}
     .rs-text p{font-size:13px;color:var(--body);line-height:1.5}
-    /* PRODUCT CARD */
     .product-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow);padding:22px;display:none}
     .product-card.show{display:block}
     .product-card h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:14px}
@@ -69,7 +65,6 @@
     .prod-item:last-child{margin-bottom:0}
     .prod-left h4{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:2px}
     .prod-left p{font-size:12px;color:var(--muted)}
-    .prod-price{font-size:14px;font-weight:700;color:var(--teal)}
     .buy-btn{background:var(--saffron);color:#fff;border:none;padding:7px 14px;border-radius:var(--rs);font-size:12px;font-weight:700;cursor:pointer;font-family:'Hind Guntur',sans-serif;white-space:nowrap}
     .buy-btn:hover{background:var(--saffron-h)}
     .ad-zone{border:1.5px dashed #C8BAA8;border-radius:var(--rs);padding:16px;text-align:center;font-size:11px;color:#AAA;letter-spacing:1.5px;text-transform:uppercase;margin:20px 0}
@@ -78,7 +73,6 @@
     @media(max-width:800px){.checker{grid-template-columns:1fr}.inp-panel{position:static}}
     @media(max-width:500px){.main,.tabs-wrap{padding-left:16px;padding-right:16px}.htab{font-size:12px;padding:10px 4px}}
   </style>
-
 </head>
 <body>
 <header>
@@ -103,7 +97,6 @@
   </div>
 </div>
 <div class="main">
-
 <!-- HAIR CARE -->
 <div class="hpane on" id="hp0">
   <div class="checker">
@@ -112,7 +105,7 @@
       <div class="field"><label>Hair Problem</label>
         <div class="pills" id="hairProbPills">
           <button class="pill on" data-v="fall">Hair Fall</button>
-          <button class="pill" data-v="dry">Dry & Frizzy</button>
+          <button class="pill" data-v="dry">Dry &amp; Frizzy</button>
           <button class="pill" data-v="oily">Oily Scalp</button>
           <button class="pill" data-v="dandruff">Dandruff</button>
           <button class="pill" data-v="growth">Growth కావాలి</button>
@@ -131,15 +124,10 @@
       <button class="calc-btn" onclick="showHairRoutine()">Routine చూపించు →</button>
     </div>
     <div class="res-panel" id="hairResults">
-      <div class="empty-h" id="hairEmpty">
-        <div class="ei">💇</div>
-        <h3>Hair Routine తెలుసుకోండి</h3>
-        <p>Hair type ఎంచుకుని routine చూడండి</p>
-      </div>
+      <div class="empty-h" id="hairEmpty"><div class="ei">💇</div><h3>Hair Routine తెలుసుకోండి</h3><p>Hair type ఎంచుకుని routine చూడండి</p></div>
     </div>
   </div>
 </div>
-
 <!-- SKIN CARE -->
 <div class="hpane" id="hp1">
   <div class="checker">
@@ -168,15 +156,10 @@
       <button class="calc-btn" onclick="showSkinRoutine()">Routine చూపించు →</button>
     </div>
     <div class="res-panel" id="skinResults">
-      <div class="empty-h" id="skinEmpty">
-        <div class="ei">✨</div>
-        <h3>Skin Routine తెలుసుకోండి</h3>
-        <p>Skin type ఎంచుకుని routine చూడండి</p>
-      </div>
+      <div class="empty-h" id="skinEmpty"><div class="ei">✨</div><h3>Skin Routine తెలుసుకోండి</h3><p>Skin type ఎంచుకుని routine చూడండి</p></div>
     </div>
   </div>
 </div>
-
 <!-- GYM -->
 <div class="hpane" id="hp2">
   <div class="checker">
@@ -205,322 +188,264 @@
       <button class="calc-btn" onclick="showGymRoutine()">Workout Plan చూపించు →</button>
     </div>
     <div class="res-panel" id="gymResults">
-      <div class="empty-h" id="gymEmpty">
-        <div class="ei">💪</div>
-        <h3>Gym Routine తెలుసుకోండి</h3>
-        <p>Goal ఎంచుకుని workout plan చూడండి</p>
-      </div>
+      <div class="empty-h" id="gymEmpty"><div class="ei">💪</div><h3>Gym Routine తెలుసుకోండి</h3><p>Goal ఎంచుకుని workout plan చూడండి</p></div>
     </div>
   </div>
 </div>
-</div><!-- main -->
-
+</div>
 <footer><p>© 2026 <a href="/">TeluguHelp (teluguhelp.in)</a> — Health tips informational only. Serious problems కి doctor consult చేయండి. | <a href="privacy.html">Privacy</a> | <a href="disclaimer.html">Disclaimer</a></p></footer>
-
 <script>
 function switchHTab(i,btn){
-  document.querySelectorAll('.htab').forEach((b,j)=>b.classList.toggle('on',j===i));
-  document.querySelectorAll('.hpane').forEach((p,j)=>p.classList.toggle('on',j===i));
+  document.querySelectorAll('.htab').forEach(function(b,j){b.classList.toggle('on',j===i);});
+  document.querySelectorAll('.hpane').forEach(function(p,j){p.classList.toggle('on',j===i);});
 }
 
-let hairProb='fall',hairBudget='low',hairGender='male';
-let skinType='oily',skinConcern='acne',skinBudget='low';
-let gymGoal='loss',gymLevel='beginner',gymDays='4';
+var hairProb='fall', hairBudget='low', hairGender='male';
+var skinType='oily', skinConcern='acne', skinBudget='low';
+var gymGoal='loss', gymLevel='beginner', gymDays='4';
 
-function setupPills(id,cb){document.querySelectorAll('#'+id+' .pill').forEach(p=>{p.addEventListener('click',()=>{document.querySelectorAll('#'+id+' .pill').forEach(x=>x.classList.remove('on'));p.classList.add('on');cb(p.dataset.v);});})}
-setupPills('hairProbPills',v=>hairProb=v);
-setupPills('hairBudgetPills',v=>hairBudget=v);
-setupPills('hairGenderPills',v=>hairGender=v);
-setupPills('skinTypePills',v=>skinType=v);
-setupPills('skinConcernPills',v=>skinConcern=v);
-setupPills('skinBudgetPills',v=>skinBudget=v);
-setupPills('gymGoalPills',v=>gymGoal=v);
-setupPills('gymLevelPills',v=>gymLevel=v);
-setupPills('gymDaysPills',v=>gymDays=v);
+function setupPills(id,cb){
+  document.querySelectorAll('#'+id+' .pill').forEach(function(p){
+    p.addEventListener('click',function(){
+      document.querySelectorAll('#'+id+' .pill').forEach(function(x){x.classList.remove('on');});
+      p.classList.add('on');
+      cb(p.dataset.v);
+    });
+  });
+}
+setupPills('hairProbPills',function(v){hairProb=v;});
+setupPills('hairBudgetPills',function(v){hairBudget=v;});
+setupPills('hairGenderPills',function(v){hairGender=v;});
+setupPills('skinTypePills',function(v){skinType=v;});
+setupPills('skinConcernPills',function(v){skinConcern=v;});
+setupPills('skinBudgetPills',function(v){skinBudget=v;});
+setupPills('gymGoalPills',function(v){gymGoal=v;});
+setupPills('gymLevelPills',function(v){gymLevel=v;});
+setupPills('gymDaysPills',function(v){gymDays=v;});
 
-// ── HAIR ROUTINES ──
-const HAIR_ROUTINES = {
-  dry:{
-    title:'Dry & Frizzy Hair Routine',
+var HAIR={
+  fall:{title:'Hair Fall Control Routine',
     steps:[
-      {time:'Week 2-3x',title:'Deep Conditioning',text:'Coconut oil + Honey mask — 30 mins apply చేసి warm towel wrap చేయండి. Frizz తగ్గి shine వస్తుంది.'},
-      {time:'Wash Day',title:'Moisturizing Shampoo',text:'Sulfate-free shampoo వాడండి. Harsh sulfates dry hair మరింత dry చేస్తాయి.'},
-      {time:'After Wash',title:'Leave-in Conditioner',text:'Damp hair పై leave-in conditioner లేదా hair serum apply చేయండి. Air dry prefer చేయండి.'},
-      {time:'Daily',title:'Hydration & Diet',text:'రోజు 3L water తాగండి. Omega-3 rich foods (flaxseeds, walnuts) తినండి.'},
-    ],
-    products:{low:['Vatika Enriched Coconut Oil (₹80)','Dove Intensive Repair Shampoo (₹120)','Garnier Fructis Mask (₹200)'],
-              mid:['Mamaearth Argan Shampoo (₹350)','Streax Serum (₹300)','Biotique Bio Kelp Mask (₹450)'],
-              high:['Moroccanoil Treatment (₹2000)','Kérastase Nutritive Masque','OGX Argan Oil Shampoo']}
-  },
-  oily:{
-    title:'Oily Scalp Control Routine',
-    steps:[
-      {time:'Every 2 days',title:'Gentle Clarifying Wash',text:'Mild clarifying shampoo వాడండి. Scalp clean అవుతుంది. Over-washing avoid చేయండి — more oil produce అవుతుంది.'},
-      {time:'Week 1x',title:'Apple Cider Vinegar Rinse',text:'1 tbsp ACV + 1 cup water dilute చేసి final rinse గా వాడండి — scalp pH balance అవుతుంది.'},
-      {time:'Avoid',title:'Heavy Oils తగ్గించండి',text:'Coconut oil, castor oil scalp పై వాడకండి — ends కి మాత్రమే apply చేయండి.'},
-      {time:'Daily',title:'Diet & Hormones',text:'Oily, fried foods తగ్గించండి. Zinc-rich foods (pumpkin seeds, chickpeas) తినండి.'},
-    ],
-    products:{low:['Head & Shoulders Clean & Balanced (₹180)','Wow ACV Shampoo (₹350)','Tea Tree Oil (₹150)'],
-              mid:['Neutrogena Anti-Residue Shampoo (₹550)','Minimalist Salicylic Shampoo (₹400)','Biotique Fresh Neem Shampoo (₹200)'],
-              high:['Vichy Dercos Anti-Dandruff (₹800)','Ducray Squanorm Shampoo','Kérastase Specifique Shampoo']}
-  },
-  growth:{
-    title:'Hair Growth Routine',
-    steps:[
-      {time:'Week 3x',title:'Scalp Massage with Growth Oils',text:'Castor oil (ricinoleic acid) + Rosemary oil 5 drops కలిపి 10 mins scalp massage చేయండి. Blood circulation పెరుగుతుంది.'},
-      {time:'Daily',title:'Biotin & Protein Diet',text:'Eggs, chicken, lentils, spinach తినండి. Biotin tablets (Doctor advice తో) 2500mcg/day consider చేయండి.'},
-      {time:'Week 1x',title:'Protein Mask',text:'Egg + Yogurt mask 30 mins — protein hair shaft strengthen చేస్తుంది, breakage తగ్గుతుంది.'},
-      {time:'Always',title:'Protective Styling',text:'Tight hairstyles avoid చేయండి. Satin pillow cover వాడండి — friction తగ్గుతుంది.'},
-    ],
-    products:{low:['Castor Oil (₹120)','Rosemary Essential Oil (₹150)','Himalaya Protein Shampoo (₹100)'],
-              mid:['Indulekha Bringha Oil (₹450)','Minimalist Redensyl 3% Serum (₹699)','Mamaearth Onion Hair Mask (₹350)'],
-              high:['The Ordinary Multi-Peptide Serum (₹1800)','Kérastase Chroma Absolu','Nioxin System Kit']}
-  },
-  fall: {
-    title:'Hair Fall Control Routine',
-    steps:[
-      {time:'Week 2-3x',title:'Oil Massage',text:'Castor oil + Coconut oil కలిపి (1:2 ratio) scalp massage చేయండి. 30 నిమిషాలు ఉంచి wash చేయండి.'},
-      {time:'Daily',title:'Onion Juice (Optional)',text:'Onion juice scalp కి apply చేసి 15 mins ఉంచి wash చేయండి. Results 4-6 weeks లో కనిపిస్తాయి.'},
-      {time:'Daily',title:'Diet',text:'Protein, Iron, Biotin rich foods తినండి — eggs, spinach, nuts, lentils. Water 3L/day.'},
-      {time:'Avoid',title:'Heat Styling తగ్గించండి',text:'Hair dryer, straightener తక్కువగా వాడండి. Towel తో rough drying avoid చేయండి.'},
+      {time:'Week 2-3x',title:'Oil Massage',text:'Castor oil + Coconut oil (1:2) scalp massage చేయండి. 30 mins ఉంచి wash చేయండి.'},
+      {time:'Daily',title:'Onion Juice',text:'Onion juice scalp కి apply చేసి 15 mins ఉంచి wash చేయండి. Results 4-6 weeks లో.'},
+      {time:'Daily',title:'Diet',text:'Protein, Iron, Biotin rich foods — eggs, spinach, nuts. Water 3L/day.'},
+      {time:'Avoid',title:'Heat తగ్గించండి',text:'Hair dryer, straightener తక్కువగా వాడండి.'}
     ],
     products:{low:['Parachute Coconut Oil (₹80)','Clinic Plus Shampoo (₹80)','Vatika Hair Oil (₹120)'],
               mid:['WOW Onion Shampoo (₹350)','Indulekha Bringha Oil (₹450)','Minimalist Peptide Serum (₹600)'],
-              high:['Kérastase Bain Stimuliste (₹2000)','Biotique Bio Kelp Shampoo','Dermalogica Hair Growth']}
-  },
-  dandruff:{
-    title:'Dandruff Control Routine',
+              high:['Kérastase Bain Stimuliste (₹2000)','Biotique Bio Kelp Shampoo','Dermalogica Hair Growth']}},
+  dry:{title:'Dry & Frizzy Hair Routine',
     steps:[
-      {time:'Week 2-3x',title:'Anti-Dandruff Shampoo',text:'Ketoconazole 2% shampoo (Nizoral/Ketomac) వాడండి. 5 mins scalp పై ఉంచాకే wash చేయండి.'},
-      {time:'Week 1x',title:'Tea Tree Oil',text:'Coconut oil లో tea tree oil 5-10 drops కలిపి scalp massage చేయండి — anti-fungal effect.'},
-      {time:'Daily',title:'Avoid Triggers',text:'Stress తగ్గించండి. Oily food తక్కువగా తినండి. Pillow cover frequently wash చేయండి.'},
-      {time:'Always',title:'Cold Water Rinse',text:'Hair wash చేసేటప్పుడు last rinse cold water తో చేయండి — scalp pH balance అవుతుంది.'},
+      {time:'Week 2-3x',title:'Deep Conditioning',text:'Coconut oil + Honey mask — 30 mins apply చేసి warm towel wrap చేయండి.'},
+      {time:'Wash Day',title:'Moisturizing Shampoo',text:'Sulfate-free shampoo వాడండి. Harsh sulfates avoid చేయండి.'},
+      {time:'After Wash',title:'Leave-in Conditioner',text:'Damp hair పై leave-in conditioner apply చేయండి. Air dry prefer చేయండి.'},
+      {time:'Daily',title:'Hydration',text:'రోజు 3L water తాగండి. Omega-3 rich foods తినండి.'}
+    ],
+    products:{low:['Vatika Coconut Oil (₹80)','Dove Repair Shampoo (₹120)','Garnier Fructis Mask (₹200)'],
+              mid:['Mamaearth Argan Shampoo (₹350)','Streax Serum (₹300)','Biotique Bio Kelp Mask (₹450)'],
+              high:['Moroccanoil Treatment (₹2000)','OGX Argan Oil Shampoo','Kérastase Nutritive']}},
+  oily:{title:'Oily Scalp Control Routine',
+    steps:[
+      {time:'Every 2 days',title:'Clarifying Wash',text:'Mild clarifying shampoo వాడండి. Over-washing avoid చేయండి.'},
+      {time:'Week 1x',title:'ACV Rinse',text:'1 tbsp Apple Cider Vinegar + 1 cup water dilute చేసి final rinse గా వాడండి.'},
+      {time:'Avoid',title:'Heavy Oils తగ్గించండి',text:'Coconut oil scalp పై వాడకండి — ends కి మాత్రమే apply చేయండి.'},
+      {time:'Daily',title:'Diet',text:'Oily, fried foods తగ్గించండి. Zinc-rich foods తినండి.'}
+    ],
+    products:{low:['Head & Shoulders (₹180)','WOW ACV Shampoo (₹350)','Tea Tree Oil (₹150)'],
+              mid:['Neutrogena Anti-Residue (₹550)','Minimalist Salicylic Shampoo (₹400)','Biotique Neem Shampoo (₹200)'],
+              high:['Vichy Dercos (₹800)','Ducray Squanorm','Kérastase Specifique']}},
+  dandruff:{title:'Dandruff Control Routine',
+    steps:[
+      {time:'Week 2-3x',title:'Anti-Dandruff Shampoo',text:'Ketoconazole 2% shampoo (Nizoral/Ketomac) వాడండి. 5 mins scalp పై ఉంచి wash చేయండి.'},
+      {time:'Week 1x',title:'Tea Tree Oil',text:'Coconut oil లో tea tree oil 5-10 drops కలిపి scalp massage చేయండి.'},
+      {time:'Daily',title:'Avoid Triggers',text:'Stress తగ్గించండి. Pillow cover frequently wash చేయండి.'},
+      {time:'Always',title:'Cold Water Rinse',text:'Last rinse cold water తో చేయండి — scalp pH balance అవుతుంది.'}
     ],
     products:{low:['Nizoral Shampoo (₹250)','Head & Shoulders (₹180)','Neem oil (₹100)'],
-              mid:['Selsun Blue (₹400)','WOW Apple Cider Shampoo (₹350)','Mamaearth Tea Tree Shampoo (₹300)'],
-              high:['Ducray Squanorm (₹800)','SVR Sebiaclear Shampoo','Philip Kingsley Flaky Itchy Scalp']}
-  },
+              mid:['Selsun Blue (₹400)','WOW Apple Cider Shampoo (₹350)','Mamaearth Tea Tree (₹300)'],
+              high:['Ducray Squanorm (₹800)','SVR Sebiaclear Shampoo','Philip Kingsley Flaky']}},
+  growth:{title:'Hair Growth Routine',
+    steps:[
+      {time:'Week 3x',title:'Growth Oil Massage',text:'Castor oil + Rosemary oil 5 drops కలిపి 10 mins scalp massage చేయండి.'},
+      {time:'Daily',title:'Protein Diet',text:'Eggs, chicken, lentils, spinach తినండి. Biotin supplements consider చేయండి.'},
+      {time:'Week 1x',title:'Protein Mask',text:'Egg + Yogurt mask 30 mins — protein hair strengthen చేస్తుంది.'},
+      {time:'Always',title:'Protective Styling',text:'Tight hairstyles avoid చేయండి. Satin pillow cover వాడండి.'}
+    ],
+    products:{low:['Castor Oil (₹120)','Rosemary Essential Oil (₹150)','Himalaya Protein Shampoo (₹100)'],
+              mid:['Indulekha Bringha Oil (₹450)','Minimalist Redensyl Serum (₹699)','Mamaearth Onion Hair Mask (₹350)'],
+              high:['The Ordinary Multi-Peptide Serum (₹1800)','Kérastase Chroma','Nioxin System Kit']}}
 };
 
-function showHairRoutine(){
-  const routine = HAIR_ROUTINES[hairProb] || HAIR_ROUTINES['fall'];
-  const prods = routine.products[hairBudget];
-  const panel = document.getElementById('hairResults');
-  document.getElementById('hairEmpty').style.display='none';
-  document.querySelectorAll('#hairResults .routine-card, #hairResults .product-card').forEach(c=>c.remove());
-
-  const rc=document.createElement('div');rc.className='routine-card show';
-  rc.innerHTML=`<h3>🗓️ ${routine.title}</h3>${routine.steps.map(s=>`
-    <div class="routine-step">
-      <span class="rs-time">${s.time}</span>
-      <div class="rs-text"><h4>${s.title}</h4><p>${s.text}</p></div>
-    </div>`).join('')}`;
-  panel.appendChild(rc);
-
-  const pc=document.createElement('div');pc.className='product-card show';
-  pc.innerHTML=`<h3>🛒 Recommended Products (${hairBudget==='low'?'Budget':'Mid-range'} picks)</h3>
-    ${prods.map(p=>`<div class="prod-item">
-      <div class="prod-left"><h4>${p.split('(')[0].trim()}</h4><p>${p.match(/\((.+)\)/)?.[1]||''}</p></div>
-      <button class="buy-btn" onclick="window.open('https://www.amazon.in/s?k=${encodeURIComponent(p.split('(')[0].trim())}','_blank')">Buy →</button>
-    </div>`).join('')}
-    <div class="ad-zone" style="margin-top:14px">Advertisement — Google AdSense</div>`;
-  panel.appendChild(pc);
-}
-
-// ── SKIN ROUTINES ──
-const SKIN_DATA = {
+var SKIN={
+  oily_acne:{
+    steps:[
+      {time:'Morning',title:'Cleanser',text:'Salicylic acid face wash వాడండి — CeraVe, Minimalist లేదా Mamaearth Tea Tree.'},
+      {time:'Morning',title:'Toner',text:'Niacinamide toner apply చేయండి — pores తగ్గిస్తుంది, oil control చేస్తుంది.'},
+      {time:'Morning',title:'Moisturizer + SPF',text:'Oil-free moisturizer + SPF 30+ తప్పనిసరి.'},
+      {time:'Night',title:'BHA/Retinol',text:'Salicylic acid serum లేదా Retinol (0.025%) — acne scars fade అవుతాయి.'}
+    ],
+    products:{low:['Cetaphil Face Wash (₹250)','Garnier BHA Toner (₹200)','Neutrogena SPF 50 (₹350)'],
+              mid:['CeraVe SA Cleanser (₹600)','Minimalist Niacinamide (₹400)','Dot & Key SPF (₹600)'],
+              high:['La Roche-Posay Effaclar (₹1200)','Paula Choice BHA (₹2500)','Drunk Elephant C-Firma']}},
+  dry_glow:{
+    steps:[
+      {time:'Morning',title:'Hydrating Cleanser',text:'Cream-based cleanser వాడండి. Harsh foaming cleansers avoid చేయండి.'},
+      {time:'Morning',title:'Hyaluronic Acid',text:'Damp skin పై HA serum apply చేయండి — deep hydration.'},
+      {time:'Morning',title:'Rich Moisturizer + SPF',text:'Ceramide-rich moisturizer వాడండి. SPF 30+ must.'},
+      {time:'Night',title:'Facial Oil',text:'Rosehip oil లేదా heavy night cream apply చేయండి.'}
+    ],
+    products:{low:['Dove Face Wash (₹150)','Himalaya Moisturizer (₹150)','Lotus SPF 40 (₹300)'],
+              mid:['Minimalist HA Serum (₹400)','Simple Moisturizer (₹400)','Re equil Sunscreen (₹595)'],
+              high:['The Ordinary HA + B5 (₹1500)','CeraVe Moisturising Cream (₹1200)','Bioderma Atoderm']}},
+  oily_glow:{
+    steps:[
+      {time:'Morning',title:'Gentle Cleanser',text:'Foaming cleanser వాడండి — oily skin కి twice daily wash OK.'},
+      {time:'Morning',title:'Vitamin C Serum',text:'10% Vitamin C serum — glow మరియు protection.'},
+      {time:'Morning',title:'Light Moisturizer + SPF',text:'Gel-based moisturizer + SPF 50.'},
+      {time:'Night',title:'Niacinamide',text:'Niacinamide 10% serum — oil control మరియు glow.'}
+    ],
+    products:{low:['Garnier Bright Wash (₹200)','Lakme Vit C Serum (₹350)','Lotus SPF 50 (₹400)'],
+              mid:['Minimalist Vitamin C (₹549)','Dot & Key Serum (₹695)','Re equil SPF (₹695)'],
+              high:['Skinceuticals CE Ferulic','Paula Choice Vitamin C','Drunk Elephant']}},
   combo_acne:{
     steps:[
-      {time:'Morning',title:'Gentle Foam Cleanser',text:'T-zone (forehead, nose, chin) oily. Cheeks dry. Gentle foaming cleanser వాడండి — neither too harsh nor too mild.'},
-      {time:'Morning',title:'Niacinamide Serum',text:'Niacinamide 10% serum — T-zone oil control చేస్తుంది, dry areas సరిగా moisturize చేస్తుంది.'},
-      {time:'Morning',title:'Lightweight Moisturizer + SPF',text:'Gel-based moisturizer entire face కి. T-zone కి less product, cheeks కి more.'},
-      {time:'Night',title:'Zone-specific treatment',text:'T-zone: Salicylic acid spot treatment. Cheeks: Hydrating serum. Targeted approach works best for combination skin.'},
+      {time:'Morning',title:'Gentle Foam Cleanser',text:'T-zone oily, cheeks dry. Gentle foaming cleanser వాడండి.'},
+      {time:'Morning',title:'Niacinamide Serum',text:'T-zone oil control చేస్తుంది, dry areas hydrate చేస్తుంది.'},
+      {time:'Morning',title:'Lightweight Moisturizer',text:'Gel-based moisturizer + SPF.'},
+      {time:'Night',title:'Zone Treatment',text:'T-zone: Salicylic acid. Cheeks: Hydrating serum.'}
     ],
-    products:{low:['CeraVe Foaming Cleanser (₹600)','Garnier BHA Toner (₹200)','Neutrogena Light Gel (₹300)'],
-              mid:['Minimalist Niacinamide 10% (₹349)','Dot & Key Water Drench Moisturizer (₹595)','Re'equil Sunscreen (₹595)'],
-              high:['La Roche-Posay Effaclar Mat (₹1500)','The Inkey List Hyaluronic Acid','Paula's Choice BHA 2%']}
-  },
-  combo_dark:{
-    steps:[
-      {time:'Morning',title:'Vitamin C Cleanser',text:'Brightening cleanser వాడండి — dark spots fade అవుతాయి.'},
-      {time:'Morning',title:'Vitamin C Serum',text:'10% L-Ascorbic Acid serum apply చేయండి. Dark spots మరియు hyperpigmentation కి most effective.'},
-      {time:'Morning',title:'SPF 50+ తప్పనిసరి',text:'Sun protection లేకుండా Vitamin C work చేయదు. High SPF must.'},
-      {time:'Night',title:'Alpha Arbutin + Retinol',text:'Alpha Arbutin dark spots lighten చేస్తుంది. Retinol cell turnover పెంచుతుంది.'},
-    ],
-    products:{low:['Garnier Bright & Matte Wash (₹200)','Lakme 9-5 Vit C Serum (₹350)','Lotus SPF 50 (₹400)'],
-              mid:['Minimalist Vitamin C 10% (₹549)','Dot & Key Vitamin C Serum (₹695)','Re'equil SPF 60 (₹695)'],
-              high:['Skinceuticals CE Ferulic (₹8000)','The Ordinary Vitamin C Suspension','Paula's Choice Vitamin C']}
-  },
-  combo_glow:{
-    steps:[
-      {time:'Morning',title:'Hydrating Toner',text:'Essence lేదా toner with hyaluronic acid — combination skin balance చేస్తుంది.'},
-      {time:'Morning',title:'Glow Serum',text:'Niacinamide + Vitamin C blend overall glow ఇస్తుంది.'},
-      {time:'Morning',title:'Moisturizer + SPF',text:'Glass skin కోసం good hydration + high SPF must-have combo.'},
-      {time:'Night',title:'Sleeping Mask',text:'Weekly 2x sleeping mask apply చేయండి — wake up with glowing skin.'},
-    ],
-    products:{low:['Simple Kind to Skin Toner (₹200)','Pond's Gold Serum (₹300)','Lotus SPF 40 (₹300)'],
-              mid:['Minimalist HA Serum (₹400)','Good Vibes Vitamin C Serum (₹399)','Derma Co SPF (₹499)'],
-              high:['SK-II Facial Treatment Essence (₹8000)','Tatcha The Dewy Skin Cream','Sulwhasoo First Care Serum']}
-  },
+    products:{low:['CeraVe Foaming (₹600)','Garnier BHA Toner (₹200)','Neutrogena Light Gel (₹300)'],
+              mid:['Minimalist Niacinamide (₹349)','Dot & Key Moisturizer (₹595)','Re equil Sunscreen (₹595)'],
+              high:['La Roche-Posay Effaclar (₹1500)','The Inkey List HA','Paula Choice BHA 2%']}},
   normal_glow:{
     steps:[
-      {time:'Morning',title:'Gentle Cleanser',text:'Normal skin needs only mild cleanser — over-washing disturbs skin barrier.'},
-      {time:'Morning',title:'Antioxidant Serum',text:'Vitamin C or Niacinamide serum for protection and glow.'},
-      {time:'Morning',title:'Lightweight Moisturizer',text:'Normal skin needs less — light gel moisturizer + SPF 30.'},
-      {time:'Night',title:'Retinol (Start Slow)',text:'Retinol 0.025% twice a week — skin texture improve అవుతుంది.'},
+      {time:'Morning',title:'Gentle Cleanser',text:'Normal skin needs mild cleanser — over-washing avoid చేయండి.'},
+      {time:'Morning',title:'Antioxidant Serum',text:'Vitamin C or Niacinamide serum.'},
+      {time:'Morning',title:'Light Moisturizer',text:'Light gel moisturizer + SPF 30.'},
+      {time:'Night',title:'Retinol',text:'Retinol 0.025% twice a week — skin texture improve అవుతుంది.'}
     ],
     products:{low:['Dove Face Wash (₹150)','Garnier Serum (₹200)','Lotus SPF 30 (₹280)'],
               mid:['Simple Moisturizer (₹400)','Minimalist Vitamin C (₹549)','Dot & Key SPF (₹595)'],
-              high:['Tatcha The Water Cream','The Ordinary Retinol 0.5%','Drunk Elephant B-Hydra']}
-  },
-  oily_acne:{
-    steps:[
-      {time:'Morning',title:'Cleanser',text:'Salicylic acid face wash వాడండి — CeraVe, Minimalist లేదా Mamaearth Tea Tree face wash.'},
-      {time:'Morning',title:'Toner',text:'Niacinamide toner apply చేయండి — pores తగ్గిస్తుంది, oil control చేస్తుంది.'},
-      {time:'Morning',title:'Moisturizer + SPF',text:'Oil-free, non-comedogenic moisturizer + SPF 30+ తప్పనిసరి.'},
-      {time:'Night',title:'Retinol / BHA',text:'Salicylic acid serum లేదా Retinol (0.025%) నెమ్మదిగా start చేయండి — acne scars fade అవుతాయి.'},
-    ],
-    products:{low:['Cetaphil Face Wash (₹250)','Garnier BHA Toner (₹200)','Neutrogena SPF 50 (₹350)'],
-              mid:['CeraVe SA Cleanser (₹600)','Minimalist Niacinamide Serum (₹400)','Dot & Key SPF (₹600)'],
-              high:['La Roche-Posay Effaclar (₹1200)','Paula\'s Choice BHA (₹2500)','Drunk Elephant C-Firma']}
-  },
-  dry_glow:{
-    steps:[
-      {time:'Morning',title:'Hydrating Cleanser',text:'Cream-based, non-foaming cleanser వాడండి. Harsh foaming cleansers avoid చేయండి.'},
-      {time:'Morning',title:'Hyaluronic Acid Serum',text:'Damp skin పై Hyaluronic Acid serum apply చేయండి — deep hydration.'},
-      {time:'Morning',title:'Rich Moisturizer + SPF',text:'Ceramide-rich moisturizer వాడండి. SPF 30+ forget చేయవద్దు.'},
-      {time:'Night',title:'Facial Oil లేదా Night Cream',text:'Rosehip oil లేదా heavy night cream apply చేయండి — skin repairs overnight.'},
-    ],
-    products:{low:['Dove Face Wash (₹150)','Himalaya Moisturizer (₹150)','Lotus SPF 40 (₹300)'],
-              mid:['Minimalist HA Serum (₹400)','Simple Kind to Skin Moisturizer (₹400)','Re\'equil Mattifying Sunscreen (₹595)'],
-              high:['The Ordinary HA + B5 (₹1500)','CeraVe Moisturising Cream (₹1200)','Bioderma Atoderm']}
-  },
+              high:['Tatcha The Water Cream','The Ordinary Retinol','Drunk Elephant B-Hydra']}}
 };
 
-function showSkinRoutine(){
-  const key=`${skinType}_${skinConcern}`;
-  const data=SKIN_DATA[key]||SKIN_DATA['oily_acne'];
-  const prods=data.products[skinBudget];
-  const panel=document.getElementById('skinResults');
-  document.getElementById('skinEmpty').style.display='none';
-  document.querySelectorAll('#skinResults .routine-card, #skinResults .product-card').forEach(c=>c.remove());
+var GYM={
+  loss_beginner:{title:'Weight Loss — Beginner (4 Days/Week)',
+    days:[
+      {day:'Day 1 — Cardio',exercises:['Brisk Walk/Jog: 30 mins','Jumping Jacks: 3x20','Burpees: 3x10','Plank: 3x30 sec']},
+      {day:'Day 2 — Upper Body',exercises:['Push-ups: 3x10','Dumbbell Rows: 3x12','Shoulder Press: 3x12','Tricep Dips: 3x10']},
+      {day:'Day 3 — Rest/Yoga',exercises:['Light stretching','Yoga 30 mins']},
+      {day:'Day 4 — Lower Body',exercises:['Squats: 3x15','Lunges: 3x12','Glute Bridges: 3x15','Calf Raises: 3x20']}
+    ]},
+  muscle_beginner:{title:'Muscle Gain — Beginner (4 Days/Week)',
+    days:[
+      {day:'Day 1 — Chest & Triceps',exercises:['Bench Press: 4x8','Incline DB Press: 3x10','Cable Fly: 3x12','Tricep Pushdown: 3x12']},
+      {day:'Day 2 — Back & Biceps',exercises:['Pull-ups: 4x8','Barbell Row: 3x10','Cable Row: 3x12','Bicep Curl: 3x12']},
+      {day:'Day 3 — Rest',exercises:['Active Recovery','Light walking']},
+      {day:'Day 4 — Legs & Shoulders',exercises:['Squats: 4x8','Romanian Deadlift: 3x10','Overhead Press: 3x10','Lateral Raise: 3x15']}
+    ]},
+  fit_beginner:{title:'General Fitness — Beginner (3 Days/Week)',
+    days:[
+      {day:'Day 1 — Full Body A',exercises:['Goblet Squat: 3x12','DB Row: 3x12','Push-ups: 3x10','Plank: 3x30sec','Walk: 15 min']},
+      {day:'Day 2 — Rest',exercises:['Light walk 20 min','Stretching']},
+      {day:'Day 3 — Full Body B',exercises:['Deadlift: 3x10','Bench Press: 3x10','Lat Pulldown: 3x12','Lunges: 3x10']}
+    ]},
+  home_beginner:{title:'Home Workout — No Equipment (4 Days/Week)',
+    days:[
+      {day:'Day 1 — Upper Body',exercises:['Push-ups: 4x15','Diamond Push-ups: 3x10','Tricep Dips (chair): 3x12','Superman: 3x15']},
+      {day:'Day 2 — Lower Body',exercises:['Squats: 4x20','Jump Squats: 3x15','Lunges: 3x15 each','Glute Bridge: 4x20']},
+      {day:'Day 3 — Rest',exercises:['Yoga or stretching']},
+      {day:'Day 4 — HIIT',exercises:['Burpees: 4x10','Mountain Climbers: 4x20','Jump Jacks: 4x30','Plank: 4x45sec']}
+    ]},
+  loss_intermediate:{title:'Weight Loss — Intermediate (4 Days/Week)',
+    days:[
+      {day:'Day 1 — HIIT Cardio',exercises:['Sprints 10x (30sec on/off)','Jump Rope: 3x2 min','Mountain Climbers: 4x20','Box Jumps: 3x12']},
+      {day:'Day 2 — Upper Body',exercises:['Incline Bench: 4x10','Pull-ups: 4x8','Arnold Press: 3x12','Cable Rows: 3x12']},
+      {day:'Day 3 — Rest',exercises:['Active recovery','Stretching 30 mins']},
+      {day:'Day 4 — Lower Body',exercises:['Barbell Squats: 4x10','Romanian DL: 3x12','Walking Lunges: 3x16','Hanging Leg Raises: 3x15']}
+    ]},
+  muscle_intermediate:{title:'Muscle Gain — Intermediate (4 Days/Week)',
+    days:[
+      {day:'Day 1 — Chest & Triceps',exercises:['Flat Bench: 4x6','Incline DB: 4x8','Cable Fly: 3x12','Close Grip Bench: 3x10']},
+      {day:'Day 2 — Back & Biceps',exercises:['Weighted Pull-ups: 4x6','Pendlay Row: 4x8','Cable Row: 3x12','Preacher Curl: 4x10']},
+      {day:'Day 3 — Rest',exercises:['Light cardio 20 min','Full body stretch']},
+      {day:'Day 4 — Legs & Shoulders',exercises:['Squats: 5x5','Leg Press: 3x12','Romanian DL: 4x10','OHP: 4x8']}
+    ]},
+  loss_advanced:{title:'Weight Loss — Advanced (5 Days/Week)',
+    days:[
+      {day:'Day 1 — Push',exercises:['Bench Press: 5x5','Weighted Dips: 4x10','Cable Fly: 3x15','OHP: 4x8','Tricep Pushdown: 4x12']},
+      {day:'Day 2 — Pull',exercises:['Weighted Pull-ups: 5x6','Barbell Row: 4x8','Face Pulls: 3x15','Barbell Curl: 4x10']},
+      {day:'Day 3 — HIIT',exercises:['Kettlebell Swings: 4x15','Box Jumps: 4x10','Battle Ropes: 4x30sec']},
+      {day:'Day 4 — Legs',exercises:['Squats: 5x5','Romanian DL: 4x10','Leg Press: 3x15','Calf Raises: 4x20']},
+      {day:'Day 5 — Conditioning',exercises:['Rowing Machine: 20 min','Core circuit x4 rounds']}
+    ]},
+  muscle_advanced:{title:'Muscle Gain — Advanced PPL (6 Days/Week)',
+    days:[
+      {day:'Push Day',exercises:['Bench Press: 5x5','OHP: 4x6','Incline Press: 4x8','Lateral Raise: 4x15','Tricep: 4x12']},
+      {day:'Pull Day',exercises:['Weighted Pull-ups: 5x6','Pendlay Row: 5x5','Face Pulls: 4x15','Hammer Curl: 4x10']},
+      {day:'Leg Day',exercises:['Squat: 5x5','Front Squat: 3x6','Romanian DL: 4x8','Leg Press: 3x15']},
+      {day:'Repeat PPL',exercises:['Rotate Push/Pull/Legs','Deload every 8 weeks','Track progressive overload']}
+    ]}
+};
 
-  const rc=document.createElement('div');rc.className='routine-card show';
-  rc.innerHTML=`<h3>🧴 Skin Care Routine</h3>${data.steps.map(s=>`
-    <div class="routine-step"><span class="rs-time">${s.time}</span>
-    <div class="rs-text"><h4>${s.title}</h4><p>${s.text}</p></div></div>`).join('')}`;
+function showHairRoutine(){
+  var routine=HAIR[hairProb]||HAIR['fall'];
+  var prods=routine.products[hairBudget]||routine.products['low'];
+  var panel=document.getElementById('hairResults');
+  document.getElementById('hairEmpty').style.display='none';
+  panel.querySelectorAll('.routine-card,.product-card').forEach(function(c){c.remove();});
+  var rc=document.createElement('div');
+  rc.className='routine-card show';
+  rc.innerHTML='<h3>'+routine.title+'</h3>'+routine.steps.map(function(s){
+    return '<div class="routine-step"><span class="rs-time">'+s.time+'</span><div class="rs-text"><h4>'+s.title+'</h4><p>'+s.text+'</p></div></div>';
+  }).join('');
   panel.appendChild(rc);
-
-  const pc=document.createElement('div');pc.className='product-card show';
-  pc.innerHTML=`<h3>🛒 Recommended Products</h3>
-    ${prods.map(p=>`<div class="prod-item">
-      <div class="prod-left"><h4>${p.split('(')[0].trim()}</h4><p>${p.match(/\((.+)\)/)?.[1]||''}</p></div>
-      <button class="buy-btn" onclick="window.open('https://www.amazon.in/s?k=${encodeURIComponent(p.split('(')[0].trim())}','_blank')">Buy →</button>
-    </div>`).join('')}
-    <div class="ad-zone" style="margin-top:14px">Advertisement — Google AdSense</div>`;
+  var pc=document.createElement('div');
+  pc.className='product-card show';
+  pc.innerHTML='<h3>Recommended Products</h3>'+prods.map(function(p){
+    var name=p.split('(')[0].trim();
+    var price=p.match(/\((.+)\)/)?p.match(/\((.+)\)/)[1]:'';
+    return '<div class="prod-item"><div class="prod-left"><h4>'+name+'</h4><p>'+price+'</p></div><button class="buy-btn" onclick="window.open(\'https://www.amazon.in/s?k='+encodeURIComponent(name)+'\',\'_blank\')">Buy</button></div>';
+  }).join('')+'<div class="ad-zone">Advertisement</div>';
   panel.appendChild(pc);
 }
 
-// ── GYM ROUTINES ──
-const GYM_PLANS = {
-  loss_intermediate:{
-    title:'Weight Loss — Intermediate (4 Days/Week)',
-    days:[
-      {day:'Day 1 — HIIT Cardio',exercises:['Sprints 10x (30sec on / 30sec off)','Jump Rope: 3×2 min','Mountain Climbers: 4×20','Box Jumps: 3×12','Cool-down walk: 10 min']},
-      {day:'Day 2 — Upper Body',exercises:['Incline Bench Press: 4×10','Pull-ups: 4×8','Arnold Press: 3×12','Cable Rows: 3×12','Tricep Dips: 3×12']},
-      {day:'Day 3 — Rest + Yoga',exercises:['Active recovery','Stretching 30 mins','Focus on flexibility']},
-      {day:'Day 4 — Lower Body + Core',exercises:['Barbell Squats: 4×10','Romanian Deadlift: 3×12','Walking Lunges: 3×16','Hanging Leg Raises: 3×15','Russian Twists: 3×20']},
-    ]
-  },
-  loss_advanced:{
-    title:'Weight Loss — Advanced (5 Days/Week)',
-    days:[
-      {day:'Day 1 — Push',exercises:['Barbell Bench Press: 5×5','Weighted Dips: 4×10','Cable Fly: 3×15','OHP: 4×8','Tricep Pushdown: 4×12']},
-      {day:'Day 2 — Pull',exercises:['Weighted Pull-ups: 5×6','Barbell Row: 4×8','Face Pulls: 3×15','Barbell Curl: 4×10','Hammer Curl: 3×12']},
-      {day:'Day 3 — HIIT',exercises:['Prowler Push/Sled: 8 rounds','Kettlebell Swings: 4×15','Box Jumps: 4×10','Battle Ropes: 4×30sec']},
-      {day:'Day 4 — Legs',exercises:['Squats: 5×5','Front Squats: 3×8','Leg Press: 3×15','Romanian DL: 4×10','Calf Raises: 4×20']},
-      {day:'Day 5 — Conditioning',exercises:['Rowing Machine: 20 min','Core circuit × 4 rounds','Mobility work']},
-    ]
-  },
-  muscle_intermediate:{
-    title:'Muscle Gain — Intermediate (4 Days/Week)',
-    days:[
-      {day:'Day 1 — Chest & Triceps',exercises:['Flat Bench: 4×6','Incline DB: 4×8','Cable Fly: 3×12','Close Grip Bench: 3×10','Overhead Tricep: 3×12']},
-      {day:'Day 2 — Back & Biceps',exercises:['Weighted Pull-ups: 4×6','Pendlay Row: 4×8','Cable Row: 3×12','Preacher Curl: 4×10','Cable Curl: 3×15']},
-      {day:'Day 3 — Rest',exercises:['Light cardio 20 min','Full body stretch']},
-      {day:'Day 4 — Legs & Shoulders',exercises:['Squats: 5×5','Leg Press: 3×12','Romanian DL: 4×10','OHP: 4×8','Lateral + Front Raise: 3×15']},
-    ]
-  },
-  muscle_advanced:{
-    title:'Muscle Gain — Advanced (5-6 Days/Week PPL)',
-    days:[
-      {day:'Push Day',exercises:['Bench Press: 5×5','OHP: 4×6','Incline Press: 4×8','Lateral Raise: 4×15','Tricep work: 4×12']},
-      {day:'Pull Day',exercises:['Weighted Pull-ups: 5×6','Pendlay Row: 5×5','Face Pulls: 4×15','Hammer Curl: 4×10','Reverse Curl: 3×12']},
-      {day:'Leg Day',exercises:['Squat: 5×5','Front Squat: 3×6','Romanian DL: 4×8','Leg Press: 3×15','Calf Raises: 5×20']},
-      {day:'Repeat PPL',exercises:['Rotate Push/Pull/Legs every day','Deload every 8 weeks','Track progressive overload every session']},
-    ]
-  },
-  fit_beginner:{
-    title:'General Fitness — Beginner (3 Days/Week)',
-    days:[
-      {day:'Day 1 — Full Body A',exercises:['Goblet Squat: 3×12','DB Row: 3×12','Push-ups: 3×10','Plank: 3×30sec','Bike/Walk: 15 min']},
-      {day:'Day 2 — Rest',exercises:['Light walk 20 min','Stretching']},
-      {day:'Day 3 — Full Body B',exercises:['Deadlift: 3×10','Bench Press: 3×10','Lat Pulldown: 3×12','Lunges: 3×10','Core work: 10 min']},
-    ]
-  },
-  home_beginner:{
-    title:'Home Workout — No Equipment (4 Days/Week)',
-    days:[
-      {day:'Day 1 — Upper Body',exercises:['Push-ups: 4×15','Diamond Push-ups: 3×10','Pike Push-ups: 3×10','Tricep Dips (chair): 3×12','Superman: 3×15']},
-      {day:'Day 2 — Lower Body',exercises:['Squats: 4×20','Jump Squats: 3×15','Lunges: 3×15 each','Glute Bridge: 4×20','Calf Raises: 4×25']},
-      {day:'Day 3 — Rest',exercises:['Yoga or stretching']},
-      {day:'Day 4 — Full Body HIIT',exercises:['Burpees: 4×10','Mountain Climbers: 4×20','Jump Jacks: 4×30','High Knees: 4×30sec','Plank: 4×45sec']},
-    ]
-  },
-  loss_beginner:{
-    title:'Weight Loss — Beginner (4 Days/Week)',
-    days:[
-      {day:'Day 1 — Cardio',exercises:['Brisk Walk/Jog: 30 mins','Jumping Jacks: 3×20','Burpees: 3×10','Plank: 3×30 sec']},
-      {day:'Day 2 — Upper Body',exercises:['Push-ups: 3×10','Dumbbell Rows: 3×12','Shoulder Press: 3×12','Tricep Dips: 3×10']},
-      {day:'Day 3 — Rest/Yoga',exercises:['Light stretching','Yoga 30 mins']},
-      {day:'Day 4 — Lower Body',exercises:['Squats: 3×15','Lunges: 3×12','Glute Bridges: 3×15','Calf Raises: 3×20']},
-    ]
-  },
-  muscle_beginner:{
-    title:'Muscle Gain — Beginner (4 Days/Week)',
-    days:[
-      {day:'Day 1 — Chest & Triceps',exercises:['Bench Press: 4×8','Incline DB Press: 3×10','Cable Fly: 3×12','Tricep Pushdown: 3×12','Skull Crushers: 3×10']},
-      {day:'Day 2 — Back & Biceps',exercises:['Pull-ups/Lat Pulldown: 4×8','Barbell Row: 3×10','Cable Row: 3×12','Bicep Curl: 3×12','Hammer Curl: 3×10']},
-      {day:'Day 3 — Rest',exercises:['Active Recovery','Light walking']},
-      {day:'Day 4 — Legs & Shoulders',exercises:['Squats: 4×8','Romanian Deadlift: 3×10','Leg Press: 3×12','Overhead Press: 3×10','Lateral Raise: 3×15']},
-    ]
-  },
-};
-
-function showGymRoutine(){
-  const key=`${gymGoal}_${gymLevel}`;
-  const plan=GYM_PLANS[key]||GYM_PLANS['loss_beginner'];
-  const panel=document.getElementById('gymResults');
-  document.getElementById('gymEmpty').style.display='none';
-  document.querySelectorAll('#gymResults .routine-card').forEach(c=>c.remove());
-
-  const rc=document.createElement('div');rc.className='routine-card show';
-  rc.innerHTML=`<h3>💪 ${plan.title}</h3>
-    ${plan.days.map(d=>`
-    <div class="routine-step">
-      <span class="rs-time" style="white-space:normal;min-width:90px">${d.day}</span>
-      <div class="rs-text">
-        <ul style="padding-left:16px;margin:0">${d.exercises.map(e=>`<li style="font-size:13px;color:var(--body);margin-bottom:3px">${e}</li>`).join('')}</ul>
-      </div>
-    </div>`).join('')}
-    <div style="padding:14px;background:var(--cream2);border-radius:var(--rs);margin-top:14px;font-size:13px;color:var(--body)">
-      💡 <strong>Diet tip:</strong> Protein 1.6-2g/kg body weight రోజు తినండి. Chicken, eggs, dal, paneer good sources.
-    </div>
-    <div class="ad-zone" style="margin-top:14px">Advertisement — Google AdSense</div>`;
+function showSkinRoutine(){
+  var key=skinType+'_'+skinConcern;
+  var data=SKIN[key]||SKIN['oily_acne'];
+  var prods=data.products[skinBudget]||data.products['low'];
+  var panel=document.getElementById('skinResults');
+  document.getElementById('skinEmpty').style.display='none';
+  panel.querySelectorAll('.routine-card,.product-card').forEach(function(c){c.remove();});
+  var rc=document.createElement('div');
+  rc.className='routine-card show';
+  rc.innerHTML='<h3>Skin Care Routine</h3>'+data.steps.map(function(s){
+    return '<div class="routine-step"><span class="rs-time">'+s.time+'</span><div class="rs-text"><h4>'+s.title+'</h4><p>'+s.text+'</p></div></div>';
+  }).join('');
   panel.appendChild(rc);
+  var pc=document.createElement('div');
+  pc.className='product-card show';
+  pc.innerHTML='<h3>Recommended Products</h3>'+prods.map(function(p){
+    var name=p.split('(')[0].trim();
+    var price=p.match(/\((.+)\)/)?p.match(/\((.+)\)/)[1]:'';
+    return '<div class="prod-item"><div class="prod-left"><h4>'+name+'</h4><p>'+price+'</p></div><button class="buy-btn" onclick="window.open(\'https://www.amazon.in/s?k='+encodeURIComponent(name)+'\',\'_blank\')">Buy</button></div>';
+  }).join('')+'<div class="ad-zone">Advertisement</div>';
+  panel.appendChild(pc);
 }
 
+function showGymRoutine(){
+  var key=gymGoal+'_'+gymLevel;
+  var plan=GYM[key]||GYM['loss_beginner'];
+  var panel=document.getElementById('gymResults');
+  document.getElementById('gymEmpty').style.display='none';
+  panel.querySelectorAll('.routine-card').forEach(function(c){c.remove();});
+  var rc=document.createElement('div');
+  rc.className='routine-card show';
+  rc.innerHTML='<h3>'+plan.title+'</h3>'+plan.days.map(function(d){
+    return '<div class="routine-step"><span class="rs-time" style="white-space:normal;min-width:90px">'+d.day+'</span><div class="rs-text"><ul style="padding-left:16px;margin:0">'+d.exercises.map(function(e){return '<li style="font-size:13px;color:var(--body);margin-bottom:3px">'+e+'</li>';}).join('')+'</ul></div></div>';
+  }).join('')+'<div style="padding:14px;background:var(--cream2);border-radius:var(--rs);margin-top:14px;font-size:13px;color:var(--body)">Protein 1.6-2g/kg body weight రోజు తినండి. Chicken, eggs, dal, paneer good sources.</div><div class="ad-zone">Advertisement</div>';
+  panel.appendChild(rc);
+}
 </script>
 </body>
 </html>
-
