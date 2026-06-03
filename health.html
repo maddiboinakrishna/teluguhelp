@@ -523,25 +523,14 @@ function showGymRoutine(){
 else{localStorage.setItem("th_lang",lang);location.reload();}}
 </script>
 
-<script>);
-  var a=document.querySelector('[data-lang="'+lang+'"]');
-  if(a)a.classList.add('on');
-  if(typeof setLanguage==='function'){setLanguage(lang);}
-  else{setTimeout
-</script>
+
+
 
 <script>
-function setLang(btn, lang) {
-  document.querySelectorAll('.lang-pill').forEach(function(b){ b.classList.remove('on'); });
+function setLang(btn,lang){
+  document.querySelectorAll('.lang-pill').forEach(function(b){b.classList.remove('on');});
   btn.classList.add('on');
-  localStorage.setItem('th_lang', lang);
 }
-// Restore saved language pill on load
-document.addEventListener('DOMContentLoaded', function(){
-  var lang = localStorage.getItem('th_lang') || 'te';
-  var btn = document.querySelector('.lang-pill[onclick*="\'' + lang + '\'"]');
-  if(btn){ document.querySelectorAll('.lang-pill').forEach(function(b){ b.classList.remove('on'); }); btn.classList.add('on'); }
-});
 </script>
 </body>
 </html>
