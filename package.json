@@ -1,0 +1,21 @@
+{
+  "name": "teluguhelp",
+  "version": "1.0.0",
+  "description": "Telugu language help tools and calculators",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static site - no build step required'",
+    "dev": "npx serve .",
+    "lint": "echo 'No linter configured'"
+  },
+  "keywords": [
+    "telugu",
+    "tools",
+    "calculators"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}

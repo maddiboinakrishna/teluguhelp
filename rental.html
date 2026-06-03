@@ -87,6 +87,11 @@
     @media(max-width:860px){.main{grid-template-columns:1fr}.inp-panel{position:static}}
     @media(max-width:500px){.main,.state-table-wrap{padding-left:16px;padding-right:16px}.act-btns{flex-direction:column}}
   </style>
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 
 </head>
 <body>
@@ -217,7 +222,7 @@ function calcRental(){
   document.getElementById('stampSub').textContent=`${tenure} నెలల agreement | ${document.getElementById('rState').options[document.getElementById('rState').selectedIndex].text}`;
 
   document.getElementById('stampBreakdown').innerHTML=`
-    <div class="brow"><span class="brow-name">నెలసరి అద్దె</span><span class="brow-amt">${fmt(rent)}</span></div>
+    <div class="brow"><span class="brow-name">నెలస��ి అద్దె</span><span class="brow-amt">${fmt(rent)}</span></div>
     <div class="brow"><span class="brow-name">Security Deposit (${deposit} నెలలు)</span><span class="brow-amt">${fmt(depAmt)}</span></div>
     <div class="brow"><span class="brow-name">Agreement కాలపరిమితి</span><span class="brow-amt">${tenure} నెలలు</span></div>
     <div class="brow"><span class="brow-name">వార్షిక అద్దె</span><span class="brow-amt">${fmt(annualRent)}</span></div>
