@@ -286,18 +286,7 @@
       .monthly-amount { font-size: 38px; }
     }
   </style>
-<script src="/i18n.js">
 
-  // i18n language switch wrapper
-  function switchLang(lang) {
-    if (typeof setLanguage === 'function') {
-      setLanguage(lang);
-    } else {
-      localStorage.setItem('th_lang', lang);
-      location.reload();
-    }
-  }
-</script>
 </head>
 <body>
 
@@ -317,15 +306,15 @@
         <span class="logo-en">teluguhelp.in</span>
       </div>
     </a>
-    <a href="/" class="back-btn" data-i18n="common.back">← Home కి వెళ్ళు</a>
+    <a href="/" class="back-btn">← Home కి వెళ్ళు</a>
   </nav>
 </header>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="breadcrumb"><a href="/">Home</a><span>›</span> జీతం లెక్కలు</div>
-  <h1 data-i18n="salary.title">జీతం లెక్కలు — Salary Calculator</h1>
-  <p data-i18n="salary.subtitle">మీ CTC నుండి నెలసరి జీతం, PF, TDS అన్నీ తెలుగులో తెలుసుకోండి</p>
+  <h1>జీతం లెక్కలు — Salary Calculator</h1>
+  <p>మీ CTC నుండి నెలసరి జీతం, PF, TDS అన్నీ తెలుగులో తెలుసుకోండి</p>
 </div>
 
 <!-- MAIN -->
@@ -333,7 +322,7 @@
 
   <!-- LEFT: INPUT PANEL -->
   <div class="input-panel">
-    <h2 data-i18n="salary.inp.title">📝 మీ వివరాలు ఇవ్వండి</h2>
+    <h2>📝 మీ వివరాలు ఇవ్వండి</h2>
 
     <div class="field">
       <label>వార్షిక CTC (Annual CTC) <span>రూపాయలలో</span></label>
@@ -384,7 +373,7 @@
       </select>
     </div>
 
-    <button class="calc-btn" onclick="calculate()" data-i18n="salary.btn">లెక్కించండి →</button>
+    <button class="calc-btn" onclick="calculate()">లెక్కించండి →</button>
   </div>
 
   <!-- RIGHT: RESULTS -->
@@ -400,7 +389,7 @@
     <!-- Result card -->
     <div class="result-card" id="resultCard">
       <div class="monthly-big">
-        <div class="monthly-label" data-i18n="salary.result.label">నెలసరి జీతం (In-Hand)</div>
+        <div class="monthly-label">నెలసరి జీతం (In-Hand)</div>
         <div class="monthly-amount" id="inHandAmt">₹0</div>
         <div class="monthly-sub" id="annualSub"></div>
       </div>
@@ -773,4 +762,29 @@
     ans.classList.toggle('open');
   }
 
+else{localStorage.setItem("th_lang",lang);location.reload();}}
+</script>
+
+<script>);
+  var a=document.querySelector('[data-lang="'+lang+'"]');
+  if(a)a.classList.add('on');
+  if(typeof setLanguage==='function'){setLanguage(lang);}
+  else{setTimeout
+</script>
+
+<script>
+function setLang(btn, lang) {
+  document.querySelectorAll('.lang-pill').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+  localStorage.setItem('th_lang', lang);
+}
+// Restore saved language pill on load
+document.addEventListener('DOMContentLoaded', function(){
+  var lang = localStorage.getItem('th_lang') || 'te';
+  var btn = document.querySelector('.lang-pill[onclick*="\'' + lang + '\'"]');
+  if(btn){ document.querySelectorAll('.lang-pill').forEach(function(b){ b.classList.remove('on'); }); btn.classList.add('on'); }
+});
+</script>
+</body>
 </html>
+
