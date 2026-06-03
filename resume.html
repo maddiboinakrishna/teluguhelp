@@ -81,6 +81,7 @@
     @media(max-width:500px){.main{padding-left:16px;padding-right:16px}.field-row{grid-template-columns:1fr}.act-btns{flex-direction:column}}
   </style>
 
+<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 <body>
 <header>
@@ -302,7 +303,8 @@ Tips:
 function printResume(){
   const content = document.getElementById('resumePreview').innerHTML;
   const w = window.open('','_blank');
-  w.document.write('<html><head><title>Resume</title><style>body{font-family:Georgia,serif;padding:40px;font-size:13px;line-height:1.7;max-width:800px;margin:0 auto}pre{white-space:pre-wrap}</style></head><body>'+content+'</body></html>');
+  w.document.write('<html><head><title>Resume</title><style>body{font-family:Georgia,serif;padding:40px;font-size:13px;line-height:1.7;max-width:800px;margin:0 auto}pre{white-space:pre-wrap}</style><script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</head><body>'+content+'</body></html>');
   w.document.close(); w.print();
 }</script>
 </body></html>`);

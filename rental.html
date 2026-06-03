@@ -88,6 +88,7 @@
     @media(max-width:500px){.main,.state-table-wrap{padding-left:16px;padding-right:16px}.act-btns{flex-direction:column}}
   </style>
 
+<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 <body>
 <header>
@@ -257,7 +258,8 @@ function calcRental(){
 function printAgreement(){
   const content = document.getElementById('agreementText').innerHTML;
   const w = window.open('','_blank');
-  w.document.write('<html><head><title>Rental Agreement</title><style>body{font-family:Georgia,serif;padding:40px;font-size:13px;line-height:1.9;max-width:800px;margin:0 auto}h4{text-align:center;text-decoration:underline;margin-bottom:16px}p{margin-bottom:10px}</style></head><body>'+content+'</body></html>');
+  w.document.write('<html><head><title>Rental Agreement</title><style>body{font-family:Georgia,serif;padding:40px;font-size:13px;line-height:1.9;max-width:800px;margin:0 auto}h4{text-align:center;text-decoration:underline;margin-bottom:16px}p{margin-bottom:10px}</style><script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</head><body>'+content+'</body></html>');
   w.document.close(); w.print();
 }</script>
 </body></html>');
