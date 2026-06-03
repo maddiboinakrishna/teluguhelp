@@ -266,8 +266,9 @@
       .logo-te { font-size: 16px; }
     }
   </style>
+<script src="/i18n.js"></script>
 </head>
-<body>
+<body data-page-key="home">
 
 <!-- ══ HEADER ══ -->
 <header>
@@ -293,9 +294,9 @@
 
     <!-- Language Toggle -->
     <div class="lang-pills" role="group" aria-label="Language">
-      <button class="lang-pill on" onclick="switchLang(this,'te')">తెలుగు</button>
-      <button class="lang-pill" onclick="switchLang(this,'hi')">हिंदी</button>
-      <button class="lang-pill" onclick="switchLang(this,'en')">English</button>
+      <button class="lang-pill on" data-lang="te" onclick="switchLang('te')">తెలుగు</button>
+      <button class="lang-pill" data-lang="hi" onclick="switchLang('hi')">हिंदी</button>
+      <button class="lang-pill" data-lang="en" onclick="switchLang('en')">English</button>
     </div>
   </nav>
 </header>
@@ -305,15 +306,15 @@
   <div class="hero-inner">
     <div class="hero-chip">
       <span class="dot"></span>
-      తెలుగు వారికోసం · 100% ఉచితం
+      <span data-i18n='hero.chip'>తెలుగు వారికోసం · 100% ఉచితం</span>
     </div>
-    <h1>మీ సమస్యకు<br><span class="accent">వెంటనే పరిష్కారం</span></h1>
-    <p class="hero-sub">జీతం లెక్కలు · లోన్ అర్హత · ప్రభుత్వ పథకాలు — తెలుగులో, సులభంగా</p>
+    <h1><span data-i18n="hero.title1">మీ సమస్యకు</span><br><span class="accent" data-i18n="hero.title2">వెంటనే పరిష్కారం</span></h1>
+    <p class="hero-sub" data-i18n="hero.sub">జీతం లెక్కలు · లోన్ అర్హత · ప్రభుత్వ పథకాలు — తెలుగులో, సులభంగా</p>
     <div class="trust-row">
-      <span class="trust-item">50,000+ మంది వాడారు</span>
-      <span class="trust-item">Registration అక్కర్లేదు</span>
-      <span class="trust-item">Data save కాదు</span>
-      <span class="trust-item">Mobile Friendly</span>
+      <span class="trust-item" data-i18n="hero.trust1">50,000+ మంది వాడారు</span>
+      <span class="trust-item" data-i18n="hero.trust2">Registration అక్కర్లేదు</span>
+      <span class="trust-item" data-i18n="hero.trust3">Data save కాదు</span>
+      <span class="trust-item" data-i18n="hero.trust4">Mobile Friendly</span>
     </div>
   </div>
 </section>
@@ -326,8 +327,8 @@
 <!-- ══ TOOLS ══ -->
 <section class="sec">
   <div class="sec-head">
-    <h2>ఏ సమస్య వచ్చినా — <em>ఇక్కడ చూడండి</em></h2>
-    <p>ఒక్కో సాధనం ఒక నిజమైన సమస్యను పూర్తిగా పరిష్కరిస్తుంది</p>
+    <h2 data-i18n="tools.heading">ఏ సమస్య వచ్చినా — ఇక్కడ చూడండి</h2>
+    <p data-i18n="tools.sub">ఒక్కో సాధనం ఒక నిజమైన సమస్యను పూర్తిగా పరిష్కరిస్తుంది</p>
   </div>
   <div class="tools-grid" id="toolsGrid">
 
@@ -335,11 +336,11 @@
       <div class="tc-top">
         <div class="tc-icon">💰</div>
         <div class="tc-names">
-          <span class="tc-te">జీతం లెక్కలు</span>
+          <span class="tc-te" data-i18n="tool.salary.te">జీతం లెక్కలు</span>
           <span class="tc-en">Salary & CTC Calculator</span>
         </div>
       </div>
-      <p class="tc-desc">మీ CTC నుండి నెలసరి జీతం ఎంతో తెలుసుకోండి. PF, TDS, పాత vs కొత్త పన్ను విధానం లెక్కలు.</p>
+      <p class="tc-desc" data-i18n="tool.salary.desc">మీ CTC నుండి నెలసరి జీతం ఎంతో తెలుసుకోండి. PF, TDS, పాత vs కొత్త పన్ను విధానం లెక్కలు.</p>
       <div class="tc-footer">
         <span class="tc-badge">Finance</span>
         <span class="tc-arrow">→</span>
@@ -350,11 +351,11 @@
       <div class="tc-top">
         <div class="tc-icon">🏠</div>
         <div class="tc-names">
-          <span class="tc-te">లోన్ వస్తుందా?</span>
+          <span class="tc-te" data-i18n="tool.emi.te">లోన్ వస్తుందా?</span>
           <span class="tc-en">EMI & Loan Eligibility</span>
         </div>
       </div>
-      <p class="tc-desc">మీ జీతానికి ఎంత లోన్ వస్తుందో చెక్ చేయండి. EMI లెక్కలు, 6 బ్యాంకులు పోలిక.</p>
+      <p class="tc-desc" data-i18n="tool.emi.desc">మీ జీతానికి ఎంత లోన్ వస్తుందో చెక్ చేయండి. EMI లెక్కలు, 6 బ్యాంకులు పోలిక.</p>
       <div class="tc-footer">
         <span class="tc-badge">Loans</span>
         <span class="tc-arrow">→</span>
@@ -365,11 +366,11 @@
       <div class="tc-top">
         <div class="tc-icon">🏛️</div>
         <div class="tc-names">
-          <span class="tc-te">ప్రభుత్వ పథకాలు</span>
+          <span class="tc-te" data-i18n="tool.schemes.te">ప్రభుత్వ పథకాలు</span>
           <span class="tc-en">Govt Scheme Checker</span>
         </div>
       </div>
-      <p class="tc-desc">మీకు ఏ ప్రభుత్వ పథకాలు అర్హత ఉందో తెలుసుకోండి. రాష్ట్రం, ఆదాయం, వయసు ఆధారంగా.</p>
+      <p class="tc-desc" data-i18n="tool.schemes.desc">మీకు ఏ ప్రభుత్వ పథకాలు అర్హత ఉందో తెలుసుకోండి. రాష్ట్రం, ఆదాయం, వయసు ఆధారంగా.</p>
       <div class="tc-footer">
         <span class="tc-badge">Government</span>
         <span class="tc-arrow">→</span>
@@ -380,7 +381,7 @@
       <div class="tc-top">
         <div class="tc-icon">📋</div>
         <div class="tc-names">
-          <span class="tc-te">పత్రాలు గైడ్</span>
+          <span class="tc-te" data-i18n="tool.documents.te">పత్రాలు గైడ్</span>
           <span class="tc-en">Ration Card & Documents</span>
         </div>
       </div>
@@ -395,11 +396,11 @@
       <div class="tc-top">
         <div class="tc-icon">🎓</div>
         <div class="tc-names">
-          <span class="tc-te">స్కాలర్షిప్</span>
+          <span class="tc-te" data-i18n="tool.scholarship.te">స్కాలర్షిప్</span>
           <span class="tc-en">Scholarship Checker</span>
         </div>
       </div>
-      <p class="tc-desc">చదువుకు స్కాలర్షిప్ వస్తుందా? CGPA అర్హత, apply steps — 2026 అప్డేట్.</p>
+      <p class="tc-desc" data-i18n="tool.scholarship.desc">చదువుకు స్కాలర్షిప్ వస్తుందా? CGPA అర్హత, apply steps — 2026 అప్డేట్.</p>
       <div class="tc-footer">
         <span class="tc-badge">Education</span>
         <span class="tc-arrow">→</span>
@@ -410,11 +411,11 @@
       <div class="tc-top">
         <div class="tc-icon">🏘️</div>
         <div class="tc-names">
-          <span class="tc-te">ఇల్లు అద్దె ఒప్పందం</span>
+          <span class="tc-te" data-i18n="tool.rental.te">ఇల్లు అద్దె ఒప్పందం</span>
           <span class="tc-en">Rental Agreement</span>
         </div>
       </div>
-      <p class="tc-desc">Rental agreement PDF తయారు చేయండి. స్టాంప్ డ్యూటీ, రాష్ట్రం ప్రకారం లెక్కలు.</p>
+      <p class="tc-desc" data-i18n="tool.rental.desc">Rental agreement PDF తయారు చేయండి. స్టాంప్ డ్యూటీ, రాష్ట్రం ప్రకారం లెక్కలు.</p>
       <div class="tc-footer">
         <span class="tc-badge">Property</span>
         <span class="tc-arrow">→</span>
@@ -426,11 +427,11 @@
         <div class="tc-top">
           <div class="tc-icon">📝</div>
           <div class="tc-names">
-            <span class="tc-te">AI Resume Builder</span>
+            <span class="tc-te" data-i18n="tool.resume.te">AI Resume Builder</span>
             <span class="tc-en">ATS Score + PDF Download</span>
           </div>
         </div>
-        <p class="tc-desc">AI తో professional resume తయారు చేయండి. ATS score check, job match — ఉచితంగా.</p>
+        <p class="tc-desc" data-i18n="tool.resume.desc">AI తో professional resume తయారు చేయండి. ATS score check, job match — ఉచితంగా.</p>
         <div class="tc-footer">
           <span class="tc-badge">Career</span>
           <span class="tc-arrow">→</span>
@@ -441,11 +442,11 @@
         <div class="tc-top">
           <div class="tc-icon">🏪</div>
           <div class="tc-names">
-            <span class="tc-te">Business Name Generator</span>
+            <span class="tc-te" data-i18n="tool.business.te">Business Name Generator</span>
             <span class="tc-en">AI + Domain Check</span>
           </div>
         </div>
-        <p class="tc-desc">AI తో unique business names generate చేయండి. Domain availability check ఉచితంగా.</p>
+        <p class="tc-desc" data-i18n="tool.business.desc">AI తో unique business names generate చేయండి. Domain availability check ఉచితంగా.</p>
         <div class="tc-footer">
           <span class="tc-badge">Business</span>
           <span class="tc-arrow">→</span>
@@ -456,11 +457,11 @@
         <div class="tc-top">
           <div class="tc-icon">💪</div>
           <div class="tc-names">
-            <span class="tc-te">Health Routine</span>
+            <span class="tc-te" data-i18n="tool.health.te">Health Routine</span>
             <span class="tc-en">Hair, Skin & Gym Guide</span>
           </div>
         </div>
-        <p class="tc-desc">Hairfall solution, skin care, gym workout — budget products తో results తెలుగులో.</p>
+        <p class="tc-desc" data-i18n="tool.health.desc">Hairfall solution, skin care, gym workout — budget products తో results తెలుగులో.</p>
         <div class="tc-footer">
           <span class="tc-badge">Health</span>
           <span class="tc-arrow">→</span>
@@ -479,29 +480,29 @@
 <section class="steps-sec">
   <div class="steps-inner">
     <div class="sec-head">
-      <h2>ఎలా వాడాలి? — <em>చాలా సులభం</em></h2>
-      <p>4 simple steps లో మీ సమస్యకు జవాబు పొందండి</p>
+      <h2 data-i18n="steps.heading">ఎలా వాడాలి? — చాలా సులభం</h2>
+      <p data-i18n="steps.sub">4 simple steps లో మీ సమస్యకు జవాబు పొందండి</p>
     </div>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
-        <h3>సాధనం ఎంచుకోండి</h3>
-        <p>పైన ఉన్న tools లో మీకు కావలసిన దాన్ని click చేయండి</p>
+        <h3 data-i18n="step1.title">సాధనం ఎంచుకోండి</h3>
+        <p data-i18n="step1.desc">పైన ఉన్న tools లో మీకు కావలసిన దాన్ని click చేయండి</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <h3>వివరాలు నమోదు చేయండి</h3>
-        <p>మీ జీతం, రాష్ట్రం, వయసు లాంటి basic details ఇవ్వండి</p>
+        <h3 data-i18n="step2.title">వివరాలు నమోదు చేయండి</h3>
+        <p data-i18n="step2.desc">మీ జీతం, రాష్ట్రం, వయసు లాంటి basic details ఇవ్వండి</p>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <h3>లెక్కించండి</h3>
-        <p>ఒక్క click లో మీకు తెలుగులో సంపూర్ణ జవాబు వస్తుంది</p>
+        <h3 data-i18n="step3.title">లెక్కించండి</h3>
+        <p data-i18n="step3.desc">ఒక్క click లో మీకు తెలుగులో సంపూర్ణ జవాబు వస్తుంది</p>
       </div>
       <div class="step-card">
         <div class="step-num">4</div>
-        <h3>Save చేయండి</h3>
-        <p>PDF download చేయండి లేదా WhatsApp లో share చేయండి</p>
+        <h3 data-i18n="step4.title">Save చేయండి</h3>
+        <p data-i18n="step4.desc">PDF download చేయండి లేదా WhatsApp లో share చేయండి</p>
       </div>
     </div>
   </div>
@@ -511,24 +512,24 @@
 <section class="why-sec">
   <div class="why-inner">
     <div class="why-head">
-      <h2>మనం ఎందుకు వేరుగా ఉన్నాం?</h2>
-      <p>Other sites కంటే TeluguHelp ఏ విధంగా మెరుగ్గా ఉంది</p>
+      <h2 data-i18n="why.heading">మనం ఎందుకు వేరుగా ఉన్నాం?</h2>
+      <p data-i18n="why.sub">Other sites కంటే TeluguHelp ఏ విధంగా మెరుగ్గా ఉంది</p>
     </div>
     <div class="why-grid">
       <div class="why-card">
         <div class="why-icon-wrap">🗣️</div>
-        <h3>నిజమైన తెలుగులో</h3>
+        <h3 data-i18n="why1.title">నిజమైన తెలుగులో</h3>
         <p>Google Translate కాదు — హైదరాబాద్, విజయవాడ వాడుక భాషలో రాశాం. మీకు సులభంగా అర్థమవుతుంది.</p>
       </div>
       <div class="why-card">
         <div class="why-icon-wrap">✅</div>
-        <h3>Accurate లెక్కలు</h3>
-        <p>AI guess work కాదు — real formulas, verified data. ప్రతి లెక్క cross-check చేయబడింది.</p>
+        <h3 data-i18n="why2.title">Accurate లెక్కలు</h3>
+        <p data-i18n="why2.desc">AI guess work కాదు — real formulas, verified data. ప్రతి లెక్క cross-check చేయబడింది.</p>
       </div>
       <div class="why-card">
         <div class="why-icon-wrap">🔒</div>
         <h3>మీ Data Safe</h3>
-        <p>Registration అక్కర్లేదు. మీరు ఇచ్చిన details ఏవీ save అవ్వవు. పూర్తిగా privacy.</p>
+        <p data-i18n="why3.desc">Registration అక్కర్లేదు. మీరు ఇచ్చిన details ఏవీ save అవ్వవు. పూర్తిగా privacy.</p>
       </div>
     </div>
   </div>
@@ -539,19 +540,19 @@
   <div class="stats-inner">
     <div>
       <span class="stat-num" data-to="50000">0</span>
-      <div class="stat-lbl">మంది వాడారు</div>
+      <div class="stat-lbl" data-i18n="stats.users">మంది వాడారు</div>
     </div>
     <div>
       <span class="stat-num" data-to="10">0</span>
-      <div class="stat-lbl">ఉచిత సాధనాలు</div>
+      <div class="stat-lbl" data-i18n="stats.tools">ఉచిత సాధనాలు</div>
     </div>
     <div>
       <span class="stat-num">3</span>
-      <div class="stat-lbl">భాషలు</div>
+      <div class="stat-lbl" data-i18n="stats.languages">భాషలు</div>
     </div>
     <div>
       <span class="stat-num">₹0</span>
-      <div class="stat-lbl">ఖర్చు లేదు</div>
+      <div class="stat-lbl" data-i18n="stats.cost">ఖర్చు లేదు</div>
     </div>
   </div>
 </section>
@@ -560,7 +561,7 @@
 <section class="sec" style="background:#fff;">
   <div class="sec-head">
     <h2>తెలుగులో చదవండి — <em>Useful Articles</em></h2>
-    <p>Finance, Govt schemes, Documents — సరళమైన తెలుగులో వివరణ</p>
+    <p data-i18n="blog.sub">Finance, Govt schemes, Documents — సరళమైన తెలుగులో వివరణ</p>
   </div>
   <div class="blog-grid">
     <a href="blog/schemes-2026.html" class="blog-card">
@@ -597,7 +598,7 @@
         <p>తెలుగు వారికి వారి హక్కులు తెలియాలని మా లక్ష్యం. Hyderabad, Vijayawada, Guntur వాసుల కోసం నిర్మించాం. 100% Free, Always.</p>
       </div>
       <div class="footer-col">
-        <h4>Tools</h4>
+        <h4 data-i18n="footer.tools">Tools</h4>
         <a href="salary.html">జీతం లెక్కలు</a>
         <a href="emi.html">లోన్ అర్హత</a>
         <a href="schemes.html">ప్రభుత్వ పథకాలు</a>
@@ -605,12 +606,12 @@
         <a href="scholarship.html">స్కాలర్షిప్</a>
       </div>
       <div class="footer-col">
-        <h4>Pages</h4>
-        <a href="about.html">మా గురించి</a>
-        <a href="blog.html">వ్యాసాలు</a>
-        <a href="contact.html">సంప్రదించండి</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="disclaimer.html">Disclaimer</a>
+        <h4 data-i18n="footer.pages">Pages</h4>
+        <a href="about.html" data-i18n="footer.about">మా గురించి</a>
+        <a href="blog.html" data-i18n="footer.articles">వ్యాసాలు</a>
+        <a href="contact.html" data-i18n="footer.contact">సంప్రదించండి</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -621,10 +622,17 @@
 </footer>
 
 <script>
-  // Language switch
-  function switchLang(btn, lang) {
-    document.querySelectorAll('.lang-pill').forEach(b => b.classList.remove('on'));
-    btn.classList.add('on');
+  // Language switch — safe wrapper
+  function switchLang(lang) {
+    if (typeof setLanguage === 'function') {
+      setLanguage(lang);
+    } else {
+      // Fallback if i18n.js not loaded
+      document.querySelectorAll('.lang-pill').forEach(b => b.classList.remove('on'));
+      document.querySelectorAll('[data-lang="'+lang+'"]').forEach(b => b.classList.add('on'));
+      localStorage.setItem('th_lang', lang);
+      location.reload();
+    }
   }
 
   // Staggered card entrance
