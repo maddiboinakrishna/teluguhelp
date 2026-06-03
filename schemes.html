@@ -208,6 +208,18 @@
       .missed-grid{grid-template-columns:1fr}
     }
   </style>
+<script src="/i18n.js">
+
+  // i18n language switch wrapper
+  function switchLang(lang) {
+    if (typeof setLanguage === 'function') {
+      setLanguage(lang);
+    } else {
+      localStorage.setItem('th_lang', lang);
+      location.reload();
+    }
+  }
+</script>
 </head>
 <body>
 
@@ -227,7 +239,7 @@
         <span class="logo-en">teluguhelp.in</span>
       </div>
     </a>
-    <a href="/" class="back-btn">← Home కి వెళ్ళు</a>
+    <a href="/" class="back-btn" data-i18n="common.back">← Home కి వెళ్ళు</a>
   </nav>
 </header>
 
@@ -235,8 +247,8 @@
 <div class="page-hero">
   <div class="page-hero-inner">
     <div class="breadcrumb"><a href="/">Home</a><span>›</span> ప్రభుత్వ పథకాలు</div>
-    <h1>ప్రభుత్వ పథకాలు — <span>Scheme Checker</span></h1>
-    <p>మీకు అర్హమైన పథకాలు 4 simple steps లో తెలుసుకోండి — 2026 Updated</p>
+    <h1 data-i18n="schemes.title">ప్రభుత్వ పథకాలు — Scheme Checker</h1>
+    <p data-i18n="schemes.subtitle">మీకు అర్హమైన పథకాలు 4 simple steps లో తెలుసుకోండి — 2026 Updated</p>
   </div>
 </div>
 
@@ -429,7 +441,7 @@
 <!-- RESULTS -->
 <div class="results-wrap" id="resultsWrap">
   <div class="reset-row">
-    <button class="res-btn" onclick="resetWizard()">🔄 మళ్ళీ చెక్ చేయండి</button>
+    <button class="res-btn" onclick="resetWizard()" data-i18n="schemes.reset">🔄 మళ్ళీ చెక్ చేయండి</button>
     <button class="res-btn primary" onclick="window.print()">🖨️ Print / Save</button>
     <button class="res-btn" onclick="shareResults()">📤 Share</button>
   </div>
@@ -864,6 +876,5 @@ function shareResults() {
   if (navigator.share) navigator.share({title:'ప్రభుత్వ పథకాలు',text});
   else navigator.clipboard.writeText(text).then(()=>alert('Copied! WhatsApp లో share చేయండి.'));
 }
-</script>
-</body>
+
 </html>

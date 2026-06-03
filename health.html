@@ -78,6 +78,18 @@
     @media(max-width:800px){.checker{grid-template-columns:1fr}.inp-panel{position:static}}
     @media(max-width:500px){.main,.tabs-wrap{padding-left:16px;padding-right:16px}.htab{font-size:12px;padding:10px 4px}}
   </style>
+<script src="/i18n.js">
+
+  // i18n language switch wrapper
+  function switchLang(lang) {
+    if (typeof setLanguage === 'function') {
+      setLanguage(lang);
+    } else {
+      localStorage.setItem('th_lang', lang);
+      location.reload();
+    }
+  }
+</script>
 </head>
 <body>
 <header>
@@ -86,7 +98,7 @@
       <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#E8720C"/><rect x="8" y="10" width="24" height="5" rx="2.5" fill="white"/><rect x="17.5" y="10" width="5" height="20" rx="2.5" fill="white"/><circle cx="30" cy="29" r="3" fill="rgba(255,255,255,0.55)"/><path d="M10 27 Q14 32 20 30" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
       <div><span class="logo-te">TeluguHelp</span><span class="logo-en">teluguhelp.in</span></div>
     </a>
-    <a href="/" class="back-btn">← Home కి వెళ్ళు</a>
+    <a href="/" class="back-btn" data-i18n="common.back">← Home కి వెళ్ళు</a>
   </nav>
 </header>
 <div class="page-hero">
@@ -518,6 +530,5 @@ function showGymRoutine(){
     <div class="ad-zone" style="margin-top:14px">Advertisement — Google AdSense</div>`;
   panel.appendChild(rc);
 }
-</script>
-</body>
+
 </html>

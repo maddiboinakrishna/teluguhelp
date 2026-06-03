@@ -188,6 +188,18 @@
       .tabs-wrap,.main{padding-left:16px;padding-right:16px}
     }
   </style>
+<script src="/i18n.js">
+
+  // i18n language switch wrapper
+  function switchLang(lang) {
+    if (typeof setLanguage === 'function') {
+      setLanguage(lang);
+    } else {
+      localStorage.setItem('th_lang', lang);
+      location.reload();
+    }
+  }
+</script>
 </head>
 <body>
 
@@ -207,23 +219,23 @@
         <span class="logo-en">teluguhelp.in</span>
       </div>
     </a>
-    <a href="/" class="back-btn">← Home కి వెళ్ళు</a>
+    <a href="/" class="back-btn" data-i18n="common.back">← Home కి వెళ్ళు</a>
   </nav>
 </header>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="breadcrumb"><a href="/">Home</a><span>›</span> లోన్ అర్హత</div>
-  <h1>లోన్ వస్తుందా? — <span>EMI Calculator</span></h1>
-  <p>EMI లెక్కలు · బ్యాంక్ అర్హత · 6 బ్యాంకులు పోలిక — తెలుగులో ఉచితంగా</p>
+  <h1 data-i18n="emi.title">లోన్ వస్తుందా? — EMI Calculator</h1>
+  <p data-i18n="emi.subtitle">EMI లెక్కలు · బ్యాంక్ అర్హత · 6 బ్యాంకులు పోలిక — తెలుగులో ఉచితంగా</p>
 </div>
 
 <!-- TABS -->
 <div class="tabs-wrap">
   <div class="tabs" role="tablist">
-    <button class="tab on" onclick="switchTab(0)" role="tab">📊 EMI లెక్కలు</button>
-    <button class="tab"    onclick="switchTab(1)" role="tab">✅ అర్హత చెక్</button>
-    <button class="tab"    onclick="switchTab(2)" role="tab">🏦 బ్యాంకులు పోలిక</button>
+    <button class="tab on" onclick="switchTab(0)" role="tab" data-i18n="emi.tab1">📊 EMI లెక్కలు</button>
+    <button class="tab"    onclick="switchTab(1)" role="tab" data-i18n="emi.tab2">✅ అర్హత చెక్</button>
+    <button class="tab"    onclick="switchTab(2)" role="tab" data-i18n="emi.tab3">🏦 బ్యాంకులు పోలిక</button>
   </div>
 </div>
 
@@ -282,7 +294,7 @@
 
     <div class="res-card" id="emiResult">
       <div class="big-num">
-        <div class="big-label">నెలసరి EMI</div>
+        <div class="big-label" data-i18n="emi.result.label">నెలసరి EMI</div>
         <div class="big-amount" id="emiAmt">₹0</div>
         <div class="big-sub" id="emiSub"></div>
       </div>
@@ -787,6 +799,5 @@
     btn.classList.toggle('open');
     ans.classList.toggle('open');
   }
-</script>
-</body>
+
 </html>

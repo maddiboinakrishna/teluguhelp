@@ -19,6 +19,28 @@ const TRANSLATIONS = {
     en: '← Articles'
   },
 
+  // ── PAGE TITLES (for document.title update) ──
+  'page.title.home': {
+    te: 'TeluguHelp — తెలుగులో సహాయం | Salary, Loan, Govt Schemes',
+    hi: 'TeluguHelp — हिंदी में सहायता | Salary, Loan, योजनाएं',
+    en: 'TeluguHelp — Free Tools for Telugu People | Salary, Loan'
+  },
+  'page.title.salary': {
+    te: 'జీతం లెక్కలు — Telugu Salary Calculator 2026 | TeluguHelp',
+    hi: 'वेतन गणना — Hindi Salary Calculator 2026 | TeluguHelp',
+    en: 'Salary Calculator 2026 — CTC to In-Hand | TeluguHelp'
+  },
+  'page.title.emi': {
+    te: 'లోన్ అర్హత — Telugu EMI Calculator 2026 | TeluguHelp',
+    hi: 'लोन पात्रता — Hindi EMI Calculator 2026 | TeluguHelp',
+    en: 'Loan Eligibility & EMI Calculator 2026 | TeluguHelp'
+  },
+  'page.title.schemes': {
+    te: 'ప్రభుత్వ పథకాలు 2026 — Telugu Scheme Checker | TeluguHelp',
+    hi: 'सरकारी योजनाएं 2026 — Hindi Scheme Checker | TeluguHelp',
+    en: 'Government Schemes 2026 Eligibility Checker | TeluguHelp'
+  },
+
   // ── HOMEPAGE HERO ──
   'hero.chip': {
     te: 'తెలుగు వారికోసం · 100% ఉచితం',
@@ -199,6 +221,213 @@ const TRANSLATIONS = {
   'btn.print': { te: '🖨️ Print / PDF', hi: '🖨️ प्रिंट / PDF', en: '🖨️ Print / PDF' },
   'btn.share': { te: '📤 Share', hi: '📤 शेयर करें', en: '📤 Share' },
   'btn.apply': { te: 'Apply చేయండి →', hi: 'आवेदन करें →', en: 'Apply Now →' },
+  // ── TOOL PAGES ──
+  'salary.title': {
+    te: 'జీతం లెక్కలు — Salary Calculator',
+    hi: 'वेतन गणना — Salary Calculator',
+    en: 'Salary Calculator 2026'
+  },
+  'salary.subtitle': {
+    te: 'మీ CTC నుండి నెలసరి జీతం, PF, TDS అన్నీ తెలుగులో తెలుసుకోండి',
+    hi: 'CTC से मासिक वेतन, PF, TDS हिंदी में जानें',
+    en: 'Calculate monthly salary from CTC with PF, TDS breakdown'
+  },
+  'salary.inp.title': {
+    te: '📝 మీ వివరాలు ఇవ్వండి',
+    hi: '📝 अपनी जानकारी दें',
+    en: '📝 Enter Your Details'
+  },
+  'salary.ctc.label': {
+    te: 'వార్షిక CTC (Annual CTC)',
+    hi: 'वार्षिक CTC',
+    en: 'Annual CTC'
+  },
+  'salary.ctc.ph': {
+    te: 'ఉదా: 600000',
+    hi: 'उदा: 600000',
+    en: 'e.g. 600000'
+  },
+  'salary.emp.label': {
+    te: 'Employment Type',
+    hi: 'रोजगार प्रकार',
+    en: 'Employment Type'
+  },
+  'salary.tax.label': {
+    te: 'పన్ను విధానం ఎంచుకోండి',
+    hi: 'कर व्यवस्था चुनें',
+    en: 'Choose Tax Regime'
+  },
+  'salary.old': {
+    te: 'పాత విధానం',
+    hi: 'पुरानी व्यवस्था',
+    en: 'Old Regime'
+  },
+  'salary.new': {
+    te: 'కొత్త విధానం',
+    hi: 'नई व्యవస्था',
+    en: 'New Regime'
+  },
+  'salary.pf.label': {
+    te: 'PF మీ జీతంలో వస్తుందా?',
+    hi: 'क्या PF आपके वेतन में है?',
+    en: 'Is PF included in your salary?'
+  },
+  'salary.metro.label': {
+    te: 'మీరు Metro City లో ఉన్నారా?',
+    hi: 'क्या आप Metro City में हैं?',
+    en: 'Are you in a Metro City?'
+  },
+  'salary.state.label': {
+    te: 'రాష్ట్రం',
+    hi: 'राज्य',
+    en: 'State'
+  },
+  'salary.btn': {
+    te: 'లెక్కించండి →',
+    hi: 'गणना करें →',
+    en: 'Calculate →'
+  },
+  'salary.result.label': {
+    te: 'నెలసరి జీతం (In-Hand)',
+    hi: 'मासिक वेतन (In-Hand)',
+    en: 'Monthly Salary (In-Hand)'
+  },
+  'salary.yes': {
+    te: 'అవును (Yes)',
+    hi: 'हाँ (Yes)',
+    en: 'Yes'
+  },
+  'salary.no': {
+    te: 'లేదు (No)',
+    hi: 'नहीं (No)',
+    en: 'No'
+  },
+  'emi.title': {
+    te: 'లోన్ అర్హత — EMI Calculator',
+    hi: 'लोन पात्रता — EMI Calculator',
+    en: 'Loan Eligibility — EMI Calculator'
+  },
+  'emi.subtitle': {
+    te: 'EMI లెక్కలు · బ్యాంక్ అర్హత · 6 బ్యాంకులు పోలిక',
+    hi: 'EMI गणना · बैंक पात्रता · 6 बैंक तुलना',
+    en: 'EMI Calculation · Bank Eligibility · 6 Banks Comparison'
+  },
+  'emi.tab1': {
+    te: '📊 EMI లెక్కలు',
+    hi: '📊 EMI गणना',
+    en: '📊 EMI Calculator'
+  },
+  'emi.tab2': {
+    te: '✅ అర్హత చెక్',
+    hi: '✅ पात्रता जांच',
+    en: '✅ Eligibility Check'
+  },
+  'emi.tab3': {
+    te: '🏦 బ్యాంకులు పోలిక',
+    hi: '🏦 बैंक तुलना',
+    en: '🏦 Bank Comparison'
+  },
+  'emi.loan.label': {
+    te: 'లోన్ మొత్తం',
+    hi: 'लोन राशि',
+    en: 'Loan Amount'
+  },
+  'emi.rate.label': {
+    te: 'వడ్డీ రేటు',
+    hi: 'ब्याज दर',
+    en: 'Interest Rate'
+  },
+  'emi.tenure.label': {
+    te: 'కాలపరిమితి',
+    hi: 'अवधि',
+    en: 'Tenure'
+  },
+  'emi.btn': {
+    te: 'లెక్కించండి →',
+    hi: 'गणना करें →',
+    en: 'Calculate →'
+  },
+  'emi.result.label': {
+    te: 'నెలసరి EMI',
+    hi: 'मासिक EMI',
+    en: 'Monthly EMI'
+  },
+  'schemes.title': {
+    te: 'ప్రభుత్వ పథకాలు — Scheme Checker',
+    hi: 'सरकारी योजनाएं — Scheme Checker',
+    en: 'Govt Scheme Checker 2026'
+  },
+  'schemes.subtitle': {
+    te: 'మీకు అర్హమైన పథకాలు 4 simple steps లో తెలుసుకోండి',
+    hi: '4 आसान स्टेप्स में अपनी योजनाएं जानें',
+    en: 'Find eligible govt schemes in 4 simple steps'
+  },
+  'schemes.next': {
+    te: 'తదుపరి దశ →',
+    hi: 'अगला चरण →',
+    en: 'Next Step →'
+  },
+  'schemes.prev': {
+    te: '← వెనక్కి',
+    hi: '← वापस',
+    en: '← Back'
+  },
+  'schemes.check': {
+    te: '🔍 పథకాలు చూడండి →',
+    hi: '🔍 योजनाएं देखें →',
+    en: '🔍 Check Schemes →'
+  },
+  'schemes.result': {
+    te: 'మీకు పథకాలు అర్హత ఉంది! 🎉',
+    hi: 'आप योजनाओं के पात्र हैं! 🎉',
+    en: 'You are eligible for schemes! 🎉'
+  },
+  'schemes.apply': {
+    te: 'Apply చేయండి →',
+    hi: 'आवेदन करें →',
+    en: 'Apply Now →'
+  },
+  'schemes.reset': {
+    te: '🔄 మళ్ళీ చెక్ చేయండి',
+    hi: '🔄 फिर से जांचें',
+    en: '🔄 Check Again'
+  },
+  'common.yes': {
+    te: 'అవును',
+    hi: 'हाँ',
+    en: 'Yes'
+  },
+  'common.no': {
+    te: 'లేదు',
+    hi: 'नहीं',
+    en: 'No'
+  },
+  'common.print': {
+    te: '🖨️ Print / PDF',
+    hi: '🖨️ प्रिंट / PDF',
+    en: '🖨️ Print / PDF'
+  },
+  'common.share': {
+    te: '📤 Share',
+    hi: '📤 शेयर',
+    en: '📤 Share'
+  },
+  'common.reset': {
+    te: '🔄 మళ్ళీ',
+    hi: '🔄 फिर से',
+    en: '🔄 Reset'
+  },
+  'common.back': {
+    te: '← Home కి వెళ్ళు',
+    hi: '← होम पर जाएं',
+    en: '← Back to Home'
+  },
+  'common.calculate': {
+    te: 'లెక్కించండి →',
+    hi: 'गणना करें →',
+    en: 'Calculate →'
+  },
+
 };
 
 // ── Current language (default: auto-detect) ──
